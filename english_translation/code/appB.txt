@@ -1,0 +1,251 @@
+import pandas as pd
+import numpy as np
+from collections import defaultdict, deque
+import heapq
+
+excel_file = '/Users/(*file path*)/§{\cjkfont 附件}§2.xlsx'
+coords_c = pd.read_excel(excel_file, sheet_name=0, header=1)
+edges_c = pd.read_excel(excel_file, sheet_name=1, header=1)
+
+node_ids = coords_c.iloc[:, 0].astype(str).values
+X = coords_c.iloc[:, 1].astype(float).values
+Y = coords_c.iloc[:, 2].astype(float).values
+Z = coords_c.iloc[:, 3].astype(float).values
+
+edge_ids = edges_c.iloc[:, 0].astype(str).values
+node1_ids = edges_c.iloc[:, 1].astype(str).values
+node2_ids = edges_c.iloc[:, 2].astype(str).values
+
+W = 4
+H = 3
+h0 = 0.1
+Q_burst = 30
+Q_in = Q_burst / 60
+
+burst_pt = np.array([5349.03, 4931.90, 10.00])
+burst_pt = np.array([4143.12,4376.28,6.33])
+
+node_map = {str(node_id): idx for idx, node_id in enumerate(node_ids)}
+num_nodes = len(node_ids)
+
+graph = defaultdict(list)
+edge_info = {}
+edge_lengths = {}
+
+for i in range(len(edge_ids)):
+    node1 = str(node1_ids[i])
+    node2 = str(node2_ids[i])
+    idx1 = node_map[node1]
+    idx2 = node_map[node2]
+
+    length = np.linalg.norm([X[idx2]-X[idx1], Y[idx2]-Y[idx1], Z[idx2]-Z[idx1]])
+    edge_info[edge_ids[i]] = (node1, node2, length)
+    edge_lengths[edge_ids[i]] = length
+
+    graph[node1].append((node2, edge_ids[i], length))
+    graph[node2].append((node1, edge_ids[i], length))
+
+def find_closest_edge(burst_pt, edge_info, node_map, X, Y, Z):
+    best_edge = None
+    best_distance = float('inf')
+    best_position = 0.5
+
+    for edge_id, (node1, node2, length) in edge_info.items():
+        idx1 = node_map[node1]
+        idx2 = node_map[node2]
+
+        p1 = np.array([X[idx1], Y[idx1], Z[idx1]])
+        p2 = np.array([X[idx2], Y[idx2], Z[idx2]])
+
+        ab = p2 - p1
+        if np.linalg.norm(ab) < 1e-10:
+            continue
+
+        t = np.dot(burst_pt - p1, ab) / np.dot(ab, ab)
+        t = max(0, min(1, t))
+        proj = p1 + t * ab
+        distance = np.linalg.norm(burst_pt - proj)
+
+        if distance < best_distance:
+            best_distance = distance
+            best_edge = edge_id
+            best_position = t
+    return best_edge, best_position, best_distance
+
+best_edge, best_position, best_distance = find_closest_edge(burst_pt, edge_info, node_map, X, Y, Z)
+
+if best_edge is None or best_distance > 1.0:
+    raise ValueError("Could not find suitable burst point on any edge")
+
+burst_node_id = "BurstPoint"
+node_map[burst_node_id] = num_nodes
+node_ids = np.append(node_ids, burst_node_id)
+X = np.append(X, burst_pt[0])
+Y = np.append(Y, burst_pt[1])
+Z = np.append(Z, burst_pt[2])
+num_nodes += 1
+
+node1, node2, total_length = edge_info[best_edge]
+part1_length = best_position * total_length
+part2_length = (1 - best_position) * total_length
+
+del edge_info[best_edge]
+del edge_lengths[best_edge]
+graph[node1] = [n for n in graph[node1] if n[1] != best_edge]
+graph[node2] = [n for n in graph[node2] if n[1] != best_edge]
+
+edge1_id = f"{best_edge}_part1"
+edge2_id = f"{best_edge}_part2"
+
+edge_info[edge1_id] = (node1, burst_node_id, part1_length)
+edge_info[edge2_id] = (burst_node_id, node2, part2_length)
+edge_lengths[edge1_id] = part1_length
+edge_lengths[edge2_id] = part2_length
+
+graph[node1].append((burst_node_id, edge1_id, part1_length))
+graph[burst_node_id].append((node1, edge1_id, part1_length))
+graph[burst_node_id].append((node2, edge2_id, part2_length))
+graph[node2].append((burst_node_id, edge2_id, part2_length))
+
+def get_node_elevation(node_id):
+    """Get the elevation of a node"""
+    if node_id == burst_node_id:
+        return burst_pt[2]
+    idx = node_map[node_id]
+    return Z[idx]
+
+edge_reach_time = {edge_id: float('inf') for edge_id in edge_info}
+edge_fill_time = {edge_id: float('inf') for edge_id in edge_info}
+node_reach_time = {node_id: float('inf') for node_id in node_map}
+
+edge_water_height = {edge_id: 0.0 for edge_id in edge_info}
+edge_is_filled = {edge_id: False for edge_id in edge_info}
+edge_has_reached_min = {edge_id: False for edge_id in edge_info}
+
+pq = []
+node_reach_time[burst_node_id] = 0.0
+
+for neighbor, edge_id, length in graph[burst_node_id]:
+    flow_rate = Q_in / len(graph[burst_node_id])
+
+    volume_needed = W * h0 * length
+    reach_time = volume_needed / flow_rate
+
+    heapq.heappush(pq, (reach_time, 'reach', edge_id, neighbor, flow_rate))
+
+while pq:
+    current_time, event_type, edge_id, node_id, flow_rate = heapq.heappop(pq)
+
+    if event_type == 'reach':
+        if edge_has_reached_min[edge_id]:
+            continue
+
+        edge_has_reached_min[edge_id] = True
+        edge_reach_time[edge_id] = current_time
+        edge_water_height[edge_id] = h0
+
+        if current_time < node_reach_time[node_id]:
+            node_reach_time[node_id] = current_time
+
+        current_node_elevation = get_node_elevation(node_id)
+
+        downstream_edges = []
+        for next_neighbor, next_edge_id, next_length in graph[node_id]:
+            if next_edge_id != edge_id and not edge_is_filled[next_edge_id]:
+                next_node_elevation = get_node_elevation(next_neighbor)
+                if next_node_elevation <= current_node_elevation:
+                    downstream_edges.append((next_edge_id, next_neighbor, next_length))
+
+        if downstream_edges:
+            flow_per_edge = flow_rate / len(downstream_edges)
+
+            for next_edge_id, next_node, next_length in downstream_edges:
+                if not edge_has_reached_min[next_edge_id]:
+                    volume_needed = W * h0 * next_length
+                    next_reach_time = current_time + (volume_needed / flow_per_edge)
+                    heapq.heappush(pq, (next_reach_time, 'reach', next_edge_id, next_node, flow_per_edge))
+                else:
+                    remaining_volume = W * (H - edge_water_height[next_edge_id]) * next_length
+                    new_fill_time = current_time + (remaining_volume / flow_per_edge)
+                    heapq.heappush(pq, (new_fill_time, 'fill', next_edge_id, next_node, flow_per_edge))
+
+        additional_volume = W * (H - h0) * edge_lengths[edge_id]
+        fill_time = current_time + (additional_volume / flow_rate)
+        heapq.heappush(pq, (fill_time, 'fill', edge_id, node_id, flow_rate))
+
+    elif event_type == 'fill':
+        if edge_is_filled[edge_id]:
+            continue
+
+        edge_is_filled[edge_id] = True
+        edge_fill_time[edge_id] = current_time
+        edge_water_height[edge_id] = H
+
+        node1, node2, length = edge_info[edge_id]
+        downstream_node = node2 if node_reach_time[node2] > node_reach_time[node1] else node1
+
+        current_node_elevation = get_node_elevation(downstream_node)
+
+        downstream_edges = []
+        for next_neighbor, next_edge_id, next_length in graph[downstream_node]:
+            if next_edge_id != edge_id and not edge_is_filled[next_edge_id]:
+                next_node_elevation = get_node_elevation(next_neighbor)
+                if next_node_elevation <= current_node_elevation:
+                    downstream_edges.append((next_edge_id, next_neighbor, next_length))
+
+        if downstream_edges:
+            flow_per_edge = flow_rate / len(downstream_edges)
+
+            for next_edge_id, next_node, next_length in downstream_edges:
+                if not edge_has_reached_min[next_edge_id]:
+                    volume_needed = W * h0 * next_length
+                    next_reach_time = current_time + (volume_needed / flow_per_edge)
+                    heapq.heappush(pq, (next_reach_time, 'reach', next_edge_id, next_node, flow_per_edge))
+                else:
+                    remaining_volume = W * (H - edge_water_height[next_edge_id]) * next_length
+                    new_fill_time = current_time + (remaining_volume / flow_per_edge)
+                    heapq.heappush(pq, (new_fill_time, 'fill', next_edge_id, next_node, flow_per_edge))
+results_edges = []
+for edge_id, (node1, node2, length) in edge_info.items():
+    reach_min = edge_reach_time[edge_id] / 60 if edge_reach_time[edge_id] < float('inf') else np.nan
+    fill_min = edge_fill_time[edge_id] / 60 if edge_fill_time[edge_id] < float('inf') else np.nan
+
+    results_edges.append({
+        'Edge': edge_id,
+        'From_Node': node1,
+        'To_Node': node2,
+        'Length_m': round(length, 2),
+        'Reach_Time_min': round(reach_min, 2) if not np.isnan(reach_min) else np.nan,
+        'Fill_Time_min': round(fill_min, 2) if not np.isnan(fill_min) else np.nan
+    })
+
+results_nodes = []
+for node_id in node_map:
+    if node_id == burst_node_id:
+        reach_min = 0.0
+    else:
+        reach_min = node_reach_time[node_id] / 60 if node_reach_time[node_id] < float('inf') else np.nan
+    results_nodes.append({
+        'Node': node_id,
+        'Reach_Time_min': round(reach_min, 2) if not np.isnan(reach_min) else np.nan
+    })
+
+df_edges = pd.DataFrame(results_edges)
+df_nodes = pd.DataFrame(results_nodes)
+
+df_edges.to_excel('result_edges_modified.xlsx', index=False)
+df_nodes.to_excel('result_nodes_modified.xlsx', index=False)
+
+print("Modified simulation completed!")
+print(f"Burst point inserted at edge {best_edge}, position {best_position:.3f}")
+
+reachable_edges = sum(1 for t in edge_reach_time.values() if t < float('inf'))
+filled_edges = sum(1 for t in edge_fill_time.values() if t < float('inf'))
+total_edges = len(edge_info)
+
+print(f"Reachable edges: {reachable_edges}/{total_edges} ({reachable_edges/total_edges*100:.1f}%)")
+print(f"Filled edges: {filled_edges}/{total_edges} ({filled_edges/total_edges*100:.1f}%)")
+
+reachable_nodes = sum(1 for t in node_reach_time.values() if t < float('inf'))
+total_nodes = len(node_map)
+print(f"Reachable nodes: {reachable_nodes}/{total_nodes} ({reachable_nodes/total_nodes*100:.1f}%)")

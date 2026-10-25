@@ -1,0 +1,305 @@
+{
+ "inrush": {
+  "node": "A",
+  "z": 56.08222759042668
+ },
+ "shafts_z": [
+  54.496,
+  54.703,
+  56.505,
+  58.076
+ ],
+ "miners_z": {
+  "M1": 52.83,
+  "M2": 59.597,
+  "M3": 70.928,
+  "M4": 45.333
+ },
+ "flood": {
+  "median_node_days": 18.06423969889922,
+  "max_node_days": 85.5595983198186,
+  "last_full_days": 85.93363409465577,
+  "bound_days": 85.9336340946557,
+  "residual": 3.9528633658523e-15,
+  "extent": {
+   "10": {
+    "wet_km": 0.8124828171534895,
+    "impassable_km": 0.045487661270920146
+   },
+   "30": {
+    "wet_km": 0.8124828171534895,
+    "impassable_km": 0.045487661270920146
+   },
+   "60": {
+    "wet_km": 1.6993787498259258,
+    "impassable_km": 0.5323509690113992
+   },
+   "180": {
+    "wet_km": 1.6993787498259258,
+    "impassable_km": 1.4192469016838356
+   },
+   "1440": {
+    "wet_km": 4.387981639509488,
+    "impassable_km": 3.303788368449532
+   }
+  }
+ },
+ "legacy": {
+  "median_node_days": 112670.83140451902,
+  "max_node_days": 45626932097.010315,
+  "reached": 1591
+ },
+ "prop1": {
+  "n": 6251,
+  "min": 0.909090909090905,
+  "max": 0.9090909090909122
+ },
+ "routes": {
+  "M1": {
+   "escape_min": 7.3915264338350175,
+   "exit": "P0986",
+   "km": 1.5339663441204043,
+   "latest_dep_min": 4.662915555733485,
+   "dry_min": 10.51518179012112,
+   "dry_cut_at": null,
+   "dry_km": 1.443248085202799,
+   "same_route": false,
+   "latest_alert_min": 4.662821690241496,
+   "dist_to_inrush_km": 0.2802338285323625
+  },
+  "M2": {
+   "escape_min": 9.430984247732008,
+   "exit": "P0986",
+   "km": 2.0234362194556823,
+   "latest_dep_min": 118.19721180971527,
+   "dry_min": 12.55503076948678,
+   "dry_cut_at": null,
+   "dry_km": 1.932811840250556,
+   "same_route": false,
+   "latest_alert_min": 490.8329186340173,
+   "dist_to_inrush_km": 0.7697975835801202
+  },
+  "M3": {
+   "escape_min": 13.959524265869485,
+   "exit": "P0986",
+   "km": 3.1102858238086766,
+   "latest_dep_min": 113.6686717915778,
+   "dry_min": 23.169528870746714,
+   "dry_cut_at": null,
+   "dry_km": 3.0197014613315036,
+   "same_route": false,
+   "latest_alert_min": 2866.3487173616886,
+   "dist_to_inrush_km": 1.8566872046610676
+  },
+  "M4": {
+   "escape_min": 15.021335275581444,
+   "exit": "P1081",
+   "km": 3.3651204661395466,
+   "latest_dep_min": 16269.367924966204,
+   "dry_min": 15.021335275581444,
+   "dry_cut_at": null,
+   "dry_km": 3.3651204661395466,
+   "same_route": true,
+   "latest_alert_min": 18896.841444075108,
+   "dist_to_inrush_km": 4.270151309410075
+  }
+ },
+ "alert_sweep": [
+  {
+   "alert_min": 1,
+   "miner": "M1",
+   "aware_min": 7.3915264338350175,
+   "aware_ok": true,
+   "dry_min": 10.51518179012112
+  },
+  {
+   "alert_min": 1,
+   "miner": "M2",
+   "aware_min": 9.430984247732008,
+   "aware_ok": true,
+   "dry_min": 12.55503076948678
+  },
+  {
+   "alert_min": 1,
+   "miner": "M3",
+   "aware_min": 13.959524265869485,
+   "aware_ok": true,
+   "dry_min": 23.169528870746714
+  },
+  {
+   "alert_min": 1,
+   "miner": "M4",
+   "aware_min": 15.021335275581444,
+   "aware_ok": true,
+   "dry_min": 15.021335275581444
+  },
+  {
+   "alert_min": 3,
+   "miner": "M1",
+   "aware_min": 9.391526433835017,
+   "aware_ok": true,
+   "dry_min": 12.515181790121122
+  },
+  {
+   "alert_min": 3,
+   "miner": "M2",
+   "aware_min": 11.430984247732008,
+   "aware_ok": true,
+   "dry_min": 15.544608595934221
+  },
+  {
+   "alert_min": 3,
+   "miner": "M3",
+   "aware_min": 15.959524265869485,
+   "aware_ok": true,
+   "dry_min": 25.169528870746714
+  },
+  {
+   "alert_min": 3,
+   "miner": "M4",
+   "aware_min": 17.021335275581443,
+   "aware_ok": true,
+   "dry_min": 17.021335275581443
+  },
+  {
+   "alert_min": 5,
+   "miner": "M1",
+   "aware_min": Infinity,
+   "aware_ok": false,
+   "dry_min": "cut off"
+  },
+  {
+   "alert_min": 5,
+   "miner": "M2",
+   "aware_min": 13.43098424773201,
+   "aware_ok": true,
+   "dry_min": 22.640822116242767
+  },
+  {
+   "alert_min": 5,
+   "miner": "M3",
+   "aware_min": 17.95952426586949,
+   "aware_ok": true,
+   "dry_min": 27.169528870746714
+  },
+  {
+   "alert_min": 5,
+   "miner": "M4",
+   "aware_min": 19.02133527558145,
+   "aware_ok": true,
+   "dry_min": 19.02133527558145
+  },
+  {
+   "alert_min": 10,
+   "miner": "M1",
+   "aware_min": Infinity,
+   "aware_ok": false,
+   "dry_min": "cut off"
+  },
+  {
+   "alert_min": 10,
+   "miner": "M2",
+   "aware_min": 18.43098424773201,
+   "aware_ok": true,
+   "dry_min": 27.640822116242767
+  },
+  {
+   "alert_min": 10,
+   "miner": "M3",
+   "aware_min": 22.95952426586947,
+   "aware_ok": true,
+   "dry_min": 32.16952887074671
+  },
+  {
+   "alert_min": 10,
+   "miner": "M4",
+   "aware_min": 24.02133527558145,
+   "aware_ok": true,
+   "dry_min": 24.02133527558145
+  },
+  {
+   "alert_min": 15,
+   "miner": "M1",
+   "aware_min": Infinity,
+   "aware_ok": false,
+   "dry_min": "cut off"
+  },
+  {
+   "alert_min": 15,
+   "miner": "M2",
+   "aware_min": 23.430984247731992,
+   "aware_ok": true,
+   "dry_min": 32.64082211624277
+  },
+  {
+   "alert_min": 15,
+   "miner": "M3",
+   "aware_min": 27.95952426586947,
+   "aware_ok": true,
+   "dry_min": 37.16952887074673
+  },
+  {
+   "alert_min": 15,
+   "miner": "M4",
+   "aware_min": 29.02133527558145,
+   "aware_ok": true,
+   "dry_min": 29.02133527558145
+  },
+  {
+   "alert_min": 20,
+   "miner": "M1",
+   "aware_min": Infinity,
+   "aware_ok": false,
+   "dry_min": "cut off"
+  },
+  {
+   "alert_min": 20,
+   "miner": "M2",
+   "aware_min": 28.430984247731992,
+   "aware_ok": true,
+   "dry_min": 37.64082211624279
+  },
+  {
+   "alert_min": 20,
+   "miner": "M3",
+   "aware_min": 32.95952426586947,
+   "aware_ok": true,
+   "dry_min": 42.16952887074673
+  },
+  {
+   "alert_min": 20,
+   "miner": "M4",
+   "aware_min": 34.02133527558145,
+   "aware_ok": true,
+   "dry_min": 34.02133527558145
+  },
+  {
+   "alert_min": 30,
+   "miner": "M1",
+   "aware_min": Infinity,
+   "aware_ok": false,
+   "dry_min": "cut off"
+  },
+  {
+   "alert_min": 30,
+   "miner": "M2",
+   "aware_min": 38.43098424773201,
+   "aware_ok": true,
+   "dry_min": 47.64082211624279
+  },
+  {
+   "alert_min": 30,
+   "miner": "M3",
+   "aware_min": 42.95952426586948,
+   "aware_ok": true,
+   "dry_min": 52.169528870746724
+  },
+  {
+   "alert_min": 30,
+   "miner": "M4",
+   "aware_min": 44.02133527558145,
+   "aware_ok": true,
+   "dry_min": 44.02133527558145
+  }
+ ]
+}

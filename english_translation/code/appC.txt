@@ -1,0 +1,315 @@
+mine_id = 1;
+if mine_id == 1
+    netFile = '§{\cjkfont 附件}§1.xlsx';
+    waterFile = 'result1-1.xlsx';
+    exitCoords = [3252.16,3326.63,10.00;
+                  3173.10,2819.97,10.00];
+    workerCoords = [5808.18,5367.75,10.00;
+                    5194.00,4785.31,10.00;
+                    6190.81,3434.29,10.00];
+else
+    netFile = '§{\cjkfont 附件}§2.xlsx';
+    waterFile = 'result1-2.xlsx';
+    exitCoords = [6336.99,6073.22,36.15;
+                  6416.05,6579.88,8.69];
+    workerCoords = [4395.15,4614.53,6.59;
+                    3398.34,5965.56,1.31;
+                    3879.44,4125.47,6.22];
+end
+
+segCount = 20;
+v_dry = 4.0;
+v_with = 2.0;
+v_against = 1.0;
+level_block = 0.3;
+alert_delay = 1.0;
+
+nodeCell = readcell(netFile, 'Sheet', 1);
+if isempty(nodeCell)
+    error('Cannot read sheet "§{\cjkfont 端点}§" from %s', netFile);
+end
+
+nodeCell(1,:) = [];
+
+nodeCell = readcell(netFile, 'Sheet', 1, 'NumHeaderLines', 1);
+nodeCell = nodeCell(~all(cellfun(@(x) isempty(x) || (isstring(x)&&strlength(x)==0), nodeCell),2), :);
+nodeIDs_cell = cellstr(string(nodeCell(:,1)));
+N = size(nodeCell,1);
+
+coords = nan(N,3);
+for j = 1:3
+    coords(:,j) = str2double(string(nodeCell(:, j+1)));
+end
+
+idMap = containers.Map(nodeIDs_cell, num2cell(1:N));
+
+edgeCell = readcell(netFile, 'Sheet', '§{\cjkfont 巷道}§');
+edgeCell(1,:) = [];
+edgeCell = edgeCell(~cellfun(@(x) all([isempty(x) isnan(x)]), edgeCell(:,1)), :);
+M = size(edgeCell,1);
+edgeIDs = cellstr(string(edgeCell(:,1)));
+u_text = cellstr(string(edgeCell(:,2)));
+v_text = cellstr(string(edgeCell(:,3)));
+
+u = zeros(M,1); v = zeros(M,1);
+for k = 1:M
+    keyu = u_text{k}; keyv = v_text{k};
+    if ~isKey(idMap, keyu)
+        error('Unknown node ID "%s" referenced in edge table', keyu);
+    end
+    if ~isKey(idMap, keyv)
+        error('Unknown node ID "%s" referenced in edge table', keyv);
+    end
+    u(k) = idMap(keyu);
+    v(k) = idMap(keyv);
+end
+
+edgeLengths = sqrt(sum((coords(u,:) - coords(v,:)).^2, 2));
+
+wNodeCell = readcell(waterFile, 'Sheet', 1);
+wNodeCell(1,:) = [];
+nodeArrivalTime = Inf(N,1);
+for i = 1:size(wNodeCell,1)
+    idStr = char(string(wNodeCell{i,1}));
+    if isKey(idMap, idStr)
+        tval = str2double(string(wNodeCell{i,2}));
+        if ~isnan(tval)
+            nodeArrivalTime(idMap(idStr)) = tval;
+        end
+    end
+end
+
+wEdgeCell = readcell(waterFile, 'Sheet', 1);
+wEdgeCell(1,:) = [];
+edgeFillTime = Inf(M,1);
+edgeFlowDir = ones(M,1);
+for i = 1:size(wEdgeCell,1)
+    idStr = char(string(wEdgeCell{i,1}));
+    idx = find(strcmp(edgeIDs, idStr), 1);
+    if isempty(idx), continue; end
+
+    fval = NaN;
+    for c = 2:size(wEdgeCell,2)
+        cellv = wEdgeCell{i,c};
+        if isempty(cellv), continue; end
+        nval = str2double(string(cellv));
+        if ~isnan(nval)
+            fval = nval; break;
+        end
+    end
+    if ~isnan(fval)
+        edgeFillTime(idx) = fval;
+    else
+        edgeFillTime(idx) = Inf;
+    end
+    dirVal = 0;
+    for c = 2:size(wEdgeCell,2)
+        cellv = wEdgeCell{i,c};
+        if isempty(cellv), continue; end
+        s = lower(string(cellv));
+        nval = str2double(s);
+        if ~isnan(nval) && (nval==1 || nval==-1)
+            dirVal = nval; break;
+        end
+        sChar = char(s);
+        if contains(sChar, 'u->v') || contains(sChar, 'u-v') || contains(sChar, '->')
+            if contains(sChar,'v->u'), dirVal = -1; else dirVal = +1; end
+            break;
+        end
+        if contains(sChar,'v->u'), dirVal = -1; break; end
+    end
+    if dirVal ~= 0
+        edgeFlowDir(idx) = dirVal;
+    end
+end
+
+edges = [u, v, edgeLengths, edgeFillTime];
+
+neighbors = cell(N,1);
+neighborEdges = cell(N,1);
+neighborDir = cell(N,1);
+for k = 1:M
+    a = u(k); b = v(k);
+
+    neighbors{a}(end+1,1) = b;
+    neighborEdges{a}(end+1,1) = k;
+    neighborDir{a}(end+1,1) = +1;
+
+    neighbors{b}(end+1,1) = a;
+    neighborEdges{b}(end+1,1) = k;
+    neighborDir{b}(end+1,1) = -1;
+end
+
+startNodes = knnsearch(coords, workerCoords);
+exitNodes = knnsearch(coords, exitCoords);
+
+fprintf('Computing best escape paths...\n');
+global_water_start = min(nodeArrivalTime);
+if isinf(global_water_start)
+    global_water_start = 0;
+end
+
+for wi = 1:length(startNodes)
+    start_idx = startNodes(wi);
+    [path_idx, best_time] = find_best_path( start_idx, exitNodes, ...
+        N, M, edges, edgeFlowDir, nodeArrivalTime, neighbors, neighborEdges, neighborDir, ...
+        segCount, v_dry, v_with, v_against, level_block, alert_delay, global_water_start);
+    fprintf('Worker %d: ', wi);
+    if isempty(path_idx)
+        fprintf('No feasible path found.\n');
+    else
+        fprintf('Arrival time (min): %.2f ; Path: ', best_time);
+        for p = path_idx
+            fprintf('%s ', nodeIDs_cell{p});
+        end
+        fprintf('\n');
+    end
+end
+fprintf('Done.\n');
+
+function [path_idx, best_time] = find_best_path( start_idx, exit_indices, ...
+        N, M, edges, edgeFlowDir, nodeArrivalTime, neighbors, neighborEdges, neighborDir, ...
+        segCount, v_dry, v_with, v_against, level_block, alert_delay, global_water_start)
+
+    INF_time = 1e12;
+    best_time = Inf;
+    path_idx = [];
+    dist = Inf(N,1);
+    prev = zeros(N,1);
+    visited = false(N,1);
+    start_time = global_water_start + alert_delay;
+    dist(start_idx) = start_time;
+
+    heap_times = []; heap_nodes = [];
+    [heap_times, heap_nodes] = heap_push(heap_times, heap_nodes, start_time, start_idx);
+    while true
+        [tcur, cur, heap_times, heap_nodes] = heap_pop(heap_times, heap_nodes);
+        if isempty(tcur), break; end
+        if visited(cur), continue; end
+        visited(cur) = true;
+        if any(exit_indices == cur)
+            best_time = tcur;
+
+            path_idx = cur;
+            cur2 = cur;
+            while cur2 ~= start_idx
+                p = prev(cur2);
+                if p == 0, break; end
+                path_idx = [p, path_idx];
+                cur2 = p;
+            end
+            return;
+        end
+
+        nbList = neighbors{cur};
+        edgesList = neighborEdges{cur};
+        dirList = neighborDir{cur};
+        if isempty(nbList), continue; end
+        for j = 1:length(nbList)
+            neighbor = nbList(j);
+            ek = edgesList(j);
+            dirSign = dirList(j);
+            if visited(neighbor), continue; end
+            enter_time = tcur;
+            t_need = compute_edge_travel_time(ek, enter_time, dirSign, edges, edgeFlowDir, nodeArrivalTime, segCount, v_dry, v_with, v_against, level_block);
+            if ~isfinite(t_need), continue; end
+            arrival = enter_time + t_need;
+            if arrival < dist(neighbor)
+                dist(neighbor) = arrival;
+                prev(neighbor) = cur;
+                [heap_times, heap_nodes] = heap_push(heap_times, heap_nodes, arrival, neighbor);
+            end
+        end
+    end
+
+    best_time = Inf;
+    path_idx = [];
+end
+
+function t = compute_edge_travel_time(k, t_enter, dirSign, edges, edgeFlowDir, nodeArrivalTime, segCount, v_dry, v_with, v_against, level_block)
+    len = edges(k,3);
+    seg_len = len / segCount;
+
+    if edgeFlowDir(k) == +1
+        fillStart = nodeArrivalTime(edges(k,1));
+    else
+        fillStart = nodeArrivalTime(edges(k,2));
+    end
+    fillDuration = edges(k,4); % minutes
+    t = 0.0;
+    cur_t = t_enter;
+    for s = 1:segCount
+
+        if isinf(fillDuration)
+            level = double(cur_t >= fillStart);
+        else
+            level = (cur_t - fillStart) / fillDuration;
+        end
+        if level < 0, level = 0; end
+        if level > 1, level = 1; end
+
+        if dirSign == +1
+            workerWith = (edgeFlowDir(k) == +1);
+        else
+            workerWith = (edgeFlowDir(k) == -1);
+        end
+
+        if level == 0
+            speed = v_dry;
+        elseif level <= level_block
+            if workerWith, speed = v_with; else speed = v_against; end
+        else
+            t = Inf; return;
+        end
+
+        dt = (seg_len / speed) / 60.0;
+        cur_t = cur_t + dt;
+        t = t + dt;
+        if ~isinf(fillDuration)
+            level_new = (cur_t - fillStart) / fillDuration;
+            if level_new > level_block
+                t = Inf; return;
+            end
+        end
+    end
+end
+
+function [heap_times, heap_nodes] = heap_push(heap_times, heap_nodes, time_val, node_idx)
+    heap_times(end+1) = time_val;
+    heap_nodes(end+1) = node_idx;
+    i = numel(heap_times);
+    while i > 1
+        parent = floor(i/2);
+        if heap_times(parent) <= heap_times(i), break; end
+
+        [heap_times(parent), heap_times(i)] = deal(heap_times(i), heap_times(parent));
+        [heap_nodes(parent), heap_nodes(i)] = deal(heap_nodes(i), heap_nodes(parent));
+        i = parent;
+    end
+end
+
+function [time_val, node_idx, heap_times, heap_nodes] = heap_pop(heap_times, heap_nodes)
+    if isempty(heap_times)
+        time_val = []; node_idx = []; return;
+    end
+    time_val = heap_times(1);
+    node_idx = heap_nodes(1);
+    last = numel(heap_times);
+    if last == 1
+        heap_times = []; heap_nodes = []; return;
+    end
+    heap_times(1) = heap_times(last);
+    heap_nodes(1) = heap_nodes(last);
+    heap_times(last) = []; heap_nodes(last) = [];
+
+    i = 1;
+    while true
+        left = 2*i; right = left + 1; smallest = i;
+        if left <= numel(heap_times) && heap_times(left) < heap_times(smallest), smallest = left; end
+        if right <= numel(heap_times) && heap_times(right) < heap_times(smallest), smallest = right; end
+        if smallest == i, break; end
+        [heap_times(i), heap_times(smallest)] = deal(heap_times(smallest), heap_times(i));
+        [heap_nodes(i), heap_nodes(smallest)] = deal(heap_nodes(smallest), heap_nodes(i));
+        i = smallest;
+    end
+end

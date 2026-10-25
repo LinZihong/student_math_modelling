@@ -1,0 +1,92 @@
+{
+  "source_seed": 20261026,
+  "delay_min": [
+    1.0,
+    15.0,
+    60.0,
+    180.0
+  ],
+  "quality_factor": 1.1,
+  "sources": [
+    {
+      "node": "A",
+      "split": "train",
+      "residual": 1.247075398026547e-15
+    },
+    {
+      "node": "P0116",
+      "split": "train",
+      "residual": 2.6571785222761463e-15
+    },
+    {
+      "node": "P0233",
+      "split": "train",
+      "residual": 2.0406271642225578e-15
+    },
+    {
+      "node": "P0136",
+      "split": "train",
+      "residual": 1.3435598793900014e-15
+    },
+    {
+      "node": "P0498",
+      "split": "train",
+      "residual": 3.4265133266596027e-15
+    },
+    {
+      "node": "P0415",
+      "split": "train",
+      "residual": 2.0084496523802487e-15
+    },
+    {
+      "node": "P0556",
+      "split": "train",
+      "residual": 2.3632388571700005e-15
+    },
+    {
+      "node": "P0091",
+      "split": "train",
+      "residual": 3.0763536285454585e-15
+    },
+    {
+      "node": "P0008",
+      "split": "test",
+      "residual": 2.7106947970431105e-15
+    },
+    {
+      "node": "P0411",
+      "split": "test",
+      "residual": 1.8785119995545116e-15
+    },
+    {
+      "node": "P0596",
+      "split": "test",
+      "residual": 3.707804439068418e-15
+    },
+    {
+      "node": "P0363",
+      "split": "test",
+      "residual": 2.382544986109842e-15
+    },
+    {
+      "node": "P0338",
+      "split": "test",
+      "residual": 2.0549386483631705e-15
+    },
+    {
+      "node": "P0349",
+      "split": "test",
+      "residual": 2.0359790365464007e-15
+    },
+    {
+      "node": "P0196",
+      "split": "test",
+      "residual": 2.9796974490045017e-15
+    },
+    {
+      "node": "P0625",
+      "split": "test",
+      "residual": 1.9687488526850144e-15
+    }
+  ]
+}

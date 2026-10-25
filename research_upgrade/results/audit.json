@@ -1,0 +1,18 @@
+[
+  {
+    "case": 1,
+    "original_code_sha256": "74df72ee62ff41d085e9294f0a47a7901604612d877abc3c8d2da90c659a702c",
+    "nodes": 664,
+    "edges": 978,
+    "wet_edges": 978,
+    "status": "legacy nonconservative flood; conditional routing only"
+  },
+  {
+    "case": 2,
+    "original_code_sha256": "6c1bd695bb1fb1a365d046e57c8c81bc1cacd9ee3d806199639ecc3cc28579f2",
+    "nodes": 664,
+    "edges": 978,
+    "wet_edges": 44,
+    "status": "legacy nonconservative flood; conditional routing only"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "audit/cad_extraction_source.py": "395fc7cac0c953d83cd506033dd308f70fab042049786d21bf4f206586928316",
+  "audit/cad_scenario_source.py": "32a62b3cd55f6cce20c24f496933469d41972ee9c24f7f2781f7c7406af64239",
+  "code/diagnostics.py": "2cc8ab37b6d4e081cac16ed98022f13673b9ae386032a052ee41a3c845351a7b",
+  "code/figures.py": "7b1718970c95b951a6643e83a26713dad3815c6e0e10e94842003016693f77aa",
+  "code/menus.py": "e85cc8d15f1bfeb3c11be18b47149f74bd6bbf7ef6644ffe9452a574d5b17616",
+  "code/model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "code/model/flood.py": "517646fda3b3a85a2bbe9ad9c7d44e90ba683caedc58b13cb23a6ef163cbecdc",
+  "code/model/legacy.py": "ef6dcbdff4d1cac342674bf4790306c0e916bfb395447f383e21ed9d627c66dd",
+  "code/model/network.py": "7ce361ad844e236c8c237b74e7c17d8bea7669689086cedcd29411f52a1aecaa",
+  "code/model/routing.py": "a9c29b101e2cb0d7c4753a9fae07b831398155c2a9221c321be85c1a89dd3441",
+  "code/model/test_model.py": "77fa52332d966ec863caf12eceb7779504b08c8b8ff9d7ae305b7066ddb332b9",
+  "code/reproduce.py": "00ecbf01402c1ff8fa5d0315e432191692762257f8700c8acc805fba289b467a",
+  "code/robust.py": "e1ec2e0ef8f4ed819251502b1392cdbe7445e205b323c9e710c562aeb80b2656",
+  "code/run.py": "227a322a5683d17bba5de11b599b44b15ae7c4cd4ad47421717f42e3440f1a56",
+  "code/test_robust.py": "6921238210d7facfd3023100cff26b09402b81b747386419c89662b96f4fdba4",
+  "code/validate.py": "c3bbb6bdf94b6c4c5e1e6e3ec62b87f784c7b967aa9d803edd555c8747e33761",
+  "data/cad/data/mine_features.json": "a07a471dd26580fe943593f7bc8ed4474c551ddaa25e5a22d363dd94007e952e",
+  "data/cad/data/mine_network.xlsx": "931a09456a4087c7570c656077f049e6fc1c1f4babd67c814e482e63668b66e6",
+  "data/competition_network.xlsx": "37a20bcbbd6e906b1a9fe88e8ed444ef9a1858cd74d4cce951102e5fd450e97f"
+}

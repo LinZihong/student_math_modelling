@@ -1,0 +1,33 @@
+# OS / editor / tool state
+.DS_Store
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# LaTeX intermediate files and build output
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.xdv
+*.toc
+*.synctex.gz
+preprint/build/
+output/
+
+# Compiled documents and large binaries (the problem statement is kept as source material)
+*.pdf
+!original_question/D题.pdf
+*.pkl
+*.dwg
+
+# Real mine data: raw drawing, its JSON dump and the anonymization key must never be committed
+mine_example/raw/
+
+# First draft: names the mine; kept on disk only
+yale_supplement/Mine_Flood_Escape_Yale_STEM_draft.tex

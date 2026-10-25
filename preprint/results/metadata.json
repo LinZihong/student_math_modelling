@@ -1,0 +1,28 @@
+[
+  {
+    "case": "competition",
+    "nodes_original": 663,
+    "edges_original": 977,
+    "routing_nodes": 667,
+    "routing_edges": 981,
+    "width_m": 4.0,
+    "length_km": 125.62477502816019,
+    "max_volume_residual": 1.247075398026547e-15,
+    "flood_seconds": 0.365301167126745,
+    "last_full_min": 50249.910011264044,
+    "source": "A"
+  },
+  {
+    "case": "cad",
+    "nodes_original": 1591,
+    "edges_original": 2083,
+    "routing_nodes": 1592,
+    "routing_edges": 2084,
+    "width_m": 4.99,
+    "length_km": 247.98483586433727,
+    "max_volume_residual": 3.1231357253688927e-15,
+    "flood_seconds": 1.5556406669784337,
+    "last_full_min": 123744.43309630427,
+    "source": "A"
+  }
+]

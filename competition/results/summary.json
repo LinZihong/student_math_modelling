@@ -1,0 +1,472 @@
+{
+ "1": {
+  "snap": {
+   "A": [
+    "A",
+    0.0067
+   ],
+   "B": [
+    "B",
+    0.0002
+   ],
+   "E1": [
+    "P0393",
+    0.0072
+   ],
+   "E2": [
+    "P0526",
+    0.0
+   ],
+   "M1": [
+    "M1",
+    0.0149
+   ],
+   "M2": [
+    "M2",
+    0.0035
+   ],
+   "M3": [
+    "M3",
+    0.0
+   ]
+  },
+  "problem1": {
+   "nodes_reached": 663,
+   "nodes": 663,
+   "median_node_min": 6302.002425476095,
+   "max_node_min": 45892.75114325346,
+   "tunnels_full": 977,
+   "tunnels": 977,
+   "last_full_h": 837.047313091479,
+   "bound_h": 837.0473130914773,
+   "residual": 3.301840209391495e-15,
+   "lost_m3": 0.0
+  },
+  "problem3": {
+   "nodes_reached": 663,
+   "nodes": 663,
+   "median_node_min": 2475.5979871732484,
+   "max_node_min": 19837.06172735535,
+   "tunnels_full": 977,
+   "tunnels": 977,
+   "last_full_h": 418.55698987907215,
+   "bound_h": 837.0473130914773,
+   "residual": 3.818517086771256e-15,
+   "lost_m3": 0.0
+  },
+  "legacy": {
+   "nodes_reached": 663,
+   "median_node_min": 641240.5828418967,
+   "max_node_min": 8609759492.870806
+  },
+  "problem2": [
+   {
+    "start": "M1",
+    "escape_min": 15.879929967362818,
+    "exit": "P0393",
+    "length_km": 3.5711831921670774,
+    "latest_dep_min": 26.565211650603278,
+    "dry_min": 19.289684354356464,
+    "dry_cut_at": null,
+    "dry_km": 3.527313679706411,
+    "same_route": false
+   },
+   {
+    "start": "M2",
+    "escape_min": 12.170313903076329,
+    "exit": "P0393",
+    "length_km": 2.680875336738319,
+    "latest_dep_min": 468.5705557070609,
+    "dry_min": 12.170313903076329,
+    "dry_cut_at": null,
+    "dry_km": 2.680875336738319,
+    "same_route": true
+   },
+   {
+    "start": "M3",
+    "escape_min": 18.103627969324865,
+    "exit": "P0393",
+    "length_km": 4.104870712637966,
+    "latest_dep_min": 1610.4252006598867,
+    "dry_min": 18.103627969324865,
+    "dry_cut_at": null,
+    "dry_km": 4.104870712637965,
+    "same_route": true
+   }
+  ],
+  "problem4": [
+   {
+    "miner": "M1",
+    "status": "re-planned",
+    "on": [
+     "P0347",
+     "P0345"
+    ],
+    "along_m": 31.722292765279917,
+    "xy": [
+     5152.072624993456,
+     4704.538565836904
+    ],
+    "escape_min": 16.454265937630446,
+    "exit": "P0526",
+    "length_km": 2.749023825031308,
+    "latest_dep_min": 95.06100717885957,
+    "old_min": 20.67625318381678,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   },
+   {
+    "miner": "M2",
+    "status": "re-planned",
+    "on": [
+     "P0151",
+     "P0147"
+    ],
+    "along_m": 131.91932256528094,
+    "xy": [
+     4500.963043050557,
+     4510.632949884138
+    ],
+    "escape_min": 15.233056229855405,
+    "exit": "P0393",
+    "length_km": 1.7718594211335918,
+    "latest_dep_min": 24.147967634969966,
+    "old_min": 16.96663711953029,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   },
+   {
+    "miner": "M3",
+    "status": "re-planned",
+    "on": [
+     "P0370",
+     "P0139"
+    ],
+    "along_m": 423.4006845936116,
+    "xy": [
+     5514.385187627034,
+     4074.4848203267325
+    ],
+    "escape_min": 18.502432759807654,
+    "exit": "P0526",
+    "length_km": 3.240583862353836,
+    "latest_dep_min": 3385.2599497054307,
+    "old_min": 26.12166283680298,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   }
+  ],
+  "subdivision": {
+   "median_min": 7.761021455128988e-12,
+   "max_min": 1.1641532182693481e-10,
+   "median_rel": 9.627478639287883e-16
+  },
+  "prop1": {
+   "n": 3926,
+   "min": 0.9090909090909062,
+   "max": 0.9090909090909101
+  }
+ },
+ "2": {
+  "snap": {
+   "A": [
+    "A",
+    0.0031
+   ],
+   "B": [
+    "B",
+    0.0032
+   ],
+   "E1": [
+    "P0393",
+    0.0
+   ],
+   "E2": [
+    "P0526",
+    0.0
+   ],
+   "M1": [
+    "M1",
+    0.0
+   ],
+   "M2": [
+    "M2",
+    0.0087
+   ],
+   "M3": [
+    "M3",
+    0.0157
+   ]
+  },
+  "problem1": {
+   "nodes_reached": 663,
+   "nodes": 663,
+   "median_node_min": 11866.456839455923,
+   "max_node_min": 41878.47140790145,
+   "tunnels_full": 977,
+   "tunnels": 977,
+   "last_full_h": 837.4985001877332,
+   "bound_h": 837.4985001877342,
+   "residual": 3.274426686303348e-15,
+   "lost_m3": 0.0
+  },
+  "problem3": {
+   "nodes_reached": 663,
+   "nodes": 663,
+   "median_node_min": 7221.39989811277,
+   "max_node_min": 24603.147572089732,
+   "tunnels_full": 977,
+   "tunnels": 977,
+   "last_full_h": 418.7909167605339,
+   "bound_h": 837.4985001877342,
+   "residual": 3.2720259036982647e-15,
+   "lost_m3": 0.0
+  },
+  "legacy": {
+   "nodes_reached": 28,
+   "median_node_min": 439.81357350039275,
+   "max_node_min": 2923.3426439916357
+  },
+  "problem2": [
+   {
+    "start": "M1",
+    "escape_min": 12.198010141901298,
+    "exit": "P0393",
+    "length_km": 2.6875224340563117,
+    "latest_dep_min": 10124.825433908945,
+    "dry_min": 12.198010141901298,
+    "dry_cut_at": null,
+    "dry_km": 2.6875224340563126,
+    "same_route": true
+   },
+   {
+    "start": "M2",
+    "escape_min": 18.13186937101937,
+    "exit": "P0393",
+    "length_km": 4.111648649044648,
+    "latest_dep_min": 12411.457689450475,
+    "dry_min": 18.13186937101937,
+    "dry_cut_at": null,
+    "dry_km": 4.11164864904465,
+    "same_route": true
+   },
+   {
+    "start": "M3",
+    "escape_min": 19.200898685047534,
+    "exit": "P0393",
+    "length_km": 3.4428807280546243,
+    "latest_dep_min": 1288.1338721542218,
+    "dry_min": 19.708310341659196,
+    "dry_cut_at": null,
+    "dry_km": 3.3982535596446173,
+    "same_route": false
+   }
+  ],
+  "problem4": [
+   {
+    "miner": "M1",
+    "status": "re-planned",
+    "on": [
+     "P0147",
+     "P0150"
+    ],
+    "along_m": 69.39321964958299,
+    "xy": [
+     5262.164760881165,
+     5054.217194045055
+    ],
+    "escape_min": 12.424912912492953,
+    "exit": "P0393",
+    "length_km": 1.5391005227188705,
+    "latest_dep_min": 9.065592059900133,
+    "old_min": 16.300086137456162,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   },
+   {
+    "miner": "M2",
+    "status": "re-planned",
+    "on": [
+     "P0370",
+     "P0139"
+    ],
+    "along_m": 663.3165081553293,
+    "xy": [
+     4239.981105480229,
+     5151.394050717926
+    ],
+    "escape_min": 18.50385453633037,
+    "exit": "P0526",
+    "length_km": 3.0009250887192875,
+    "latest_dep_min": 80.50818731302303,
+    "old_min": 25.978058086899292,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   },
+   {
+    "miner": "M3",
+    "status": "re-planned",
+    "on": [
+     "P0358",
+     "P0357"
+    ],
+    "along_m": 1.3282617210646777,
+    "xy": [
+     4095.2584381504344,
+     4332.88655786917
+    ],
+    "escape_min": 19.74643506796844,
+    "exit": "P0526",
+    "length_km": 3.2731453290951094,
+    "latest_dep_min": 79.26560678138497,
+    "old_min": 27.047087400927456,
+    "old_cut_at": null,
+    "turned_back": false,
+    "same_as_old": false
+   }
+  ],
+  "subdivision": {
+   "median_min": 1.940255363782247e-12,
+   "max_min": 964.3072974200787,
+   "median_rel": 1.5873173844043735e-16
+  },
+  "prop1": {
+   "n": 3927,
+   "min": 0.9090909090909073,
+   "max": 0.9090909090909102
+  }
+ },
+ "sensitivity": [
+  {
+   "parameter": "Q",
+   "change": 0.1,
+   "mean_travel_change_pct": 0.0,
+   "max_abs_travel_change_pct": 0.0,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.0
+  },
+  {
+   "parameter": "Q",
+   "change": -0.1,
+   "mean_travel_change_pct": 0.0,
+   "max_abs_travel_change_pct": 0.0,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.0
+  },
+  {
+   "parameter": "h0",
+   "change": 0.1,
+   "mean_travel_change_pct": 0.0,
+   "max_abs_travel_change_pct": 0.0,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.0
+  },
+  {
+   "parameter": "h0",
+   "change": -0.1,
+   "mean_travel_change_pct": 0.0,
+   "max_abs_travel_change_pct": 0.0,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.0
+  },
+  {
+   "parameter": "v_with",
+   "change": 0.1,
+   "mean_travel_change_pct": -0.01895743119866324,
+   "max_abs_travel_change_pct": 0.11374458719197944,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": -0.18507432888764003
+  },
+  {
+   "parameter": "v_with",
+   "change": -0.1,
+   "mean_travel_change_pct": 0.023170193687241335,
+   "max_abs_travel_change_pct": 0.139021162123448,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.22620195752933564
+  },
+  {
+   "parameter": "v_against",
+   "change": 0.1,
+   "mean_travel_change_pct": -0.4153084265361561,
+   "max_abs_travel_change_pct": 2.491850559216936,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": -0.7646460627410329
+  },
+  {
+   "parameter": "v_against",
+   "change": -0.1,
+   "mean_travel_change_pct": 0.5075991879886265,
+   "max_abs_travel_change_pct": 3.045595127931759,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.9345674100168112
+  },
+  {
+   "parameter": "alert",
+   "change": 0,
+   "mean_travel_change_pct": -2.3653693429293634,
+   "max_abs_travel_change_pct": 14.192216057576177,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": -2.3012151806947587
+  },
+  {
+   "parameter": "alert",
+   "change": 2,
+   "mean_travel_change_pct": 1.989656361842716e-15,
+   "max_abs_travel_change_pct": 1.1937938171056295e-14,
+   "routes_changed": 0,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 0.0
+  },
+  {
+   "parameter": "alert",
+   "change": 5,
+   "mean_travel_change_pct": 2.8325491130738447,
+   "max_abs_travel_change_pct": 16.995294678443027,
+   "routes_changed": 1,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 4.384997434141357
+  },
+  {
+   "parameter": "alert",
+   "change": 10,
+   "mean_travel_change_pct": 8.351119074432155,
+   "max_abs_travel_change_pct": 48.06533266842396,
+   "routes_changed": 1,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 5.139313673949831
+  },
+  {
+   "parameter": "alert",
+   "change": 15,
+   "mean_travel_change_pct": 8.675377974932735,
+   "max_abs_travel_change_pct": 48.06533266842396,
+   "routes_changed": 1,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 5.463572574450406
+  },
+  {
+   "parameter": "alert",
+   "change": 20,
+   "mean_travel_change_pct": 8.675377974932715,
+   "max_abs_travel_change_pct": 48.06533266842391,
+   "routes_changed": 1,
+   "dry_routes_cut": 0,
+   "mean_dry_change_pct": 5.532692035277764
+  }
+ ]
+}

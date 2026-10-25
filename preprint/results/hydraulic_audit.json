@@ -1,0 +1,20 @@
+[
+  {
+    "case": "competition",
+    "scaling_comparisons": 3911,
+    "scaling_max_error": 1.4432899320127035e-15,
+    "reverse_order_max_block_difference_s": 0.0,
+    "reverse_tie_rule_max_block_difference_s": 0.0,
+    "reversed_volume_residual": 1.247075398026547e-15,
+    "scaled_volume_residual": 2.1037122500748385e-15
+  },
+  {
+    "case": "cad",
+    "scaling_comparisons": 8335,
+    "scaling_max_error": 2.4424906541753444e-15,
+    "reverse_order_max_block_difference_s": 0.0,
+    "reverse_tie_rule_max_block_difference_s": 38825.09476169059,
+    "reversed_volume_residual": 3.1231357253688927e-15,
+    "scaled_volume_residual": 4.156013901752336e-15
+  }
+]

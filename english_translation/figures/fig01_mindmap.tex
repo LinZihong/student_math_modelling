@@ -1,0 +1,65 @@
+% Figure 1 (redrawn in English from the original Chinese mind map)
+\begin{tikzpicture}[
+    font={\sffamily\scriptsize\hyphenpenalty=10000},
+    cat/.style={anchor=south west, text width=3.4cm, align=center, inner sep=3pt,
+                minimum height=0.55cm, font={\sffamily\scriptsize\bfseries\hyphenpenalty=10000}},
+    redcat/.style={cat, fill=red!15, text=red!50!black},
+    yelcat/.style={cat, fill=yellow!25, text=yellow!30!black},
+    leaf/.style={anchor=south west, align=left, text width=3.2cm, inner sep=2pt},
+    sub/.style={anchor=south west, align=left, text width=3.4cm, inner sep=2pt},
+    rline/.style={red!85!black, line width=1.1pt},
+    yline/.style={yellow!70!orange, line width=1.1pt},
+  ]
+  % ---- root ----
+  \node[fill=black, text=white, rounded corners=4pt, font=\sffamily\footnotesize\bfseries,
+        align=center, text width=2.7cm, inner sep=5pt] (root) at (1.45,3.6)
+        {Water Flow Modeling and Escape Optimization};
+
+  % ---- red branch: water flow simulation ----
+  \draw[rline] (root.north) |- (6.6,6.3);
+  \node[anchor=south west, font=\sffamily\scriptsize\bfseries] at (3.2,6.3) {$\mdlgwhtsquare$ Water Flow Simulation};
+  \draw[rline] (6.6,8.3) -- (6.6,4.6);
+  % Simplifying assumptions
+  \draw[rline] (6.6,8.3) -- (10.4,8.3);
+  \node[redcat] at (6.7,8.3) {Simplifying Assumptions};
+  \draw[rline] (10.4,9.7) -- (10.4,7.0);
+  \draw[rline] (10.4,9.7) -- (13.9,9.7); \node[leaf] at (10.5,9.7) {Tunnel simplification};
+  \draw[rline] (10.4,7.0) -- (13.9,7.0); \node[leaf] at (10.5,7.0) {Flow simplification: simplify the fluid into a diffusion model that can be expressed with graph theory};
+  \draw[rline] (13.9,8.4) -- (13.9,5.6);
+  \draw[rline] (13.9,8.4) -- (17.6,8.4); \node[sub] at (14.0,8.4) {Water spreads at a 0.1\,m resolution};
+  \draw[rline] (13.9,7.0) -- (17.6,7.0); \node[sub] at (14.0,7.0) {Water rises after it covers a tunnel};
+  \draw[rline] (13.9,5.6) -- (17.6,5.6); \node[sub] at (14.0,5.6) {Flows from different directions merge};
+  % Simulation implementation
+  \draw[rline] (6.6,4.6) -- (13.9,4.6);
+  \node[redcat] at (6.7,4.6) {Simulation Implementation};
+  \node[leaf] at (10.5,4.6) {Implemented with priority-queue, iteration and other programming algorithms};
+
+  % ---- yellow branch: escape optimization ----
+  \draw[yline] (root.south) |- (10.4,1.0);
+  \node[anchor=south west, font=\sffamily\scriptsize\bfseries] at (3.2,1.0) {$\mdlgwhtsquare$ Escape Optimization};
+  \draw[yline] (6.6,2.8) -- (6.6,-1.0);
+  % Objective
+  \draw[yline] (6.6,2.8) -- (13.9,2.8);
+  \node[yelcat] at (6.7,2.8) {Define the Objective Function};
+  \node[leaf] at (10.5,2.8) {Formulate best-route selection as, e.g., minimizing escape time};
+  % Parameters
+  \node[yelcat] at (6.7,1.0) {Parameters Governing Escape Speed in Tunnels};
+  \draw[yline] (10.4,1.6) -- (10.4,0.4);
+  \draw[yline] (10.4,1.6) -- (13.9,1.6); \node[leaf] at (10.5,1.6) {Flow direction};
+  \draw[yline] (10.4,0.4) -- (13.9,0.4); \node[leaf] at (10.5,0.4) {Water volume};
+  % Algorithm
+  \draw[yline] (6.6,-1.0) -- (10.4,-1.0);
+  \node[yelcat] at (6.7,-1.0) {Algorithm Implementation};
+  \draw[yline] (10.4,-0.4) -- (10.4,-1.6);
+  \draw[yline] (10.4,-0.4) -- (13.9,-0.4); \node[leaf] at (10.5,-0.4) {Specify the constraints};
+  \draw[yline] (10.4,-1.6) -- (13.9,-1.6); \node[leaf] at (10.5,-1.6) {Choose the algorithm};
+
+  % ---- dashed relations ----
+  \fill (4.85,6.25) rectangle ++(0.12,0.12);
+  \draw[dashed, thick, -{Stealth}] (4.91,6.3) -- (4.91,10.5) -- (10.2,10.5)
+        node[pos=0.45, fill=white, font=\sffamily\bfseries\normalsize] {Constraints} -- (10.2,3.42);
+  \node[font=\sffamily\footnotesize] at (5.2,-2.5) {New models after adding a second inrush point};
+  \draw[dashed, thick] (4.0,-2.2) -- (4.0,1.0);
+  \fill (3.94,0.94) rectangle ++(0.12,0.12);
+  \draw[dashed, thick, -{Stealth}] (6.53,-2.2) -- (6.53,6.3);
+\end{tikzpicture}

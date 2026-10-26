@@ -1,0 +1,33 @@
+{
+  "revision_date": "2026-10-26",
+  "pages": 14,
+  "old_version_commit": "623b8ad",
+  "old_pdf_sha256": "d9d956a688e3643801ca74ecba20ef7926f9b7f7f97f46d9b3f7c14b25691a47",
+  "file_sha256": {
+    "regional_alarm_paper/main.tex": "a17f1052b9d7497f0057c2f3a35c27b15cfac7540c134fb9b1f30fbba19888aa",
+    "regional_alarm_paper/make_cad_figures.py": "2e1a6e6dffa6ef0463ad768c6674821b782ec3f01a3df3f26c03113e74d2ea25",
+    "regional_alarm_paper/README.md": "99533e3b3bdaeea5a9d53e4dc2afa0164321d83617a00d54da3a67fbaac9bf2b",
+    "output/pdf/regional_alarm_escape_preprint.pdf": "877a2754a69311deb59141fe965bc039351440536c1a5b37881daceff2677dfc",
+    "regional_alarm_paper/tables/flow_rows.tex": "d46085197fb296ea5ca18dad6f5981693d7c5272767453af76c31888862f003d",
+    "regional_alarm_paper/tables/inside_rows.tex": "aa1b5daa1145eae26fbdee57f0ae314eb23d79f7d41b01a1ca083fd899f3a1fd",
+    "regional_alarm_paper/tables/main_rows.tex": "275ca72a2a9dbbdf1d4bbfbb876ba2c013f6ba6162c5adb77634cb2e4f01ef40",
+    "regional_alarm_paper/tables/near_rows.tex": "278d2116a397dc9051b5eeccb1448c5a30e8fc543d0ee1bdd39806ae6607cc08",
+    "regional_alarm_paper/figures/cad_detours.pdf": "198ada82fbde0b51bec6431b7bcc495dce7590c8ce6e38174b0a5af781226763",
+    "regional_alarm_paper/figures/cad_geometry_3d.pdf": "2e44f4e9d5d86d2e23820e09c775bc89ddc10b464a63eb93a708d327d02fbaac",
+    "regional_alarm_paper/figures/cad_route_example.pdf": "b8ff7cdbdde1a5b4524c25d681cc229ca645cbc67d732bc189d27f7f70f46252",
+    "regional_alarm_paper/figures/cad_spatial.pdf": "0a1df72c146e386f60f9602bfdac0f14f476f75d2a1435dec551f80d82aac95f"
+  },
+  "all_pages_rendered": true,
+  "latex_warnings_checked": true,
+  "claude_polishing": {
+    "produced": false,
+    "reason": "Computer Use was not approved to use Claude; no installed claude command found in inspected locations. No model was invoked and no new tool installed."
+  },
+  "claims_check": {
+    "queries": 44436,
+    "summary_cells_checked": 72,
+    "all_terminal": true,
+    "analysis_hashes_verified": true,
+    "headline_checked": true
+  }
+}

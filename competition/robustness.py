@@ -56,11 +56,34 @@ def runtimes(cfg):
     return dict(flood_s=t_flood, route_ms=1000 * t_route, nodes=G.number_of_nodes(), edges=G.number_of_edges())
 
 
+def monotonicity(cfg, multipliers=(0.5, 0.9, 1.0, 1.1, 2.0, 5.0)):
+    """Earliest arrival and latest alert of each miner for several inflow multiples (Proposition 2)."""
+    from mine_example.scripts.simulate import latest_alert
+    G, snap, _, _ = build(cfg)
+    exits = {snap['E1'][0], snap['E2'][0]}
+    res = {}
+    for lam in multipliers:
+        f = Flood(G, [(snap['A'][0], 0.0, lam * Q)])
+        f.run()
+        adj = arcs(f)
+        res[lam] = [(fastest(adj, snap[f'M{k}'][0], exits, 60.0)[0],
+                     latest_alert(adj, snap[f'M{k}'][0], exits, hi=4e6)) for k in (1, 2, 3)]
+    pairs = violations = 0
+    for a, b in zip(multipliers, multipliers[1:]):
+        for (ta, da), (tb, db) in zip(res[a], res[b]):
+            pairs += 1
+            violations += tb < ta - 1e-9 or db > da + 0.02
+    return dict(multipliers=list(multipliers), pairs=pairs, violations=violations,
+                arrival_min={str(l): [t / 60 for t, _ in v] for l, v in res.items()},
+                latest_alert_min={str(l): [d / 60 for _, d in v] for l, v in res.items()})
+
+
 def main():
     out = {}
     for net, cfg in NETWORKS.items():
-        out[net] = dict(runtime=runtimes(cfg), subdivision=subdivision_test(cfg))
-        print(net, out[net])
+        out[net] = dict(runtime=runtimes(cfg), subdivision=subdivision_test(cfg), monotonicity=monotonicity(cfg))
+        print(net, {k: v for k, v in out[net].items() if k != 'monotonicity'},
+              {k: out[net]['monotonicity'][k] for k in ('pairs', 'violations')})
     (ROOT / 'results' / 'robustness.json').write_text(json.dumps(out, indent=1))
 
 

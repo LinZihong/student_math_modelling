@@ -24,12 +24,10 @@
 \theoremstyle{plain}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
+\newtheorem*{remark}{Remark}
 
 \newcommand{\tin}{t^{\mathrm{in}}}
 \newcommand{\tbl}{t^{\mathrm{bl}}}
@@ -49,7 +47,7 @@
 \end{center}
 
 \begin{abstract}
-\noindent A water inrush in an underground mine changes the tunnel network on which miners must escape: tunnels become slower to walk through as they flood and impassable once the water is deep enough. We couple two models. The first is an event-driven flood model on the tunnel graph in which water spreads at a fixed front depth into level and downhill tunnels, divides equally at junctions, and backs up from dead ends. We show that the model conserves water exactly and that a network fed at a constant rate is full at the time its volume has entered, and we give its scaling with the inflow. The second is an escape-routing model in which the walking speed in a tunnel depends on its water depth at the time the miner is in it. Because the water never recedes, travel times on this time-dependent network satisfy the first-in, first-out property; consequently Dijkstra's algorithm computes earliest arrivals exactly, waiting never helps, and the latest start from which an exit can still be reached is well defined. We evaluate the models on two benchmark networks with 977 tunnels each and on a 248\,km network extracted from the plan of a working coal mine. In the benchmarks, all miners reach an exit within 20 minutes, and re-planning after a second inrush shortens escape by up to 7.6 minutes relative to the original route. In the mine network, one of 269 working faces has less than five minutes in which to start.
+\noindent A water inrush in an underground mine changes the tunnel network on which miners must escape: tunnels become slower to walk through as they flood and impassable once the water is deep enough. We couple two models. The first is an event-driven flood model on the tunnel graph in which water spreads at a fixed front depth into level and downhill tunnels, divides equally at junctions, and backs up from dead ends. Its rules are designed to conserve water, so that a network fed at a constant rate becomes full exactly when its volume has entered. The second is an escape-routing model in which the walking speed in a tunnel depends on its water depth at the time the miner is in it. Because the water never recedes, travel times on this time-dependent network satisfy the first-in, first-out (FIFO) property. Known results for FIFO networks then imply that Dijkstra's algorithm computes earliest arrivals exactly and that waiting never helps, and the latest start from which an exit can still be reached is well defined and can be computed exactly. Because flood times scale inversely with the inflow, a larger inrush can only delay escape, so a route planned for the largest plausible inflow remains feasible for every smaller one. We evaluate the models on two benchmark networks with 977 tunnels each and on a 248\,km network extracted from the plan of a working coal mine. In the benchmarks, all miners reach an exit within 20 minutes, and re-planning after a second inrush shortens escape by up to 7.6 minutes relative to the original route. In the mine network, one of 269 working faces has less than five minutes in which to start.
 
 \medskip
 \noindent\textbf{Keywords:} mine flooding; water inrush; event-driven simulation; time-dependent shortest path; FIFO property; evacuation routing
@@ -64,8 +62,8 @@ Water inrush is among the most serious hazards in underground coal mining: water
 
 \paragraph{This paper.} We take a deliberately simple flood model, whose rules are those of a recent modelling problem \cite{cumcm}: water advances at a fixed front depth, divides equally at junctions into level and downhill tunnels, and fills tunnels in which it cannot advance. We make this model precise, ensure that it conserves water, and couple it to an exact time-dependent routing model. Specifically:
 \begin{enumerate}[leftmargin=2em, itemsep=1pt, topsep=2pt]
-  \item We define an event-driven flood model for any number of inrush sources with arbitrary start times, prove that it conserves water and determine when the network is full, and bound its running time (Section~\ref{sec:flood}).
-  \item We show that the travel times it induces are FIFO. Consequently, Dijkstra's algorithm is exact, waiting is never beneficial, and the latest feasible start time is well defined; this also yields a re-planning procedure for updated forecasts (Section~\ref{sec:routing}).
+  \item We define an event-driven, volume-conserving flood model for any number of inrush sources with arbitrary start times and show that its flows are well defined (Section~\ref{sec:flood}).
+  \item We show that the travel times it induces are FIFO, so that known results make Dijkstra's algorithm exact; we characterize the latest feasible start time exactly, show that a larger inflow can only delay escape, and give a re-planning procedure for updated forecasts (Section~\ref{sec:routing}).
   \item We evaluate the models on two benchmark networks, including a delayed second inrush with re-planning, a sensitivity analysis and numerical verification (Section~\ref{sec:benchmarks}), and on a network extracted from the plan of a working coal mine (Section~\ref{sec:case}).
 \end{enumerate}
 Section~\ref{sec:setting} states the problem; Section~\ref{sec:discussion} discusses limitations.
@@ -142,7 +140,14 @@ At every time, flows are determined as follows.
 For each tunnel we record $\tin_e$, the first time it receives water; $\tbl_e$, the first time $h_e(t) > \hb$; and $\tfull_e$, the time it becomes full.
 \end{definition}
 
-Rule R1 is the division rule of the problem setting. R2--R4 specify what happens when water cannot advance: it is stored in the tunnel that delivered it, and the storage moves upstream as tunnels fill. Because each junction acquires its feeding tunnel when it first becomes wet, from a junction that was wet earlier, the feeding tunnels form a forest rooted at the sources, and every junction can be processed after its feeding tunnel.
+Rule R1 is the division rule of the problem setting. R2--R4 specify what happens when water cannot advance: it is stored in the tunnel that delivered it, and the storage moves upstream as tunnels fill. The flows of R1 are well defined because water cannot circulate:
+
+\begin{lemma}[Feeding forest]\label{lem:forest}
+Every wet junction other than a source that started while it was dry has exactly one feeding tunnel, which never changes and whose other end became wet strictly earlier. Hence the feeding tunnels form a forest whose roots are sources, every conveying tunnel belongs to this forest, and visiting the wet junctions in the order in which they became wet determines all flows of R1 uniquely.
+\end{lemma}
+\begin{proof}
+A junction $w$ acquires a feeding tunnel only at the moment it becomes wet, which happens once: under R2, through a covering tunnel fed from its other end $u$; under R4, through a tunnel entered from its lower end $u$. In both cases $u$ was wet when the tunnel first received water, and covering or filling a tunnel of positive length at finite inflow takes positive time, so $u$ became wet strictly before $w$. Following feeding tunnels therefore strictly decreases the wetting time, which excludes cycles. A tunnel becomes conveying only under R2 or R4, that is, only as the feeding tunnel of its far end. The inflow $\phi_v$ of a junction depends only on the sources at $v$ and on the flow conveyed by $\pi(v)$, which is assigned when the junction feeding $\pi(v)$ is visited; since that junction became wet earlier, it is visited first. When R3 changes the mode of a tunnel during a pass, the pass is repeated; this happens finitely often because modes change irreversibly.
+\end{proof}
 
 \subsection{Event-driven simulation}
 
@@ -154,7 +159,7 @@ Between consecutive events all modes, and therefore all flows, are constant, so 
 \begin{enumerate}[label=\arabic*:, leftmargin=1.8em, itemsep=1pt, topsep=3pt]
   \item $t \gets 0$; all tunnels \textsf{dry} with $V_e = 0$; activate the sources with $s_j = 0$.
   \item \textbf{repeat}
-  \item \quad\emph{Distribute:} visit the wet junctions in the order in which they became wet; compute $\phi_v$, apply R1 and, where $O(v) = \emptyset$, R3. If R3 changes the mode of a tunnel that has already received flow in this pass, restart the pass.
+  \item \quad\emph{Distribute:} visit the wet junctions in the order in which they became wet (Lemma~\ref{lem:forest}); compute $\phi_v$, apply R1 and, where $O(v) = \emptyset$, R3. If R3 changes the mode of a tunnel that has already received flow in this pass, restart the pass.
   \item \quad\emph{Next event:} $\Delta \gets$ the least time until a receiving tunnel reaches its next threshold volume or the next source starts.
   \item \quad\emph{Advance:} $t \gets t + \Delta$; $V_e \gets V_e + \Delta \cdot (\text{inflow of } e)$ for all $e$; record $\tbl_e$ and $\tfull_e$ where reached.
   \item \quad\emph{Transitions:} apply R2 and R4; activate sources with $s_j = t$.
@@ -162,46 +167,17 @@ Between consecutive events all modes, and therefore all flows, are constant, so 
 \end{enumerate}
 \end{tcolorbox}
 
-\begin{proposition}[Running time]\label{prop:time}
-Algorithm~1 performs at most $3|E| + |\mathcal{S}|$ events and runs in $O\bigl((|E| + |\mathcal{S}|)(|V| + |E|)\bigr)$ time.
-\end{proposition}
-\begin{proof}
-Each tunnel reaches each of its three threshold volumes at most once, and each source starts once. A distribution pass takes $O(|V| + |E|)$ time. A pass is restarted only when a tunnel changes mode irreversibly (at most a bounded number of times per tunnel) or when a source's discharge is transferred (at most once per source and event), which adds $O(|E| + |\mathcal{S}|)$ passes in total.
-\end{proof}
+Each tunnel reaches each of its three threshold volumes at most once and each source starts once, so Algorithm~1 processes at most $3|E| + |\mathcal{S}|$ events. Each event requires one distribution pass of cost $O(|V| + |E|)$, repeated only when rule R3 changes the mode of a tunnel. In our implementation (Python), simulating a 977-tunnel network until it is full takes about one second.
 
-In our implementation (Python), simulating a 977-tunnel network until it is full takes about one second.
-
-\subsection{Properties}
-
-\begin{proposition}[Conservation and filling time]\label{prop:conservation}
-Let $G$ be connected with total volume $\mathcal{V} = \sum_{e} W H L_e$. As long as some tunnel is not full, the volume stored at time $t$ equals the volume that has entered,
+\subsection{Conservation and filling time}\label{sec:conservation}
+The rules are designed so that water is conserved. Under R1 a junction passes its entire inflow to its outlets; a conveying tunnel passes its inflow on, and covering and storing tunnels store it. Water could be lost only at a junction that receives water but has no outlet, and R3 resolves this case: the feeding tunnel becomes storing, or, at a source whose surrounding tunnels are all full, the discharge is transferred through full tunnels to a junction that can absorb it. Such a junction exists as long as some tunnel of the connected network is not full. Hence, until the network is full,
 \begin{equation}
-  \sum_{e\in E} V_e(t) = \sum_{j} Q_j\,(t - s_j)^+ .
+  \sum_{e\in E} V_e(t) = \sum_{j} Q_j\,(t - s_j)^+ ,
   \label{eq:conservation}
 \end{equation}
-Consequently the last tunnel becomes full at the unique $t^*$ with $\sum_j Q_j (t^* - s_j)^+ = \mathcal{V}$; for a single source starting at $0$, $t^* = \mathcal{V}/Q$.
-\end{proposition}
-\begin{proof}
-Under R1 every junction passes its entire inflow to its outlets; a conveying tunnel passes its inflow on, and covering and storing tunnels store it. Flow is therefore neither created nor lost unless some junction $v$ has $\phi_v > 0$ and $O(v) = \emptyset$. In that case R3 either turns $\pi(v)$ into a storing tunnel, which absorbs the flow, or, if $v$ is a source whose surrounding tunnels are all full, transfers the discharge through full tunnels to a junction that can absorb it. Such a junction exists whenever some tunnel is not full, because $G$ is connected and the tunnels adjacent to wet junctions are either full or able to receive water. Hence the total storage rate equals the total discharge at all times before $t^*$, which proves \eqref{eq:conservation}. The left-hand side cannot exceed $\mathcal{V}$, so all tunnels are full at $t^*$; and since the right-hand side increases strictly after the first source starts, no earlier time has this property.
-\end{proof}
+and the network becomes full exactly when the volume that has entered equals its total volume $\mathcal{V} = \sum_{e} W H L_e$. For a single source starting at time $0$, this occurs at $t^* = \mathcal{V}/Q$. We use \eqref{eq:conservation} and $t^*$ to check the implementation (Section~\ref{sec:verification}).
 
-\begin{proposition}[Scaling with the inflow]\label{prop:scaling}
-If all sources start at time $0$ and every $Q_j$ is multiplied by $\lambda > 0$, then every time recorded by Algorithm~1 is multiplied by $1/\lambda$.
-\end{proposition}
-\begin{proof}
-Flows are the discharges multiplied by fractions that depend only on $G$ and on the modes, and each event occurs when a volume determined by $G$ is reached. Suppose the two runs have processed the same events, with the times of the scaled run equal to $1/\lambda$ times the original ones. Then both runs are in the same state, with all flows multiplied by $\lambda$, so the next event is the same and its time is likewise multiplied by $1/\lambda$. Induction over events completes the proof.
-\end{proof}
-
-The proposition fails when a source starts at a fixed positive time, since that start time does not scale.
-
-\begin{proposition}[Attenuation of the front]\label{prop:attenuation}
-Let a front leave a source along tunnels $e_1, \dots, e_k$, before any tunnel stores water. Let $m_0$ be the number of outlets at the source and $m_i$ the number of outlets at the far end of $e_i$. Then $e_k$ receives the flow $q_k = Q/(m_0 m_1 \cdots m_{k-1})$ and is covered in time $W h_0 L_{e_k} / q_k$.
-\end{proposition}
-\begin{proof}
-By R1 the flow is divided by $m_i$ at each junction, and a covering tunnel of length $L$ fed at rate $q$ is covered after $W h_0 L / q$.
-\end{proof}
-
-In networks where most junctions have degree three, $m_i = 2$ and the time needed to cover a tunnel doubles at each junction: the front decelerates geometrically. Proposition~\ref{prop:conservation} shows that this deceleration does not delay filling indefinitely, because water that cannot advance is stored and, as tunnels fill, redistributed to the remaining ones.
+When all sources start together, the flood times also scale inversely with the inflow; Proposition~\ref{prop:inflow} in Section~\ref{sec:inflow} states this precisely and derives its consequence for escape.
 
 % =====================================================================
 \section{Escape Routing}\label{sec:routing}
@@ -228,7 +204,7 @@ with $a_e(t) = \infty$ if the right-hand side exceeds $\tbl_e$. Evaluating \eqre
 
 A \emph{route} is a sequence of tunnels $P = (e_1, \dots, e_m)$ joined end to end from the miner's position to an exit; starting at $t$, the miner reaches the exit at $A_P(t) = a_{e_m}(\cdots a_{e_1}(t))$.
 
-\subsection{The FIFO property and exact routing}
+\subsection{The FIFO property}
 
 \begin{lemma}[FIFO]\label{lem:fifo}
 For every tunnel $e$ and walking direction, $a_e$ is non-decreasing.
@@ -237,34 +213,58 @@ For every tunnel $e$ and walking direction, $a_e$ is non-decreasing.
 By \eqref{eq:speed} the speed in $e$ depends only on time, not on position, and is non-increasing in time. Let two miners enter $e$ at times $t_1 \le t_2$. At time $t_2$ the first miner is ahead of the second or has left the tunnel; thereafter both move with the same speed, so the distance between them does not decrease and the first leaves no later than the second. If the tunnel becomes impassable before the first miner leaves, it does so before the second leaves as well, and $a_e(t_1) = a_e(t_2) = \infty$.
 \end{proof}
 
-\begin{theorem}\label{thm:dijkstra}
-Consider Dijkstra's algorithm \cite{dijkstra} started from the miner's position $r$ with label $\tau(r) = t_0$, in which settling junction $u$ updates every neighbour $w$ by $\tau(w) \gets \min\{\tau(w), a_{uw}(\tau(u))\}$. When a junction is settled, its label equals the earliest time at which it can be reached from $r$ departing at $t_0$. Moreover, waiting at a junction never yields an earlier arrival.
-\end{theorem}
-\begin{proof}
-The second claim follows from Lemma~\ref{lem:fifo}: departing from $u$ at $t' \ge t$ gives $a_{uw}(t') \ge a_{uw}(t)$. For the first, suppose that all junctions settled so far carry correct labels, that $u$ is the next junction to be settled, and that some route reaches $u$ at time $T < \tau(u)$. Let $(x, y)$ be the first tunnel of this route that leaves the settled set. The route reaches $x$ no earlier than $\tau(x)$, so by Lemma~\ref{lem:fifo} it reaches $y$ no earlier than $a_{xy}(\tau(x))$, a value already used to update $\tau(y)$. Since $a_e(t) \ge t$ for all $e$, arrival times along the route do not decrease, so $\tau(y) \le T < \tau(u)$. The algorithm would then have settled $y$ before $u$, a contradiction.
-\end{proof}
+For travel-time functions with the FIFO property, the time-dependent version of Dijkstra's algorithm \cite{dijkstra} computes earliest arrivals exactly \cite{dreyfus, kaufman}. Started from the miner's position $r$ with label $\tau(r) = t_0$, it settles junctions in order of their labels, and settling junction $u$ updates every neighbour $w$ by $\tau(w) \gets \min\{\tau(w), a_{uw}(\tau(u))\}$. The label of every settled junction is then the earliest time at which it can be reached, and waiting at a junction never yields an earlier arrival. By Lemma~\ref{lem:fifo}, this applies to the travel times induced by the flood model. Stopping the search at the first exit settled yields the earliest-arriving route and its exit. The FIFO property is not automatic in time-dependent networks: without it, waiting can be beneficial and label-setting algorithms can fail \cite{orda}. Here it holds because water levels never decrease.
 
-Stopping the search at the first exit settled yields the earliest-arriving route and its exit. These results are instances of the general theory of FIFO networks \cite{kaufman, orda}; the point here is that the FIFO property follows from the flood model, because water levels never decrease.
-
-\begin{corollary}[Latest start]\label{cor:latest}
-For a fixed route $P$, the set of start times from which $P$ reaches its exit is an interval $(-\infty, D(P)]$. Likewise, the set of start times from which some exit can be reached is an interval $(-\infty, D^*]$.
-\end{corollary}
-\begin{proof}
-$A_P$ is a composition of non-decreasing functions and is therefore non-decreasing, so if $A_P(t) < \infty$ then $A_P(t') \le A_P(t) < \infty$ for all $t' \le t$. The second statement follows by taking the union over routes.
-\end{proof}
-
-For a fixed route, $D(P)$ is obtained exactly by inverting \eqref{eq:arrival} tunnel by tunnel from the exit backwards. If $d$ is the latest admissible exit time of $e$, the latest admissible entry time is
-\[
+\subsection{Latest start}\label{sec:latest}
+Let $\tilde a_e(t)$ denote the right-hand side of \eqref{eq:arrival}, so that $a_e(t) = \tilde a_e(t)$ if $\tilde a_e(t) \le \tbl_e$ and $a_e(t) = \infty$ otherwise. For a deadline $d \in \mathbb{R} \cup \{\infty\}$ let $z = \min(d, \tbl_e)$ and
+\begin{equation}
   b_e(d) = \begin{cases}
-    z - L_e/u_e, & L_e \le u_e\,(z - \tin_e)^+,\\
+    z - L_e/u_e, & L_e \le u_e\,(z - \tin_e)^+,\\[2pt]
     \min(z, \tin_e) - \bigl(L_e - u_e\,(z - \tin_e)^+\bigr)/\vd, & \text{otherwise},
   \end{cases}
-  \qquad z = \min(d, \tbl_e),
+  \label{eq:latest}
+\end{equation}
+with $b_e(d) = \infty$ if $z = \infty$.
+
+\begin{proposition}[Latest start]\label{prop:latest}
+\begin{enumerate}[label=(\roman*), leftmargin=2em, itemsep=1pt, topsep=2pt]
+  \item For every tunnel $e$, start time $t$ and deadline $d$: $a_e(t) \le d$ if and only if $t \le b_e(d)$.
+  \item For a route $P = (e_1, \dots, e_m)$, the miner reaches the exit by time $d$ if and only if $t \le b_{e_1}(\cdots b_{e_m}(d))$. In particular, the set of start times from which $P$ reaches its exit is the interval $(-\infty, D(P)]$ with $D(P) = b_{e_1}(\cdots b_{e_m}(\infty))$.
+  \item The set of start times from which some exit can be reached is an interval $(-\infty, D^*]$, where $D^*$ is the maximum of $D(P)$ over simple routes.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) The function $\tilde a_e$ is piecewise linear with slopes $1$, $\vd/u_e$ and $1$, continuous and strictly increasing, and maps $\mathbb{R}$ onto $\mathbb{R}$. Checking the three cases $z \le \tin_e$, $\tin_e < z < \tin_e + L_e/u_e$ and $z \ge \tin_e + L_e/u_e$ shows that \eqref{eq:latest} is its inverse evaluated at $z$. Since $a_e(t) \le d$ holds exactly when $\tilde a_e(t) \le d$ and $\tilde a_e(t) \le \tbl_e$, that is, when $\tilde a_e(t) \le z$, it is equivalent to $t \le \tilde a_e^{-1}(z) = b_e(d)$.
+(ii) The miner leaves $e_k$ by time $d_k$ exactly when it enters $e_k$ by $b_{e_k}(d_k)$, by (i), and entering $e_k$ is leaving $e_{k-1}$. Induction from the exit backwards gives the claim; with $d = \infty$ it characterizes reaching the exit at all.
+(iii) Removing a cycle from a route does not delay arrival: the miner returns to the same junction no earlier, and by Lemma~\ref{lem:fifo} the remainder of the route then arrives no earlier. Hence it suffices to consider the finitely many simple routes, and the union of the intervals $(-\infty, D(P)]$ over them is $(-\infty, D^*]$.
+\end{proof}
+
+By part (ii), $D(P)$ is computed exactly in $O(m)$ time from the exit backwards. By part (iii), $D^*$ can be found by bisection on the start time, using the earliest-arrival search to test feasibility. The quantity $D^*$ is the latest alert that still leaves the miner a way out.
+
+\subsection{Dependence on the inflow}\label{sec:inflow}
+In an emergency the inflow is rarely known precisely. The following result shows how the flood and the escape depend on it.
+
+\begin{proposition}[Scaling and monotonicity]\label{prop:inflow}
+Suppose that all sources start at time $0$ with discharges $\lambda Q_j$, $\lambda > 0$, and write $\tin_e(\lambda)$, $\tbl_e(\lambda)$, $\tfull_e(\lambda)$ for the resulting flood times and $A_P^\lambda$, $D^\lambda(P)$, $D^*(\lambda)$ for the arrival times and latest starts derived from them.
+\begin{enumerate}[label=(\roman*), leftmargin=2em, itemsep=1pt, topsep=2pt]
+  \item \emph{Scaling.} $\tin_e(\lambda) = \tin_e(1)/\lambda$, and likewise for $\tbl_e$ and $\tfull_e$; the flow direction of every tunnel does not depend on $\lambda$.
+  \item \emph{Monotonicity.} If $\lambda \le \mu$, then $A_P^\lambda(t) \le A_P^\mu(t)$ for every route $P$ and start time $t$. Consequently the earliest arrival time from any position is non-decreasing in $\lambda$, and $D^\lambda(P) \ge D^\mu(P)$ and $D^*(\lambda) \ge D^*(\mu)$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) Every flow is $\lambda$ times a fraction that depends only on $G$ and on the modes, and every event occurs when a volume determined by $G$ is reached. Suppose the runs for $\lambda$ and $1$ have processed the same events, with the times of the first equal to $1/\lambda$ times those of the second. Then both are in the same state, with all flows in the first multiplied by $\lambda$, so the next event is the same and its time is also multiplied by $1/\lambda$. Induction over events proves the scaling. Flow directions are determined by which end of a tunnel receives water first, which depends only on the order of events.
+
+(ii) Let $\lambda \le \mu$. By (i), every tunnel becomes wet and impassable no later under $\mu$ than under $\lambda$, and the speed $u_e$ in water is the same. Since $\vd \ge u_e > 0$, \eqref{eq:speed} gives $\sigma_e^\mu(t) \le \sigma_e^\lambda(t)$ for all $t$. A miner who walks at a pointwise smaller speed covers no more distance by any time, and the tunnel closes no later, so $a_e^\mu(t) \ge a_e^\lambda(t)$. Let $x_k^\lambda$ and $x_k^\mu$ be the times of leaving $e_k$, and suppose $x_{k-1}^\mu \ge x_{k-1}^\lambda$. Then by Lemma~\ref{lem:fifo}
+\[
+  x_k^\mu = a_{e_k}^\mu(x_{k-1}^\mu) \ge a_{e_k}^\mu(x_{k-1}^\lambda) \ge a_{e_k}^\lambda(x_{k-1}^\lambda) = x_k^\lambda,
 \]
-and $D(P) = b_{e_1}(\cdots b_{e_m}(\infty))$. By Corollary~\ref{cor:latest}, $D^*$ can be found by bisection on the start time, using Theorem~\ref{thm:dijkstra} to test feasibility. The quantity $D^*$ is the latest alert that still leaves the miner a way out.
+and induction gives $A_P^\mu(t) \ge A_P^\lambda(t)$. The earliest arrival is the minimum of $A_P$ over routes and is therefore non-decreasing in $\lambda$. Every start time that is feasible under $\mu$ is feasible under $\lambda$, which gives the inequalities for $D$ and $D^*$.
+\end{proof}
+
+Hence, if the inflow is known only to lie in an interval $[Q_{\min}, Q_{\max}]$, a route computed for $Q_{\max}$ remains feasible for every smaller inflow, it arrives no later than computed, and $D^*$ computed for $Q_{\max}$ is a guaranteed latest alert. The guarantee requires that all sources start together: a source that starts at a fixed positive time does not scale.
 
 \subsection{Re-planning under an updated forecast}\label{sec:replan}
-Suppose the forecast is replaced at time $\tau$, for instance because a second source starts at $s_2 < \tau$. A miner who has followed route $P$ from $t_0$ is then at some point of a tunnel $(a, b)$, at distance $\xi$ from $a$, obtained by evaluating \eqref{eq:arrival} along $P$. We add a junction $r$ at this point, connected to $a$ and $b$ by tunnels of lengths $\xi$ and $L_{ab} - \xi$ that inherit $\tin_{ab}$, $\tbl_{ab}$ and the flow direction of $(a, b)$ under the new forecast, and run the search of Theorem~\ref{thm:dijkstra} from $r$ with label $\tau$. The miner may thus continue or turn back. We compare the result with the time obtained by continuing along the remainder of $P$ under the new forecast.
+Suppose the forecast is replaced at time $\tau$, for instance because a second source starts at $s_2 < \tau$. A miner who has followed route $P$ from $t_0$ is then at some point of a tunnel $(a, b)$, at distance $\xi$ from $a$, obtained by evaluating \eqref{eq:arrival} along $P$. We add a junction $r$ at this point, connected to $a$ and $b$ by tunnels of lengths $\xi$ and $L_{ab} - \xi$ that inherit $\tin_{ab}$, $\tbl_{ab}$ and the flow direction of $(a, b)$ under the new forecast, and run the earliest-arrival search from $r$ with label $\tau$. The miner may thus continue or turn back. We compare the result with the time obtained by continuing along the remainder of $P$ under the new forecast.
 
 % =====================================================================
 \section{Benchmark Networks}\label{sec:benchmarks}
@@ -280,7 +280,7 @@ The two benchmark networks of \cite{cumcm}, which we denote N1 and N2, have the 
 \end{figure}
 
 \subsection{Flood propagation}
-Figure~\ref{fig:arrival} shows the time at which water first enters each tunnel, and Table~\ref{tab:flood} summarizes the time scales. With a single source, water spreads along the main roadways of N1 in both directions; in N2 it first runs downhill towards the south-west and reaches higher tunnels only when no level or downhill outlet remains. Both networks are full after 34.9 days, in agreement with Proposition~\ref{prop:conservation} ($\mathcal{V}/Q = 837.0$\,h for N1 and 837.5\,h for N2). With the delayed second source, the median arrival time at the junctions decreases by 61\% (N1) and 39\% (N2), and the networks are full after $t^* = \mathcal{V}/(2Q) + s_2/2$, again as Proposition~\ref{prop:conservation} predicts.
+Figure~\ref{fig:arrival} shows the time at which water first enters each tunnel, and Table~\ref{tab:flood} summarizes the time scales. With a single source, water spreads along the main roadways of N1 in both directions; in N2 it first runs downhill towards the south-west and reaches higher tunnels only when no level or downhill outlet remains. Both networks are full after 34.9 days, in agreement with the filling time $t^* = \mathcal{V}/Q$ of Section~\ref{sec:conservation} (837.0\,h for N1 and 837.5\,h for N2). With the delayed second source, the median arrival time at the junctions decreases by 61\% (N1) and 39\% (N2), and the networks are full after $t^* = \mathcal{V}/(2Q) + s_2/2$, as \eqref{eq:conservation} predicts.
 
 \begin{figure}[htbp]
   \centering
@@ -370,7 +370,7 @@ Source B starts at $s_2 = 240$\,s (N1) or 300\,s (N2), and the revised plan is i
 All six revised routes differ from the original routes, and four of them lead to the other exit: in both networks B lies 0.6--0.7\,km from E1, close to the original routes. Continuing along the original routes would not trap any miner, but it would delay arrival by 1.7--7.6 minutes, because those routes cross water from B. Compared with the single-source plans, the second source delays the earliest arrival by 0.2--3.1 minutes. The smallest margin occurs in N2 for M1, whose revised route must be started by 9.1 minutes; a revised plan issued three minutes later than assumed would no longer make that route feasible.
 
 \subsection{Sensitivity}
-We varied one parameter at a time and recomputed the flood and the six routes for the single-source scenario (Table~\ref{tab:sens}). Changing the inflow or the front depth by $\pm10\%$ leaves all six arrival times and routes unchanged. By Proposition~\ref{prop:scaling}, a 10\% larger inflow shortens every flood time by 9.1\%, but the walking speed in every tunnel along the routes is unaffected. The walking speeds in water affect only the routes that pass through water. The alert time has the largest effect. A later alert can force a longer route: with an alert after 10 minutes, the walking time of M1 in N1 increases by 48\%. With an alert at the onset, the walking time of M3 in N2 decreases by 14\% on the same route, because some of its tunnels are then entered before they are wet.
+We varied one parameter at a time and recomputed the flood and the six routes for the single-source scenario (Table~\ref{tab:sens}). Changing the inflow or the front depth by $\pm10\%$ leaves all six arrival times and routes unchanged. By Proposition~\ref{prop:inflow}(i), a 10\% larger inflow shortens every flood time by 9.1\%; by part (ii) this can only delay arrival, and here it changes the walking speed in no tunnel along the routes. The walking speeds in water affect only the routes that pass through water. The alert time has the largest effect. A later alert can force a longer route: with an alert after 10 minutes, the walking time of M1 in N1 increases by 48\%. With an alert at the onset, the walking time of M3 in N2 decreases by 14\% on the same route, because some of its tunnels are then entered before they are wet.
 
 \begin{table}[htbp]
   \centering\small
@@ -393,11 +393,12 @@ We varied one parameter at a time and recomputed the flood and the six routes fo
   \label{tab:sens}
 \end{table}
 
-\subsection{Numerical verification}
+\subsection{Numerical verification}\label{sec:verification}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
   \item \emph{Conservation.} After every event, \eqref{eq:conservation} holds to a relative error below $4\times10^{-15}$, and the last tunnel becomes full at $\mathcal{V}/Q$ to twelve significant digits.
-  \item \emph{Scaling.} With inflow $1.1\,Q$, each of the approximately 3{,}900 recorded times per network equals $1/1.1$ times its original value to thirteen significant digits (Proposition~\ref{prop:scaling}).
-  \item \emph{Routing.} On 150 random graphs with seven junctions and random wetting and blocking times, the arrival time of Theorem~\ref{thm:dijkstra} equals the minimum over all simple routes. On 2{,}000 random tunnels, $a_e$ is non-decreasing and $b_e$ inverts it.
+  \item \emph{Scaling.} With inflow $1.1\,Q$, each of the approximately 3{,}900 recorded times per network equals $1/1.1$ times its original value to thirteen significant digits, as Proposition~\ref{prop:inflow}(i) requires.
+  \item \emph{Monotonicity.} For inflows of 0.5, 0.9, 1, 1.1, 2 and 5 times $Q$, the earliest arrival of every miner is non-decreasing and its latest alert $D^*$ non-increasing in the inflow, in all 30 comparisons between consecutive inflows (Proposition~\ref{prop:inflow}(ii)).
+  \item \emph{Routing.} On 150 random graphs with seven junctions and random wetting and blocking times, the arrival time computed by the earliest-arrival search equals the minimum over all simple routes. On 2{,}000 random tunnels, $a_e$ is non-decreasing and $b_e$ inverts it.
   \item \emph{Discretization.} Splitting tunnels changes the sequence of events, so the forecast depends on how the network is discretized. We inserted ten degree-two junctions at random positions in 20 independent trials per network. Of the resulting junction arrival times, 80\% (N1) and 89\% (N2) are unchanged, and 95\% change by less than 0.21\% (N1) and 0.004\% (N2). The 99th percentiles are 5.5\% and 0.4\%; the largest relative changes, 41\% and 31\%, are local and arise where a split changes the outcome of rule R2 or the order in which tunnels back up.
 \end{itemize}
 
@@ -472,21 +473,21 @@ Across all 269 faces, with an alert after one minute, the shortest route by leng
 \end{table}
 
 
-The shortest routes from M1--M3 follow the roadway into which the water spreads, where the miners would walk at 1--2\,m/s; the earliest-arriving routes use the parallel roadway and arrive 3.1--9.2 minutes earlier (Figure~\ref{fig:mine-routes}). Face M1 lies 0.28\,km from the source and 3\,m below it. Unless the miners there start within 4 minutes 40 seconds, no route reaches an exit. For all other faces, the latest alert exceeds 8 hours. At this inflow the threat is thus confined to a few faces near the source, and the latest alert $D^*$ identifies them directly. The scaling of Proposition~\ref{prop:scaling} holds for all 6{,}251 recorded times, and \eqref{eq:conservation} holds to a relative error below $4\times10^{-15}$.
+The shortest routes from M1--M3 follow the roadway into which the water spreads, where the miners would walk at 1--2\,m/s; the earliest-arriving routes use the parallel roadway and arrive 3.1--9.2 minutes earlier (Figure~\ref{fig:mine-routes}). Face M1 lies 0.28\,km from the source and 3\,m below it. Unless the miners there start within 4 minutes 40 seconds, no route reaches an exit. For all other faces, the latest alert exceeds 8 hours. At this inflow the threat is thus confined to a few faces near the source, and the latest alert $D^*$ identifies them directly. The scaling of Proposition~\ref{prop:inflow}(i) holds for all 6{,}251 recorded times, and \eqref{eq:conservation} holds to a relative error below $4\times10^{-15}$.
 
 % =====================================================================
 \section{Discussion and Limitations}\label{sec:discussion}
 
 The flood model is phenomenological. Its division rule and fixed front depth are not derived from the equations of open-channel flow \cite{chow}, and its filling rules (R2--R4) idealize the way water ponds and overtops. In particular, the depth is assumed uniform along each tunnel, whereas an inclined tunnel fills from its lower end. As Section~\ref{sec:benchmarks} shows, the forecast also depends on how tunnels are discretized: it is insensitive for most junctions but can change substantially at a few. The model has not been validated against observed inrushes or against a hydraulic solver such as SWMM \cite{swmm}; such a comparison is the most important next step.
 
-The routing results do not depend on these specifics. Lemma~\ref{lem:fifo}, Theorem~\ref{thm:dijkstra} and Corollary~\ref{cor:latest} require only that every tunnel has a wetting time and a blocking time after which it stays impassable. They therefore apply unchanged to forecasts from any flood model in which water levels do not decrease. The routes, however, assume that the forecast is correct and known in advance. Routing for miners who observe only nearby tunnels, routing that is robust to forecast errors, and the effects of congestion and group behaviour \cite{hamacher, lu} are not considered.
+The routing results do not depend on these specifics. Lemma~\ref{lem:fifo} and Proposition~\ref{prop:latest}, and hence the exactness of the routing, require only that every tunnel has a wetting time and a blocking time after which it stays impassable. They therefore apply unchanged to forecasts from any flood model in which water levels do not decrease. Proposition~\ref{prop:inflow} additionally relies on the scaling of the flood model with the inflow. The routes, however, assume that the forecast is correct and known in advance. Routing for miners who observe only nearby tunnels, routing that is robust to forecast errors, and the effects of congestion and group behaviour \cite{hamacher, lu} are not considered.
 
 The case study inherits further approximations from the data: tunnel connectivity was derived automatically and checked visually, seals and doors recorded on the plan were not modelled, elevations were interpolated between survey stations, and the tunnel height was assumed.
 
 % =====================================================================
 \section{Conclusion}\label{sec:conclusion}
 
-We have presented a volume-conserving, event-driven flood model for tunnel networks and an exact time-dependent routing model built on its forecast. Conservation determines the filling time of a network exactly, and the monotonicity of water levels makes escape routing a FIFO problem. Dijkstra's algorithm is therefore exact, waiting is never beneficial, and the latest feasible start --- the latest alert that still leaves a way out --- is well defined and computable. On benchmark networks, the method computes routes and revised routes after a second inrush in milliseconds once the forecast is available. On a network extracted from a working mine, it shows that the danger of a moderate inrush is concentrated in a few faces near the source, and it quantifies how quickly those faces must be alerted. Coupling the routing layer to a hydraulically validated flood model is the main direction for future work.
+We have presented a volume-conserving, event-driven flood model for tunnel networks and an exact time-dependent routing model built on its forecast. Conservation determines the filling time of a network exactly, and the monotonicity of water levels makes escape routing a FIFO problem. Dijkstra's algorithm is therefore exact, waiting is never beneficial, and the latest feasible start --- the latest alert that still leaves a way out --- is well defined and computable exactly. Because flood times scale inversely with the inflow, a larger inrush can only delay escape, so plans made for the largest plausible inflow remain valid for smaller ones. On benchmark networks, the method computes routes and revised routes after a second inrush in milliseconds once the forecast is available. On a network extracted from a working mine, it shows that the danger of a moderate inrush is concentrated in a few faces near the source, and it quantifies how quickly those faces must be alerted. Coupling the routing layer to a hydraulically validated flood model is the main direction for future work.
 
 \paragraph{Data and code availability.} The benchmark networks are those of \cite{cumcm}. The implementation, tests and the anonymized mine network are available at [repository URL].
 

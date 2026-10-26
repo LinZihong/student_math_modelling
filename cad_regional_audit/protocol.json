@@ -1,0 +1,15 @@
+{
+ "status":"Exploratory extension fixed before full CAD outcomes; no paper rewrite until results reviewed",
+ "network":"Anonymized real-mine CAD-derived network; geometry not independently surveyed or hydraulically calibrated",
+ "primary_regions":"Same four median-coordinate quadrants as prior screen; full enumeration of all non-exit, non-A source nodes in each",
+ "origins":"All non-exit non-A nodes; report inside and outside source region separately",
+ "target_delay_s":[600,1200,1800],
+ "flow_m3_s":0.5,
+ "speeds_m_s":[1.3,0.7,0.5],
+ "objective":"Shortest single fixed route satisfying each target across every source in region, also report uncapped feasibility",
+ "distance_budgets":[0.05,0.1,0.2,0.5,1.0],
+ "secondary_source_set":"Same-region nodes within 50 m of supplied CAD water-outline polygons; annotation-based sensitivity only, not ground-truth geological risk",
+ "algorithm":"Constraint generation: solve exact shared-route subproblem, validate resulting path against all regional sources, add a violating source, repeat. Infeasibility of subset certifies full-set infeasibility; globally feasible shortest subset solution certifies full-set optimum. Time limits are unresolved, never failure.",
+ "validation":"Cross-check vector deadline evaluation and constraint-generation search against existing full-scenario solver on prior 113-source network and selected CAD subsets before interpreting full results",
+ "limitations":"Same volume-transfer proxy, mean depth and permanent closure; full node coverage does not imply continuous source coverage or actual mine safety"
+}

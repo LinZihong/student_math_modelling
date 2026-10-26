@@ -1,0 +1,7 @@
+{
+  "graphs": 100,
+  "scenarios_per_graph": 3,
+  "feasibility_and_minlength_comparisons": 400,
+  "deadline_optima_bracketed": 100,
+  "passed": true
+}

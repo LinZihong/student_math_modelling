@@ -1,0 +1,47 @@
+[
+  {
+    "target_min": 10.0,
+    "origins": 548,
+    "baseline_success": 292,
+    "success_by_budget": {
+      "0.05": 424,
+      "0.1": 498,
+      "0.2": 520,
+      "0.5": 529,
+      "1": 533
+    },
+    "unlimited_success": 547,
+    "fixed_route_impossible": 1,
+    "source_known_impossible": 0
+  },
+  {
+    "target_min": 20.0,
+    "origins": 548,
+    "baseline_success": 278,
+    "success_by_budget": {
+      "0.05": 403,
+      "0.1": 457,
+      "0.2": 509,
+      "0.5": 523,
+      "1": 527
+    },
+    "unlimited_success": 546,
+    "fixed_route_impossible": 1,
+    "source_known_impossible": 1
+  },
+  {
+    "target_min": 30.0,
+    "origins": 548,
+    "baseline_success": 268,
+    "success_by_budget": {
+      "0.05": 403,
+      "0.1": 435,
+      "0.2": 501,
+      "0.5": 518,
+      "1": 526
+    },
+    "unlimited_success": 545,
+    "fixed_route_impossible": 2,
+    "source_known_impossible": 1
+  }
+]

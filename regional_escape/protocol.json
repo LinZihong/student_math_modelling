@@ -1,0 +1,13 @@
+{
+ "purpose":"Exploratory screen of fixed routes conditional on coarse source-region alarms; no field guarantee",
+ "regions":"Four spatial quadrants cut at median node x and median node y separately in each network; illustrative alarm regions, not actual monitored sectors",
+ "sources":"8 design and 8 held-out distinct uniformly sampled candidate nodes per region, fixed seed 20261027; excludes exits and inserted A; no accident probabilities",
+ "flow_m3_s":0.5,
+ "speed_m_s":[4,2,1],
+ "budgets":[0,0.05,0.10,0.20],
+ "horizon_s":3600,
+ "screen":"All non-exit origins except any sampled source; dry-shortest-route worst design-source deadline. Select at most 12 with deadline in [0,3600) per region using fixed seed, not optimization outcomes. Report initially infeasible separately.",
+ "objective":"Maximize min latest departure across design sources for one common path, with length <= (1+budget) dry shortest length; capped at 3600 s",
+ "evaluation":"Same stored route on every held-out source, without selecting route using actual source. Baseline route tie broken deterministically.",
+ "limitations":"Old volume-transfer hazard proxy, average tunnel depth, uncalibrated speeds and synthetic regions. Held-out scenario minimum is a stress test, not a continuous-region guarantee. Selection uses design fields only."
+}

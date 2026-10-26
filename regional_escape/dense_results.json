@@ -1,0 +1,793 @@
+[
+  {
+    "source": "P0002",
+    "baseline_path": 71479.32865069178,
+    "path": 96497.75604210474,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0003",
+    "baseline_path": 35805.22377303737,
+    "path": 50834.331703780226,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0004",
+    "baseline_path": 64098.222459926204,
+    "path": 33333.59218611669,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0025",
+    "baseline_path": 61282.208774464016,
+    "path": 91326.09258183338,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0026",
+    "baseline_path": 61056.718545141324,
+    "path": 91100.60235251069,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0033",
+    "baseline_path": 39480.26034208132,
+    "path": 58488.83146263336,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0034",
+    "baseline_path": 15947.902801516051,
+    "path": 23469.622793945688,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0035",
+    "baseline_path": 51029.90385444061,
+    "path": 76429.51489581385,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0036",
+    "baseline_path": 19181.670307316374,
+    "path": 34210.77823805925,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0037",
+    "baseline_path": 35965.39633755689,
+    "path": 50994.50426829975,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0038",
+    "baseline_path": 68354.7002877505,
+    "path": 57413.906084723865,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0039",
+    "baseline_path": 33941.07123337932,
+    "path": 18986.733667531385,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0040",
+    "baseline_path": 76759.26845667018,
+    "path": 117801.66142219107,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0041",
+    "baseline_path": 45509.48163064578,
+    "path": 99000.38468328342,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0042",
+    "baseline_path": 49862.38982305376,
+    "path": 99000.38468328345,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0043",
+    "baseline_path": 29029.985656292254,
+    "path": 44059.093587035124,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0044",
+    "baseline_path": 100452.05066784173,
+    "path": 126618.59273719211,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0045",
+    "baseline_path": 73457.35775418708,
+    "path": 123129.6553892452,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0046",
+    "baseline_path": 30232.784029847735,
+    "path": 45261.89196059059,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0047",
+    "baseline_path": 28637.262561523527,
+    "path": 43666.3704922664,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0048",
+    "baseline_path": 57865.53679966075,
+    "path": 83894.80809178528,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0049",
+    "baseline_path": 28430.055711134835,
+    "path": 43459.16364187771,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0063",
+    "baseline_path": 953.009741452629,
+    "path": 987.9083724700457,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0064",
+    "baseline_path": 1105.689895809912,
+    "path": 16134.797826552789,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0065",
+    "baseline_path": 291.34187010564017,
+    "path": 21516.21912719418,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0066",
+    "baseline_path": 17015.13143699548,
+    "path": 21548.206861045106,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0075",
+    "baseline_path": 38283.34723086099,
+    "path": 58756.432996978714,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0076",
+    "baseline_path": 38265.00396354026,
+    "path": 58738.08972965795,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0077",
+    "baseline_path": 39152.52778012819,
+    "path": 27957.844629999545,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0091",
+    "baseline_path": 2356.8394739279706,
+    "path": 9878.559466357612,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0092",
+    "baseline_path": 410.7382095534893,
+    "path": 7932.458201983131,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0093",
+    "baseline_path": 1010.7314815658772,
+    "path": 8683.2562362603,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0094",
+    "baseline_path": 3395.481190552651,
+    "path": 18093.23054730835,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0095",
+    "baseline_path": 1164.706165267164,
+    "path": 4932.732188540189,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0096",
+    "baseline_path": 2536.045377066894,
+    "path": 10057.765369496537,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0097",
+    "baseline_path": 172136.28614112377,
+    "path": 206550.8627289958,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0098",
+    "baseline_path": 86324.71271820425,
+    "path": 131383.37240220004,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0099",
+    "baseline_path": 26059.471678971986,
+    "path": 41088.57960971486,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0108",
+    "baseline_path": 26946.75654816354,
+    "path": 10328.051884638451,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0109",
+    "baseline_path": 32163.163093943105,
+    "path": 16717.424284660887,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0167",
+    "baseline_path": 156808.5722396796,
+    "path": 156836.46388590292,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0168",
+    "baseline_path": 8922.201402901384,
+    "path": 2303.0773573395313,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0170",
+    "baseline_path": 153488.13688890432,
+    "path": 148116.07163437654,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0171",
+    "baseline_path": 111241.85909523249,
+    "path": 143333.54090142614,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0172",
+    "baseline_path": 233.14917675222608,
+    "path": 89.87922916286819,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0173",
+    "baseline_path": 4.293291203032663,
+    "path": 3226.6477672513374,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0174",
+    "baseline_path": 402.9198306356478,
+    "path": 228.66743129631737,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0175",
+    "baseline_path": 312.14117478956655,
+    "path": 4519.174000671738,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0176",
+    "baseline_path": -48.32629376422656,
+    "path": 3315.356437405159,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0177",
+    "baseline_path": 323.6171211122017,
+    "path": 2968.485574562408,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0178",
+    "baseline_path": 145.87804601035464,
+    "path": 4406.9068550699285,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0181",
+    "baseline_path": 1867.474276421216,
+    "path": 12415.506633247567,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0182",
+    "baseline_path": 111200.77565930662,
+    "path": 100619.86395389242,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0183",
+    "baseline_path": 15814.49171213763,
+    "path": 32145.24909664154,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0184",
+    "baseline_path": 13971.311474058282,
+    "path": 4743.771541237335,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0185",
+    "baseline_path": 29568.310266326218,
+    "path": 40436.14589766102,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0186",
+    "baseline_path": 14019.885853191625,
+    "path": 4792.345920370678,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0187",
+    "baseline_path": 28361.536904522254,
+    "path": 9866.084843847288,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0188",
+    "baseline_path": 14029.056917252028,
+    "path": 4801.516984431081,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0189",
+    "baseline_path": 14007.976977845903,
+    "path": 4780.437045024954,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0190",
+    "baseline_path": 28378.303824833547,
+    "path": 9882.851764158582,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0194",
+    "baseline_path": 158411.19596750833,
+    "path": 153039.1307129805,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0196",
+    "baseline_path": 33953.50001390323,
+    "path": 15458.04795322825,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0197",
+    "baseline_path": 33564.71077654741,
+    "path": 15069.258715872422,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0224",
+    "baseline_path": 86402.69501886438,
+    "path": 131461.35470286023,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0225",
+    "baseline_path": 48492.42861365763,
+    "path": 71028.92448271374,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0227",
+    "baseline_path": 86347.13613565025,
+    "path": 131405.79581964604,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0228",
+    "baseline_path": 50950.59889922473,
+    "path": 73487.09476828083,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0231",
+    "baseline_path": 86281.80068763005,
+    "path": 131340.46037162587,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0311",
+    "baseline_path": 33056.237456424766,
+    "path": 14560.785395749805,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0318",
+    "baseline_path": 33101.70113370407,
+    "path": 14606.249073029112,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0321",
+    "baseline_path": 10990.74509321801,
+    "path": 32254.56944980814,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0322",
+    "baseline_path": 142.36354070742624,
+    "path": 6813.468085042308,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0323",
+    "baseline_path": -32.02054721329452,
+    "path": 3399.7451847107313,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0324",
+    "baseline_path": 15123.328721371756,
+    "path": 36387.15307796189,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0329",
+    "baseline_path": 1152.1466583316394,
+    "path": 16181.254589074517,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0378",
+    "baseline_path": 8942.710371476134,
+    "path": 2323.5863259142798,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0379",
+    "baseline_path": 18206.129030008735,
+    "path": 4965.785028674333,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0380",
+    "baseline_path": 234575.64018494947,
+    "path": 221335.29618361502,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0381",
+    "baseline_path": 18247.139932413495,
+    "path": 5006.795931079097,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0382",
+    "baseline_path": 27907.755941960615,
+    "path": 8046.191984853682,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0383",
+    "baseline_path": 26144.51929599447,
+    "path": 53364.51344228899,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0384",
+    "baseline_path": 26907.167766722327,
+    "path": 10288.46310319724,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0385",
+    "baseline_path": 38250.25057965723,
+    "path": 58723.33634577495,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0386",
+    "baseline_path": 29468.28063811897,
+    "path": 78803.95287785697,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0387",
+    "baseline_path": 57097.44443295855,
+    "path": 69257.28161127349,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0388",
+    "baseline_path": 42664.163033243116,
+    "path": 65200.658902299234,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0389",
+    "baseline_path": 70261.32072751138,
+    "path": 100305.2045348807,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0390",
+    "baseline_path": 26080.0952815899,
+    "path": 53300.08942788443,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0416",
+    "baseline_path": 7816.156035169355,
+    "path": 23766.644424026483,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0417",
+    "baseline_path": 33583.472373067954,
+    "path": 15088.020312392973,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0418",
+    "baseline_path": 95.91320963244773,
+    "path": 1146.220630273526,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0419",
+    "baseline_path": 83046.41029446677,
+    "path": 83029.67821127624,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0544",
+    "baseline_path": 8409.196446733551,
+    "path": 12670.225255793122,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0545",
+    "baseline_path": 10562.012930207466,
+    "path": 14823.041739267039,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0546",
+    "baseline_path": 8374.65895498907,
+    "path": 12635.687764048644,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0547",
+    "baseline_path": 17006.09897012191,
+    "path": 25574.77746186897,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0548",
+    "baseline_path": 12611.415509487295,
+    "path": 19026.269159890624,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0549",
+    "baseline_path": 19089.847156002837,
+    "path": 39480.787407402364,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0552",
+    "baseline_path": 3913.3496963704006,
+    "path": 43113.36527033933,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0553",
+    "baseline_path": 45886.28064400992,
+    "path": 58762.60881844449,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0554",
+    "baseline_path": 25436.40140816622,
+    "path": 39053.05144114956,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0555",
+    "baseline_path": 79162.3213791153,
+    "path": 96261.58218863232,
+    "original_design": false,
+    "original_heldout": true
+  },
+  {
+    "source": "P0626",
+    "baseline_path": 37269.772180200125,
+    "path": 18774.320119525146,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0628",
+    "baseline_path": 38281.11606295551,
+    "path": 19785.66400228052,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0630",
+    "baseline_path": 33140.46789554975,
+    "path": 14645.015834874795,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0631",
+    "baseline_path": 111222.10676635713,
+    "path": 143313.78857255078,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0634",
+    "baseline_path": 16387.06750926347,
+    "path": 7159.527576442519,
+    "original_design": true,
+    "original_heldout": false
+  },
+  {
+    "source": "P0644",
+    "baseline_path": 92973.23909335594,
+    "path": 44246.78932298187,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0648",
+    "baseline_path": 10461.693227061323,
+    "path": 31725.517583651457,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0654",
+    "baseline_path": 1551.2869081070855,
+    "path": 21063.977367277326,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0655",
+    "baseline_path": 457.8132029307332,
+    "path": 7979.533195360375,
+    "original_design": false,
+    "original_heldout": false
+  },
+  {
+    "source": "P0656",
+    "baseline_path": 747.2779720951207,
+    "path": 11524.045697954922,
+    "original_design": false,
+    "original_heldout": false
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "rows": [
+    {
+      "region": "SE",
+      "group": "all",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1378,
+      "retained": 1378,
+      "nominal_rescued": 157,
+      "rescued_retained": 157
+    },
+    {
+      "region": "SE",
+      "group": "outside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1240,
+      "retained": 1240,
+      "nominal_rescued": 44,
+      "rescued_retained": 44
+    },
+    {
+      "region": "SE",
+      "group": "inside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 138,
+      "retained": 138,
+      "nominal_rescued": 113,
+      "rescued_retained": 113
+    },
+    {
+      "region": "SE",
+      "group": "all",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1378,
+      "retained": 1378,
+      "nominal_rescued": 157,
+      "rescued_retained": 157
+    },
+    {
+      "region": "SE",
+      "group": "outside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1240,
+      "retained": 1240,
+      "nominal_rescued": 44,
+      "rescued_retained": 44
+    },
+    {
+      "region": "SE",
+      "group": "inside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 138,
+      "retained": 138,
+      "nominal_rescued": 113,
+      "rescued_retained": 113
+    },
+    {
+      "region": "SE",
+      "group": "all",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1378,
+      "retained": 1324,
+      "nominal_rescued": 157,
+      "rescued_retained": 111
+    },
+    {
+      "region": "SE",
+      "group": "outside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1240,
+      "retained": 1235,
+      "nominal_rescued": 44,
+      "rescued_retained": 41
+    },
+    {
+      "region": "SE",
+      "group": "inside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 138,
+      "retained": 89,
+      "nominal_rescued": 113,
+      "rescued_retained": 70
+    },
+    {
+      "region": "NE",
+      "group": "all",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1289,
+      "retained": 1289,
+      "nominal_rescued": 186,
+      "rescued_retained": 186
+    },
+    {
+      "region": "NE",
+      "group": "outside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1110,
+      "retained": 1110,
+      "nominal_rescued": 35,
+      "rescued_retained": 35
+    },
+    {
+      "region": "NE",
+      "group": "inside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 179,
+      "retained": 179,
+      "nominal_rescued": 151,
+      "rescued_retained": 151
+    },
+    {
+      "region": "NE",
+      "group": "all",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1289,
+      "retained": 1289,
+      "nominal_rescued": 186,
+      "rescued_retained": 186
+    },
+    {
+      "region": "NE",
+      "group": "outside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1110,
+      "retained": 1110,
+      "nominal_rescued": 35,
+      "rescued_retained": 35
+    },
+    {
+      "region": "NE",
+      "group": "inside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 179,
+      "retained": 179,
+      "nominal_rescued": 151,
+      "rescued_retained": 151
+    },
+    {
+      "region": "NE",
+      "group": "all",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1289,
+      "retained": 1110,
+      "nominal_rescued": 186,
+      "rescued_retained": 37
+    },
+    {
+      "region": "NE",
+      "group": "outside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1110,
+      "retained": 1062,
+      "nominal_rescued": 35,
+      "rescued_retained": 2
+    },
+    {
+      "region": "NE",
+      "group": "inside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 179,
+      "retained": 48,
+      "nominal_rescued": 151,
+      "rescued_retained": 35
+    },
+    {
+      "region": "NW",
+      "group": "all",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1297,
+      "retained": 1297,
+      "nominal_rescued": 563,
+      "rescued_retained": 563
+    },
+    {
+      "region": "NW",
+      "group": "outside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1200,
+      "retained": 1200,
+      "nominal_rescued": 480,
+      "rescued_retained": 480
+    },
+    {
+      "region": "NW",
+      "group": "inside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 97,
+      "retained": 97,
+      "nominal_rescued": 83,
+      "rescued_retained": 83
+    },
+    {
+      "region": "NW",
+      "group": "all",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1297,
+      "retained": 1297,
+      "nominal_rescued": 563,
+      "rescued_retained": 563
+    },
+    {
+      "region": "NW",
+      "group": "outside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1200,
+      "retained": 1200,
+      "nominal_rescued": 480,
+      "rescued_retained": 480
+    },
+    {
+      "region": "NW",
+      "group": "inside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 97,
+      "retained": 97,
+      "nominal_rescued": 83,
+      "rescued_retained": 83
+    },
+    {
+      "region": "NW",
+      "group": "all",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1297,
+      "retained": 876,
+      "nominal_rescued": 563,
+      "rescued_retained": 169
+    },
+    {
+      "region": "NW",
+      "group": "outside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1200,
+      "retained": 855,
+      "nominal_rescued": 480,
+      "rescued_retained": 158
+    },
+    {
+      "region": "NW",
+      "group": "inside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 97,
+      "retained": 21,
+      "nominal_rescued": 83,
+      "rescued_retained": 11
+    },
+    {
+      "region": "SW",
+      "group": "all",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 1079,
+      "retained": 1079,
+      "nominal_rescued": 389,
+      "rescued_retained": 389
+    },
+    {
+      "region": "SW",
+      "group": "outside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 940,
+      "retained": 940,
+      "nominal_rescued": 281,
+      "rescued_retained": 281
+    },
+    {
+      "region": "SW",
+      "group": "inside",
+      "flow_m3_s": 0.25,
+      "nominal_routes": 139,
+      "retained": 139,
+      "nominal_rescued": 108,
+      "rescued_retained": 108
+    },
+    {
+      "region": "SW",
+      "group": "all",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 1079,
+      "retained": 1079,
+      "nominal_rescued": 389,
+      "rescued_retained": 389
+    },
+    {
+      "region": "SW",
+      "group": "outside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 940,
+      "retained": 940,
+      "nominal_rescued": 281,
+      "rescued_retained": 281
+    },
+    {
+      "region": "SW",
+      "group": "inside",
+      "flow_m3_s": 0.5,
+      "nominal_routes": 139,
+      "retained": 139,
+      "nominal_rescued": 108,
+      "rescued_retained": 108
+    },
+    {
+      "region": "SW",
+      "group": "all",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 1079,
+      "retained": 870,
+      "nominal_rescued": 389,
+      "rescued_retained": 224
+    },
+    {
+      "region": "SW",
+      "group": "outside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 940,
+      "retained": 837,
+      "nominal_rescued": 281,
+      "rescued_retained": 205
+    },
+    {
+      "region": "SW",
+      "group": "inside",
+      "flow_m3_s": 1.0,
+      "nominal_routes": 139,
+      "retained": 33,
+      "nominal_rescued": 108,
+      "rescued_retained": 19
+    }
+  ],
+  "forward_checks": 7935
+}

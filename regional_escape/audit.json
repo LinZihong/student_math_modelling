@@ -1,0 +1,21 @@
+{
+  "dense_route_walk_checks": 678,
+  "midpoint_sources": 24,
+  "protocol_hash_matches": true,
+  "original_pdf_unchanged": true,
+  "hashes": {
+    "plot.py": "72c7ac31d2e54bc34d3df74d2810844b687f6185b50ae8283f37010bda6c017b",
+    "dense.py": "33cb3dd4f24e03aa83c9f3f35262c941f45dded0f934170b5fd0801e9ca10736",
+    "dense_optimize.py": "11a6c9c14d9d42956716605f74a0a4ca791a307f34b81154e7b859eace7c3703",
+    "midpoint_check.py": "7208b18138a6ae2d9ce32b7a7b994ff06b61d2211028f199a91dce47e32c8dba",
+    "summarize.py": "a1e912af8f31b413caa572181f2361f6b64bde1da4ec6de2ead204d943142c3a",
+    "test_solver.py": "7e75ff021958d24060b80a81076f85b817ee7a11339463d8addcefec2c041232",
+    "prepare.py": "19770eb09685fc917dc138d4ce0d0d2fd8e0d096822910a87d1a491a1d1bbb51",
+    "study.py": "b209152111e957604925d1956d41c50b7ee7520316978fffc99c1006fc79d322",
+    "REPORT.md": "b81e68d6608f097dfe4b4e97d9b603970d777f862adaf3633058761cee219c9a",
+    "protocol.json": "2cfcb745405da1712f87675b3883de285b6c5afad96e03c573690fa132a6f51d",
+    "summary.json": "7c29934eda7d6c181c01452beb2b69507c5f6ab80342f45d7a35b4de843858c1",
+    "dense_optimum.json": "042089eb457ca59069773a9694c135d820796f4317d8c330fdfbdbffd7c3e95a",
+    "solver_tests.json": "abaff50d57f463afd0d3f66ea700e12547c9f1ee40da85a7b9e94d4f56a3d62f"
+  }
+}

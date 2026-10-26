@@ -1,0 +1,81 @@
+{
+  "comparison": [
+    {
+      "case": "competition",
+      "budget": 0.05,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 38,
+      "heldout_gain_at_least_1min": 14,
+      "heldout_loss_at_least_1min": 4
+    },
+    {
+      "case": "competition",
+      "budget": 0.1,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 39,
+      "heldout_gain_at_least_1min": 14,
+      "heldout_loss_at_least_1min": 3
+    },
+    {
+      "case": "competition",
+      "budget": 0.2,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 40,
+      "heldout_gain_at_least_1min": 14,
+      "heldout_loss_at_least_1min": 4
+    },
+    {
+      "case": "cad",
+      "budget": 0.05,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 37,
+      "heldout_gain_at_least_1min": 4,
+      "heldout_loss_at_least_1min": 6
+    },
+    {
+      "case": "cad",
+      "budget": 0.1,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 43,
+      "heldout_gain_at_least_1min": 8,
+      "heldout_loss_at_least_1min": 6
+    },
+    {
+      "case": "cad",
+      "budget": 0.2,
+      "selected_baseline_feasible_origins": 48,
+      "design_gain_at_least_1min": 46,
+      "heldout_gain_at_least_1min": 9,
+      "heldout_loss_at_least_1min": 6
+    }
+  ],
+  "sampled_origin_region_pairs": 123,
+  "originally_infeasible_design_pairs": 27,
+  "dense_sources": 113,
+  "midpoint_checks": [
+    {
+      "speeds": [
+        4.0,
+        2.0,
+        1.0
+      ],
+      "sources": 24,
+      "baseline_min_s": -39.130883389577306,
+      "fixed_min_s": 4627.101981155701,
+      "fixed_failed_immediate": 0
+    },
+    {
+      "speeds": [
+        1.3,
+        0.7,
+        0.5
+      ],
+      "sources": 24,
+      "baseline_min_s": -354.0049667295432,
+      "fixed_min_s": 4131.679417537657,
+      "fixed_failed_immediate": 0
+    }
+  ],
+  "all_solver_calls_completed": true,
+  "limitations": "Finite-scenario, volume-transfer-model result; no continuous-region guarantee or accident probabilities. Dense case selected after screening, not representative prevalence."
+}

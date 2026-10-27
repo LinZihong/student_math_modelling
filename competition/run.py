@@ -17,7 +17,7 @@ from model.network import insert_point, load_workbook
 from model.routing import V_AGAINST, V_DRY, V_WITH, Arc, arcs, fastest, latest_departure, walk, where
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT.parent / 'original_question'
+DATA = ROOT.parent / '原始材料_竞赛题目与附件'
 Q = 30 / 60
 ALERT = 60.0
 

@@ -3,7 +3,7 @@ import json,shutil
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-P=Path(__file__).resolve().parent;R=P.parent/'regional_escape'
+P=Path(__file__).resolve().parent;R=P.parent/'实验_06_分区预警与固定路线_初期分析'
 rows=json.loads((R/'longer_summary.json').read_text())
 fig,ax=plt.subplots(figsize=(8,3.5),layout='constrained')
 for r,color in zip(rows,['#168a78','#2572ad','#b85a31']):

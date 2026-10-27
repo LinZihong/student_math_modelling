@@ -17,12 +17,12 @@ venv/
 *.xdv
 *.toc
 *.synctex.gz
-preprint/build/
-output/
+论文_04_绕行与延迟容忍_路线菜单探索/build/
+阅读入口_PDF/
 
 # Compiled documents and large binaries (the problem statement is kept as source material)
 *.pdf
-!original_question/D题.pdf
+!原始材料_竞赛题目与附件/D题.pdf
 *.pkl
 *.dwg
 
@@ -30,4 +30,4 @@ output/
 mine_example/raw/
 
 # First draft: names the mine; kept on disk only
-yale_supplement/Mine_Flood_Escape_Yale_STEM_draft.tex
+论文_03_Yale研究补充材料草稿/Mine_Flood_Escape_Yale_STEM_draft.tex

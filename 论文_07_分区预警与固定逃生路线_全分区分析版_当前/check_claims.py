@@ -1,7 +1,7 @@
 """Reconcile manuscript tables and headline claims with individual stored outcomes."""
 import json,hashlib
 from pathlib import Path
-P=Path(__file__).resolve().parent;D=P.parent/'cad_regional_audit';summary=json.loads((D/'summary.json').read_text());checks=[];total=0
+P=Path(__file__).resolve().parent;D=P.parent/'实验_07_分区预警与固定路线_全分区分析';summary=json.loads((D/'summary.json').read_text());checks=[];total=0
 for source in ['full','near']:
  for region in ['NW','SW','SE','NE']:
   a=[json.loads(s) for s in (D/f'{source}_{region}.jsonl').read_text().splitlines()];assert len(a)==4761;assert len({(r['node'],r['target_s']) for r in a})==4761;assert all(r['status']!='timeout' for r in a);total+=len(a)
@@ -17,5 +17,13 @@ assert total==44436
 s=next(r for r in summary if r['source_set']=='full' and r['region']=='NW' and r['group']=='outside' and r['target_min']==30);assert [s[k] for k in ['n','baseline','cap_20','cap_50','cap_100','unlimited']]==[1243,720,812,961,1162,1200]
 assert json.loads((D/'stress.json').read_text())['forward_checks']==7935
 # Verify stored analysis hashes before relying on them.
-audit=json.loads((D/'audit.json').read_text());assert all(hashlib.sha256((D/k).read_bytes()).hexdigest()==v for k,v in audit['file_sha256'].items())
-out=P/'audit/revision-2026-10-26';out.mkdir(parents=True,exist_ok=True);(out/'claims-check.json').write_text(json.dumps(dict(queries=total,summary_cells_checked=len(checks),all_terminal=True,analysis_hashes_verified=True,headline_checked=True),indent=2));print('Verified',total,'queries and',len(checks),'summary cells; frozen analysis hashes match')
+audit=json.loads((D/'audit.json').read_text())
+relocations=json.loads((P.parent/'目录迁移记录.json').read_text())
+edits={x['path']:x for x in relocations['path_only_edits']}
+for k,expected in audit['file_sha256'].items():
+ file=D/k;actual=hashlib.sha256(file.read_bytes()).hexdigest()
+ if actual!=expected:
+  record=edits.get(str(file.relative_to(P.parent)))
+  assert record and record['before_sha256']==expected and record['after_sha256']==actual, str(file)
+
+out=P/'audit/revision-2026-10-26';out.mkdir(parents=True,exist_ok=True);(out/'claims-check.json').write_text(json.dumps(dict(queries=total,summary_cells_checked=len(checks),all_terminal=True,analysis_hashes_verified=True,headline_checked=True),indent=2));print('Verified',total,'queries and',len(checks),'summary cells; frozen data hashes match; path relocations verified')

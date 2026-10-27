@@ -94,14 +94,14 @@ P0104/东南区是从筛查结果中选出的探索案例，不是独立确认�
 
 Python3.12，依赖原preprint的networkx、pandas、openpyxl、shapely及制图用matplotlib。命令从工作区根目录运行：
 
-    python regional_escape/prepare.py
-    python regional_escape/test_solver.py
-    python regional_escape/study.py
-    python regional_escape/dense.py
-    python regional_escape/dense_optimize.py
-    python regional_escape/midpoint_check.py
-    python regional_escape/summarize.py
-    python regional_escape/plot.py
+    python 实验_06_分区预警与固定路线_初期分析/prepare.py
+    python 实验_06_分区预警与固定路线_初期分析/test_solver.py
+    python 实验_06_分区预警与固定路线_初期分析/study.py
+    python 实验_06_分区预警与固定路线_初期分析/dense.py
+    python 实验_06_分区预警与固定路线_初期分析/dense_optimize.py
+    python 实验_06_分区预警与固定路线_初期分析/midpoint_check.py
+    python 实验_06_分区预警与固定路线_初期分析/summarize.py
+    python 实验_06_分区预警与固定路线_初期分析/plot.py
 
 必须等待prepare.py完成后再运行study.py。study.py会跳过screen.json中已完成的区域；准备和密集水源模拟复用该目录既有文件。要改协议，应使用新结果目录，不能混用旧缓存。
 

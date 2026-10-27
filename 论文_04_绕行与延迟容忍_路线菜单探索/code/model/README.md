@@ -1,6 +1,6 @@
 # Flood and escape-routing model
 
-This is the code behind *Escaping a Flooding Mine* (paper: `../yale_supplement/Escaping_a_Flooding_Mine_v2.tex`).
+This is the code behind *Escaping a Flooding Mine* (paper: `../论文_03_Yale研究补充材料草稿/Escaping_a_Flooding_Mine_v2.tex`).
 
 | File | What it does |
 |---|---|

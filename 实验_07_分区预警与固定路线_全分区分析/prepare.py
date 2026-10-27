@@ -3,7 +3,7 @@ import sys,json,math,time,hashlib,statistics,os
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor,as_completed
 import numpy as np
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'preprint/code'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/code'))
 from run import setup
 from model.flood import Flood
 from model.routing import arcs
@@ -31,15 +31,15 @@ def main():
   x,y,_=G.nodes[n]['xyz'];regions[('N' if y>=my else 'S')+('E' if x>=mx else 'W')].append(n)
  directed=sorted((a,b,G[a][b]['length']) for a in G for b in G[a]);nodes=sorted(G)
  from shapely.geometry import Point,Polygon
- features=json.loads((ROOT/'preprint/data/cad/data/mine_features.json').read_text());polys=[Polygon(p).buffer(0) for p in features['water_outlines']]
+ features=json.loads((ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/data/cad/data/mine_features.json').read_text());polys=[Polygon(p).buffer(0) for p in features['water_outlines']]
  near=[n for n in sources if min(Point(G.nodes[n]['xyz'][:2]).distance(p) for p in polys)<=50]
- design={'nodes':{n:G.nodes[n]['xyz'] for n in nodes},'arcs':directed,'exits':sorted(exits),'regions':regions,'width':W,'median_xy':[mx,my],'annotated_water_near50m':near,'inputs_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'preprint/code/model/flood.py',ROOT/'preprint/data/cad/data/mine_network.xlsx',ROOT/'preprint/data/cad/data/mine_features.json']}}
+ design={'nodes':{n:G.nodes[n]['xyz'] for n in nodes},'arcs':directed,'exits':sorted(exits),'regions':regions,'width':W,'median_xy':[mx,my],'annotated_water_near50m':near,'inputs_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/code/model/flood.py',ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/data/cad/data/mine_network.xlsx',ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/data/cad/data/mine_features.json']}}
  (OUT/'design.json').write_text(json.dumps(design,indent=2));print('design',len(sources),{k:len(v) for k,v in regions.items()},'near water annotations',len(near),flush=True)
  results=[]
  if (OUT/'preparation.json').exists():results=json.loads((OUT/'preparation.json').read_text())
  done={x['source'] for x in results};missing=[]
  existing={}
- for p in (ROOT/'regional_escape/cad').glob('*_*.json'):
+ for p in (ROOT/'实验_06_分区预警与固定路线_初期分析/cad').glob('*_*.json'):
   d=json.loads(p.read_text())
   if 'arcs' in d and 'source' in d:existing[d['source']]=d
  for s in sources:

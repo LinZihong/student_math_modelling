@@ -1,7 +1,7 @@
 """Exact finite-scenario length-constrained common-path search; bounded execution explicitly reported."""
 import sys,json,math,heapq,random,time,csv
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'preprint/code'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/code'))
 from model.routing import Arc,latest_departure,walk
 from robust import latest_network
 import networkx as nx

@@ -1,4 +1,4 @@
-"""Worked example: the paper's flood model and escape routing on an anonymized real mine plan.
+"""Worked example: the 论文_02_洪水传播与动态逃生_Claude稿's flood model and escape routing on an anonymized real mine plan.
 
 Usage (from the project root):  python -m mine_example.scripts.simulate
 Writes mine_example/results/summary.json and the figures in mine_example/figures/.

@@ -1,6 +1,6 @@
 """Reproduce the preprint experiments without changing the source project.
 
-Run from any directory: python preprint/code/run.py
+Run from any directory: python 论文_04_绕行与延迟容忍_路线菜单探索/code/run.py
 Internal pickle caches are LOCAL trusted outputs, not distributable input formats.
 """
 import csv

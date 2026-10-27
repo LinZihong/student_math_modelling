@@ -1,6 +1,6 @@
 # Worked example: an anonymized real mine plan
 
-This folder applies the paper's method (volume-conserving flood model + time-dependent Dijkstra escape routing, code in `../model/`) to the mining plan of a working longwall coal mine.
+This folder applies the 论文_02_洪水传播与动态逃生_Claude稿's method (volume-conserving flood model + time-dependent Dijkstra escape routing, code in `../model/`) to the mining plan of a working longwall coal mine.
 
 > **Anonymization.**
 > - The published files contain no names.

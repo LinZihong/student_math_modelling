@@ -1,6 +1,6 @@
 # Flood and escape-routing model
 
-This is the code behind *Escaping a Flooding Mine* (paper: `../yale_supplement/Escaping_a_Flooding_Mine_v2.tex`).
+This is the code behind *Escaping a Flooding Mine* (paper: `../论文_03_Yale研究补充材料草稿/Escaping_a_Flooding_Mine_v2.tex`).
 
 | File | What it does |
 |---|---|
@@ -20,4 +20,4 @@ python -m competition.robustness # run times and sensitivity to subdividing tunn
 python -m mine_example.scripts.simulate && python -m mine_example.scripts.faces && python -m mine_example.scripts.figures
 ```
 
-The article that uses these results is `../paper/flood_escape_article.tex`.
+The article that uses these results is `../论文_02_洪水传播与动态逃生_Claude稿/flood_escape_article.tex`.

@@ -10,7 +10,7 @@ from matplotlib.collections import LineCollection
 from mpl_toolkits.mplot3d.art3d import Line3DCollection
 from matplotlib.colors import Normalize
 from matplotlib.lines import Line2D
-ROOT=Path(__file__).resolve().parents[1];P=Path(__file__).resolve().parent;D=ROOT/'cad_regional_audit';F=P/'figures';T=P/'tables'
+ROOT=Path(__file__).resolve().parents[1];P=Path(__file__).resolve().parent;D=ROOT/'实验_07_分区预警与固定路线_全分区分析';F=P/'figures';T=P/'tables'
 F.mkdir(exist_ok=True);T.mkdir(exist_ok=True)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':9,'axes.titlesize':11,'axes.labelsize':9,'legend.fontsize':8,'pdf.fonttype':42,'axes.spines.top':False,'axes.spines.right':False})
 d=json.loads((D/'design.json').read_text());xyz={k:np.array(v) for k,v in d['nodes'].items()};G=nx.Graph();G.add_weighted_edges_from(d['arcs']);edges=list(G.edges);rows=json.loads((D/'summary.json').read_text());colors={'NW':'#20639b','SW':'#d16925','SE':'#17817c','NE':'#8d5c9f'}

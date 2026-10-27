@@ -5,7 +5,7 @@ from collections import OrderedDict
 import numpy as np
 import networkx as nx
 ROOT=Path(__file__).resolve().parents[1]
-sys.path[:0]=[str(ROOT/'regional_escape'),str(ROOT/'preprint/code')]
+sys.path[:0]=[str(ROOT/'实验_06_分区预警与固定路线_初期分析'),str(ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/code')]
 from study import feasible
 from model.routing import Arc,latest_departure,walk
 from robust import latest_network

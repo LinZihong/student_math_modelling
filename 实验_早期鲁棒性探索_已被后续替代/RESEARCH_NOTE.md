@@ -141,7 +141,7 @@ B_e 单调不减且 B_e(d)≤d，因此该过程与正向最早到达算法的�
 
 ```sh
 python3 -m unittest discover -s research_upgrade -v
-python3 research_upgrade/experiment.py
+python3 实验_早期鲁棒性探索_已被后续替代/experiment.py
 ```
 
 本轮所有测试通过，两个附件上的实验已经实际运行。没有把新增方法或本轮实验追溯写成学生原先已完成的成果。

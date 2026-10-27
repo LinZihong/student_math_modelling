@@ -1,6 +1,6 @@
 import sys,json,random,statistics,hashlib,time
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'preprint/code'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'论文_04_绕行与延迟容忍_路线菜单探索/code'))
 from run import setup
 from model.flood import Flood
 from model.routing import arcs

@@ -23,9 +23,9 @@ CASES = {
 
 
 def legacy(case):
-    file = ROOT / 'english_translation/code' / ('appA.txt' if case == 1 else 'appB.txt')
+    file = ROOT / '论文_01_中文原文的英文翻译/code' / ('appA.txt' if case == 1 else 'appB.txt')
     source = file.read_text().split('results_edges = []')[0]
-    source = re.sub(r'excel_file = .*', 'excel_file = '+repr(str(ROOT/'original_question'/f'附件{case}.xlsx')),source)
+    source = re.sub(r'excel_file = .*', 'excel_file = '+repr(str(ROOT/'原始材料_竞赛题目与附件'/f'附件{case}.xlsx')),source)
     # These actual workbooks have ONE header row; header=1 drops P0000/H0000.
     source = source.replace('header=1', 'header=0')
     source = source.replace('pq = []', 'audit_front = {}\npq = []')

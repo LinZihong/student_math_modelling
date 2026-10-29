@@ -45,6 +45,7 @@ claims={
  '56.9\\%':pct(S['inflow']['quadrant']['30']['pairs']['shortest'])=='56.9\\%','66.5\\%':pct(S['inflow']['quadrant']['30']['pairs']['avoid'])=='66.5\\%','71.6\\%':pct(S['inflow']['quadrant']['30']['pairs']['robust'])=='71.6\\%','stays at 99.7\\%':pct(S['inflow']['quadrant']['30']['per_pair']['exact'])=='99.7\\%',
  '211 junctions':S['breadth']['50']['sources']==211,'93.8\\%':pct(S['breadth']['50']['pairs']['shortest'])=='93.8\\%','97.8\\%':pct(S['breadth']['50']['pairs']['robust'])=='97.8\\%','is 2.1\\%':pct(S['breadth']['50']['pairs']['information_limited'])=='2.1\\%','19.0\\%':pct(S['breadth']['1000']['pairs']['information_limited'])=='19.0\\%',
  # Section 3 and appendices
+ '1.02\\times10^{-13}':max(r['mass_residual'] for r in json.loads((P.parent/'实验_07_分区预警与固定路线_全分区分析/preparation.json').read_text()))<=1.02e-13,
  '2,558,244':S['queries']==2558244==V['record_consistency']['records'],'all but seven finished':len(TR)==7 and all(r['status']!='timeout' for r in TR),'within 18 seconds':max(r['seconds'] for r in TR)<=18 and all(r['status']=='no_common_route' for r in TR),'no common route exists':not S['timeouts'] and V['record_consistency']['timeouts']==0,
  '19,044 queries':V['regression_vs_experiment_07']=={'compared':19044,'mismatches':0},'747 parent':V['nested_zones']=={'parent_child_pairs':747,'violations':0},'23,012':V['forward_walks']=={'checks':23012,'failures':0},
 }

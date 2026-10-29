@@ -1,0 +1,13 @@
+{
+ "cut_node": "P0922",
+ "cut_km_from_shaft": 0.12941942531516584,
+ "origin": "P0014",
+ "shortest_km": 6.878742635166834,
+ "robust_km": 8.364675408539247,
+ "extra": 0.21601807949257212,
+ "shortest_shaft": "P0986",
+ "robust_shaft": "P1081",
+ "shortest_deadline_min": -87.58475571771179,
+ "robust_deadline_min": 231.6127764164685,
+ "candidates": 53
+}

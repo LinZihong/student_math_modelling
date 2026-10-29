@@ -1,0 +1,79 @@
+[
+ {
+  "status": "no_common_route",
+  "active": 22,
+  "task": "zones_k2_v2_z1_q1.0",
+  "exp": "E2_resolution",
+  "origin": "P0011",
+  "tau": 30,
+  "seconds": 6.9,
+  "i": 0,
+  "j": 10
+ },
+ {
+  "status": "no_common_route",
+  "active": 22,
+  "task": "zones_k2_v2_z1_q1.0",
+  "exp": "E2_resolution",
+  "origin": "P0012",
+  "tau": 30,
+  "seconds": 6.9,
+  "i": 0,
+  "j": 11
+ },
+ {
+  "status": "no_common_route",
+  "active": 22,
+  "task": "zones_k2_v2_z1_q1.0",
+  "exp": "E2_resolution",
+  "origin": "P0063",
+  "tau": 30,
+  "seconds": 17.7,
+  "i": 0,
+  "j": 62
+ },
+ {
+  "status": "no_common_route",
+  "active": 21,
+  "task": "zones_k2_v2_z1_q1.0",
+  "exp": "E2_resolution",
+  "origin": "P0064",
+  "tau": 30,
+  "seconds": 6.7,
+  "i": 0,
+  "j": 63
+ },
+ {
+  "status": "no_common_route",
+  "active": 11,
+  "task": "zones_k1_v0_z0_q2.0",
+  "exp": "E4_inflow",
+  "origin": "P0849",
+  "tau": 30,
+  "seconds": 3.3,
+  "i": 0,
+  "j": 848
+ },
+ {
+  "status": "no_common_route",
+  "active": 11,
+  "task": "zones_k2_v0_z0_q2.0",
+  "exp": "E4_inflow",
+  "origin": "P0849",
+  "tau": 30,
+  "seconds": 3.4,
+  "i": 0,
+  "j": 848
+ },
+ {
+  "status": "no_common_route",
+  "active": 11,
+  "task": "zones_k4_v0_z0_q2.0",
+  "exp": "E4_inflow",
+  "origin": "P0849",
+  "tau": 30,
+  "seconds": 3.5,
+  "i": 0,
+  "j": 848
+ }
+]

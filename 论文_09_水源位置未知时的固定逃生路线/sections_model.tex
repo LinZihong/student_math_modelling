@@ -1,0 +1,65 @@
+\section{The planning problem}\label{sec:setup}
+\subsection{The mine}
+Our test case is a tunnel network extracted from an anonymized CAD plan of a working longwall coal mine (Figure~\ref{fig:geometry}). It has 1,592 junctions and 2,084 tunnels with a total length of about 248\,km. A main roadway runs diagonally across the mine, and longwall panels branch off it on both sides. The seam dips gently: tunnel floors in the west lie about 80\,m higher than those in the far northeast, so water tends to run east and northeast. All four shafts stand on the main roadway, within about half a kilometer of each other near the middle of the mine. Once a worker reaches the bottom of a shaft we count the escape as complete; the trip up the shaft is not modeled.
+
+To build the network we joined nearly touching lines on the plan, split lines where they cross, and connected the shafts to the tunnels. The plan gives roof elevations, which we use as relative floor elevations by assuming all tunnels have the same height.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/geometry3d.pdf}
+\caption{The mine in three dimensions, with the vertical scale exaggerated 60 times. Dark lines are the tunnels at their floor elevation; light gray lines are the same tunnels projected onto the floor of the box. The workings dip gently from the longwall panels in the west, about 80\,m above the lowest point, toward the far northeast. The four shafts (red) stand close together on the main roadway near the middle of the mine; their height above the workings is not to scale.}\label{fig:geometry}
+\end{figure}
+
+\subsection{Sources and alarm zones}
+Any junction except the four shafts and one auxiliary node can be the place where water enters, which we call the \emph{source}. That gives 1,587 possible sources, and the same 1,587 junctions are the possible starting points of workers. Each flood has exactly one source, and we treat all sources as equally likely.
+
+The alarm divides the mine into zones and reports the zone that contains the source. It does not report the source itself. We use two kinds of zones. The first is the four \emph{quadrants} formed by the median $x$ and $y$ coordinates of the junctions (Figure~\ref{fig:plan}); they are the simplest possible split. Their boundaries happen to cross right at the shaft cluster, a fact that turns out to matter. The second is a family of finer zones that we use to measure the value of better information. We cut the mine along a straight line into two halves that contain the same tunnel length, cut each half along the perpendicular direction, and so on, which gives 2, 4, 8, \ldots, 128 zones of roughly equal tunnel length. With 128 zones, a zone holds about 2\,km of tunnel. To check that the results do not depend on where the cuts fall, we repeat the construction with the first cut at three angles, 0, 60 and 120 degrees. In a real mine, the zones would follow the placement of water sensors; ours are geometric stand-ins that let us vary the resolution in a controlled way.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=.62\linewidth]{figures/plan.pdf}
+\caption{Plan view of the mine and the four quadrant alarm zones (dashed boundaries). All four shafts (red squares) sit on the main roadway where the zone boundaries cross; the inset enlarges this area.}\label{fig:plan}
+\end{figure}
+
+\subsection{How late the warning can be}
+The alarm also comes late. Water may travel some distance before it reaches a sensor, and passing the warning on to workers takes more time. If the inrush starts at time $t_0$ and the worker leaves on receiving the alarm at time $t_{\rm rec}$, the worker sets off a delay $d=t_{\rm rec}-t_0$ after the inrush began. The planner cannot know $d$ in advance, so we ask for routes that work for every delay up to a target $\tau$. Our main target is 30 minutes, and we vary it from zero to two hours. The target is about how late the worker may set off, not about how long the walk takes.
+
+\subsection{The flood and walking model}\label{sec:hazard}
+To check a route, we need to know, for each source, when each tunnel first gets wet and when it becomes too deep to pass. We compute these times with an event-driven model that tracks the volume of water in every tunnel, developed for a modeling-competition problem on mine inrush \cite{cumcm}. Water arriving at a junction divides equally among the level or downhill tunnels leaving it, and goes uphill only when no such tunnel is available. A thin layer of water covers a tunnel before the water moves on beyond it. Dead-end branches fill up, and water then backs up behind them. The depth in a tunnel is its stored volume divided by its floor area. Appendix~\ref{app:flood} gives the full rules.
+
+The main runs use a constant inflow of $0.5\,\mathrm{m^3/s}$, tunnels 4.99\,m wide and 3\,m high, and a 0.1\,m water layer at the advancing front. A tunnel closes for good when its mean depth reaches 0.3\,m. Workers walk at 1.3\,m/s in dry tunnels; in wet tunnels they walk at 0.7\,m/s with the flow and 0.5\,m/s against it. If water reaches a tunnel while a worker is inside it, the worker slows down from that moment. These values define a test case; they are not measured walking speeds or a validated safety threshold.
+
+One property of this model simplifies everything that follows. Water never recedes, so a worker who enters a tunnel earlier never leaves it later. It follows that a route that works for a worker who sets off at $\tau$ also works for any earlier departure, and checking a whole range of delays only requires checking the latest one (Appendix~\ref{app:math}).
+
+\subsection{Four plans}
+A plan assigns each starting point $v$ and each alarm zone $Z$ one route, fixed in advance. Every route in every plan ends at the bottom of one of the four shafts; the plans differ in which shaft they choose and how they get there. We compare four plans.
+\begin{description}[leftmargin=1.2em,itemsep=3pt]
+\item[Shortest route.] Every worker takes the shortest route to the nearest shaft, whatever the alarm says. This is the natural default.
+\item[Avoid-the-zone rule.] Among all routes to a shaft, the worker takes the shortest of those that spend the least distance in tunnels touching the alarm zone. A planner could apply this rule with a map alone. The rule does not look at the flood when it picks a route; we check its routes afterwards, with the same test as every other plan.
+\item[Robust route.] Among all routes to a shaft, the shortest one that gets the worker out for every possible source in the zone, checked one flood at a time, and for every delay up to $\tau$. Unlike the avoid-the-zone rule, it uses the flood model to pick the route, and it may cross tunnels of the zone that the water reaches late. Finding it requires the search described in Section~\ref{sec:compute}. When no such route exists, the starting point cannot be protected by any fixed plan for that zone.
+\item[Exact source.] For comparison only, the best route for a worker who is told the exact source. No alarm system delivers this, but it marks a ceiling that no plan can beat.
+\end{description}
+Let $\Sc_Z$ be the sources in zone $Z$ and $L(P)$ the length of route $P$. The robust route has length
+\begin{equation}
+\begin{split}
+ L_Z^*(v,\tau)=\min\bigl\{L(P):{}&P\text{ leads from }v\text{ to a shaft and works}\\
+ &\text{for departure at }\tau\text{ for every source in }\Sc_Z\bigr\},
+\end{split}
+ \label{eq:main}
+\end{equation}
+which is infinite when no route qualifies. Because it is the shortest route with the guarantee, its extra length over the shortest dry route measures the least walking that the guarantee demands, and any cap on walking can be applied afterwards.
+
+\subsection{How we measure protection}
+We say a plan \emph{protects} a starting point for a zone when the route it assigns works for every source in the zone and every delay up to $\tau$. For the quadrants, we count protected starting points outside and inside each zone separately. Workers inside the zone may be standing next to the source, and their prospects are much worse.
+
+To compare zones of different sizes, we also use a whole-mine measure. Consider every pair of a starting point and a source, 1,587 by 1,587 pairs in all. A pair is protected if the plan's route for the source's zone is guaranteed for that starting point. The share of protected pairs is the chance that a randomly placed worker is protected in a flood from a randomly placed source. Each unprotected pair falls into one of two groups. If even the exact source would not help, because the worker has no way out of that flood after a delay of $\tau$, we call the pair \emph{no way out}. Otherwise, a route exists for that flood, but no single route works for the whole zone; we call the pair \emph{information-limited}, because a finer alarm could help it.
+
+\section{Finding a route that works for every source}\label{sec:compute}
+Computing the best route for each source separately and comparing the answers does not give one route that works for all of them, so the search has to consider all floods in the zone at once. We do this exactly for a finite set of sources.
+
+\paragraph{One clock for each flood.}
+Imagine that a partial route carries one clock for each flood, showing when the worker would reach the current junction in that flood. The search stores \emph{labels} at each junction, each recording a route length and the arrival times in all floods. Extending a route along a tunnel updates every clock, using that flood's wetting time, closure time and walking speed. If the tunnel would already be closed in any flood when the worker gets there, the extension is discarded. If one label at a junction is no longer than another and arrives no later in every flood, the other label can be dropped, since arriving earlier never hurts. The search expands labels in order of length plus the remaining dry distance to a shaft, so the first complete route it finds is the shortest route that works in every flood.
+
+\paragraph{Adding floods only when needed.}
+A zone can hold hundreds of sources, and most of them do not matter for a given starting point. We start with the source that is worst for the shortest route, find the shortest route that works for it, and check that route against every source in the zone with a fast backward calculation. If some source defeats the route, we add that source and search again; otherwise the route is optimal for the whole zone. If no route works even for the sources added so far, none works for the zone. The procedure is exact and ends after at most as many rounds as there are sources (Appendix~\ref{app:math}).
+
+\paragraph{Scale.}
+Our experiments solve this problem 2,558,244 times, once for every starting point, zone, delay target and inflow considered. With time limits of three seconds per search and 30 seconds per query, all but seven finished. We re-solved those seven, all for workers inside zones that cover at least a quarter of the mine, with a limit of one hour. Each finished within 18 seconds and showed that no common route exists, so every result reported here is exact. We checked the implementation against brute-force enumeration on small networks, confirmed that the results obey the logical relations that must hold between the four plans, and walked a sample of routes forward against every source with separate code (Appendix~\ref{app:checks}).

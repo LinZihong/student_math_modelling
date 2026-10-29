@@ -1,0 +1,25 @@
+{
+ "question": "What does a fixed escape plan need to know about where flood water enters, and what should it do with a zone-level alarm?",
+ "network": "Anonymized CAD-derived mine network (1,592 junctions, 2,084 tunnels, 248 km, 4 shaft-bottom exits); flood schedules from the volume-transfer model, cached in 实验_07/fields and 实验_07/upper",
+ "sources_and_origins": "All 1,587 non-exit, non-auxiliary junctions are both possible sources (one per flood) and starting points",
+ "plans_compared": {
+  "shortest": "Shortest dry route to the nearest shaft, ignoring the alarm",
+  "avoid_zone": "Among routes to a shaft, the shortest of those with the least tunnel length touching the alarm zone (origin exempt)",
+  "robust": "Exact shortest single route that works for every source in the alarm zone and every departure up to the delay target",
+  "exact_source": "Best route chosen with the exact source known (single-source latest departure); an upper bound for any plan"
+ },
+ "experiments": {
+  "E1_delay": "Quadrant zones; delay targets 0,5,10,15,20,30,45,60,90,120 min; inflow 0.5 m3/s",
+  "E2_resolution": "Recursive equal-tunnel-length bisection into 1,2,4,...,128 zones, three cutting angles (0,60,120 deg), plus quadrants and two partitions cut through the shaft cluster (2 and 4 zones); 30 min for all; 10 and 60 min for angle 0, quadrants and shaft cuts",
+  "E3_breadth": "Quadrant zones restricted to sources within 50,100,200,500,1000 m of CAD-marked water areas; 30 min",
+  "E4_inflow": "Inflow 1.0 m3/s (all flood times halved): quadrants at 10,30,60 min; angle-0 zone series at 30 min"
+ },
+ "metrics": {
+  "zone_level": "Starting points protected, split into inside and outside the alarm zone",
+  "whole_mine": "Share of (starting point, source) pairs for which the plan for the source's zone is guaranteed; every source equally likely",
+  "cost": "Extra length of the robust route over the shortest route; caps evaluated after the fact since the robust route is the shortest qualifying route"
+ },
+ "parameters": {"speeds_m_s": [1.3, 0.7, 0.5], "closure_depth_m": 0.3, "front_depth_m": 0.1, "width_m": 4.99, "height_m": 3.0, "time_limit_s": {"subproblem": 3, "query": 30}},
+ "checks": "Reproduce 实验_07 quadrant results at 10/20/30 min exactly; independent forward walks of sampled robust and zone-avoiding routes against every zone source; partition validity",
+ "limitations": "Uncalibrated flood proxy; zones are geometric stand-ins for sensor zones; junction counts are not worker counts"
+}

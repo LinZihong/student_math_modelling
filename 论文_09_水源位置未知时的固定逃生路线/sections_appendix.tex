@@ -39,14 +39,12 @@ Fix a starting point $v$, a target $\tau$, and a finite source set $\Sc_Z$. Supp
 \begin{proof}
 Every route that works for $\Sc_Z$ also works for $T$, so the subset optimum is a lower bound on the full optimum. If the subset route passes all sources, it is also an upper bound, and the two agree. Infeasibility for $T$ implies infeasibility for any larger set. A violated source cannot already be in $T$, so each failed check strictly enlarges $T$, which stays inside the finite set $\Sc_Z$.
 \end{proof}
-The result assumes that each search finishes; a search stopped by a time limit would prove nothing. Floating-point feasibility checks use tolerances of $10^{-7}$ seconds or less, which are not a physical safety margin.
+Floating-point feasibility checks use tolerances of $10^{-7}$ seconds or less, which are not a physical safety margin.
 
 \paragraph{Two consequences used in the paper.}
 First, splitting a zone can only help: a route that works for every source in $Z$ works for every source in any part of $Z$, so the robust plan for a finer partition protects every pair that the coarser one protects. Second, a menu of routes indexed by the known delay cannot extend the guarantee for a fixed zone: to cover all delays up to $\tau$, the menu must include, for delay $\tau$, a route that works for every source, and by the first proposition that route alone also works for every earlier delay.
 
-\section{Flood rules and reproducibility}\label{app:flood}
+\section{Flood propagation rules}\label{app:flood}
 Each tunnel stores a volume between zero and its capacity $WH\ell$, where $W=4.99$\,m and $H=3$\,m. When water first reaches a level or downhill tunnel, the tunnel receives a layer of volume $Wh_0\ell$ with $h_0=0.1$\,m. If its far junction is still dry, the tunnel then passes water on and joins a propagation tree; if the far junction is already wet, it stores further water. An uphill tunnel fills from below before passing water to a dry junction above it. At a wet junction, incoming flow is divided equally among the level or downhill tunnels still available (with a 0.005\,m elevation tolerance), and uphill tunnels are used only when none remain. When a dead end fills up, the tunnel feeding it stops passing water on and stores it instead. Inflow trapped behind full tunnels is moved through them to the nearest junction that can still store water, and overflow after saturation is counted in the volume balance. Simultaneous events are ordered by junction and tunnel identifiers. A tunnel closes when its mean depth reaches 0.3\,m. Walking switches to wet speed when water first enters a tunnel; the model does not track a moving front inside a tunnel.
 
 Multiplying a constant inflow by a factor divides every flood event time by the same factor, so the doubled-inflow floods are the nominal floods with all times halved. A direct rerun for one source reproduced the scaled times exactly.
-
-The project archive holds, for this study, the alarm-zone definitions (\texttt{partitions.json}), the study design (\texttt{protocol.json}), one compressed result file per zone, inflow and set of delay targets, the robust and zone-avoiding routes for the quadrant zones, and the summaries from which every table and figure is generated. The flood schedules for all 1,587 sources are stored once and shared by all experiments.

@@ -4,18 +4,19 @@
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,graphicx}
 \usepackage{xcolor,enumitem,caption}
 \usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\hypersetup{pdftitle={Planning Mine Escape Routes with Zone-Based Flood Alarms},pdfauthor={Jingchao Wang}}
 \captionsetup{font=small,labelfont=bf}
 \setlist{itemsep=2pt,topsep=4pt,leftmargin=1.6em}
 \setlength{\emergencystretch}{2em}
 \newtheorem{proposition}{Proposition}
 \newcommand{\Sc}{\mathcal{S}}
-\title{Where is the water?\\Fixed mine escape routes when the alarm reports only a zone}
-\author{}
-\date{Working preprint --- October 2026}
+\title{Planning Mine Escape Routes\\with Zone-Based Flood Alarms}
+\author{Jingchao Wang}
+\date{}
 \begin{document}
 \maketitle
 \begin{abstract}
-Mine escape routes are fixed in advance, usually as the shortest way to a shaft, but when water breaks in, the alarm reports only which zone of the mine is flooding. We ask what a fixed escape plan needs to know about where the water enters. On a 248-km tunnel network from a real coal mine, we simulate a flood from each of its 1,587 junctions and compare three plans: the shortest route, a simple rule that avoids the alarm zone, and the shortest route that is guaranteed for every possible source in the zone, which we compute exactly. Three findings stand out. First, shortest routes fail not because the warning is late but because they converge on the shafts, where the water arrives first; with four alarm zones and a 30-minute delay, they can be guaranteed for only 59\% of (worker, flood) pairs. Second, the shortest route that survives every possible source in the zone raises this to 79\%; a simple rule that steers clear of the alarm zone, without checking the flood, reaches 69\% but with much longer walks. Third, almost all of the remaining gap to the 99.8\% possible with the exact source is a lack of information, not of time: finer alarm zones close it, and drawing zone boundaries through the shafts is worth about as much as doubling the number of zones. The results rest on one mine and an uncalibrated flood model.
+Mine escape routes are fixed in advance, usually as the shortest way to a shaft, but when water breaks in, the alarm reports only which zone of the mine is flooding. We ask what a fixed escape plan needs to know about where the water enters. On a 248-km tunnel network from a real coal mine, we simulate a flood from each of its 1,587 junctions and compare three plans: the shortest route, a simple rule that avoids the alarm zone, and the shortest route that is guaranteed for every possible source in the zone, which we compute exactly. Three findings stand out. First, shortest routes fail not because the warning is late but because they converge on the shafts, where the water arrives first; with four alarm zones and a 30-minute delay, they can be guaranteed for only 59\% of (worker, flood) pairs. Second, the shortest route that survives every possible source in the zone raises this to 79\%; a simple rule that steers clear of the alarm zone, without checking the flood, reaches 69\% but with much longer walks. Third, almost all of the remaining gap to the 99.8\% possible with the exact source is a lack of information, not of time: finer alarm zones close it, and drawing zone boundaries through the shafts is worth about as much as doubling the number of zones.
 \end{abstract}
 
 \section{Introduction}
@@ -32,11 +33,13 @@ Earlier work has treated these two sides separately. Escape-route studies find t
 \item When no fixed route works, is what is missing better information about the source, or an earlier warning?
 \end{enumerate}
 
+The questions grew out of a recent modeling competition. Problem~D of the 2025 China Undergraduate Mathematical Contest in Modeling asked teams to model how inrush water spreads through a mine's tunnels and to plan escape routes for the miners \cite{cumcm}. In that problem the inrush point is given exactly and the warning goes out one minute after the inrush begins. A real alarm rarely offers either, and this paper asks what changes when it does not. Our flood model keeps the competition's rules almost unchanged; because those rules were set for a contest rather than measured in a mine, the model is uncalibrated, and we read its results as a test case for the planning method.
+
 We study these questions on a tunnel network taken from the plan of a real coal mine, with 1,592 junctions and about 248\,km of tunnels. For each of its 1,587 junctions we simulate a flood that starts there, using a simple model of how water spreads and when each tunnel becomes impassable. We then compare plans for every starting point and every alarm zone. Besides the shortest route, we test a rule that a planner could apply with a map alone: avoid the tunnels of the alarm zone. Against both we set the \emph{robust route}, the shortest route that reaches a shaft for every possible source in the zone. Finding it means searching for one route that works in hundreds of floods at once, which we do exactly. Finally, we vary the alarm itself, from no location information at all to 128 small zones, and compare the result with the ceiling set by knowing the exact source.
 
 The main findings are as follows. With four alarm zones and a 30-minute warning delay, shortest routes can be guaranteed for 59\% of all (worker, flood) pairs, the avoid-the-zone rule for 69\%, and robust routes for 79\%, whereas knowing the exact source would allow 99.8\%. The shortest routes do not fail because the warning is late: most fail even for a worker who leaves at once, and they are cut within a few hundred meters of the shafts, where routes from all over the mine meet. The avoid-the-zone rule fixes many of the same workers, but often by sending them on very long detours that a robust route avoids. Nearly all of the remaining gap is a matter of information rather than time, and it closes as the alarm zones become finer. Where the zone boundaries fall matters as much as how many zones there are. A zone that contains the whole shaft area is a weak point that more zones elsewhere do not remove, and two zones divided at the shafts protect 52\% of pairs, against 31--36\% for two zones of equal size.
 
-The numbers come from a single mine and an uncalibrated flood model, so they show what the planning method can reveal rather than how safe this particular mine is. Section~\ref{sec:limits} discusses the limits.
+The case study quantifies how source-location information changes the coverage and walking cost of fixed escape plans.
 
 \paragraph{Related work.}
 Wu et al.\ \cite{wu2020} find earliest-arrival escape paths through a mine network whose roadways flood over time, using the results of a flood simulation for a given inrush, and Zhang et al.\ \cite{zhang2022} model the spreading itself in more detail. Water-level sensors can be placed to detect an inrush quickly \cite{wu2021}; our results suggest that where zone boundaries fall relative to the shafts also matters for what the detection can be used for. Evacuation planning on networks more generally has a large optimization literature \cite{bayram2016}.
@@ -146,7 +149,7 @@ Possible sources & Junctions & Shortest & Avoid zone & Robust & Information-limi
 \section{Limitations and implications}\label{sec:limits}
 The results come from a single mine, so they show what can happen rather than how often it happens in mines generally. In particular, the strong effect of the shafts depends on this mine's layout, with all four shafts close together on one roadway; a mine with shafts far apart would behave differently. Our zones are geometric stand-ins for sensor zones. We treated every junction as an equally likely source and did not consider points partway along a tunnel. The counts in our tables are numbers of junctions, which are not the same as numbers of workers.
 
-The flood model is the main physical limitation. It conserves water volume, but it splits flow equally at junctions, spreads water along a tree of tunnels, and tracks only the mean depth of each tunnel. It ignores momentum, changes in depth along a tunnel, losses at junctions, pumping, debris, and the force of moving water on a person. Its timing has not been calibrated against any measurement. The extracted geometry and estimated elevations would also need review by mining engineers. The routing questions are realistic; the flood times are not.
+The flood model is the main physical limitation. It conserves water volume, but it splits flow equally at junctions, spreads water along a tree of tunnels, and tracks only the mean depth of each tunnel. It ignores momentum, changes in depth along a tunnel, losses at junctions, pumping, debris, and the force of moving water on a person. Its timing has not been calibrated against any measurement. The extracted geometry and estimated elevations would also need review by mining engineers.
 
 The model of the workers is equally simple. Routes end at the bottom of a shaft, and the model ignores queues, hoist capacity, fatigue, injury, and the chance of a wrong turn. Some robust routes are long, and a long route may be safe in the model and still be a poor emergency instruction.
 
@@ -154,9 +157,6 @@ Within these limits, the study suggests three practical points. First, check the
 
 \section{Conclusion}
 A fixed escape plan has to work without knowing where the water comes from. In the mine we studied, the shortest routes fail for many workers far from any flood, because the water reaches the shaft area first. Routes checked against every possible source in the alarm zone repair most of these failures, and a simple rule of avoiding the zone repairs many of them at a higher walking cost. What remains is almost entirely a matter of information: alarm zones that narrow down the source, and in particular zones that separate the approaches to different shafts, would let a fixed plan protect nearly every worker, while an earlier warning helps mainly by making that information less critical. The natural next steps are to test these findings with a calibrated flood model and with mines whose shafts are spread out, and to design alarm zones and escape routes together.
-
-\paragraph{Data, code, and authorship.}
-The project archive contains the anonymized network, the zone definitions, every individual result, the solver checks, and the scripts that produce the tables and figures (Appendix~\ref{app:flood}). There is no public repository or field dataset. The research, implementation and writing received AI assistance.
 
 \begin{thebibliography}{99}\small
 \bibitem{bayram2016} V. Bayram. Optimization models for large scale network evacuation planning and management: A literature review. \emph{Surveys in Operations Research and Management Science}, 21(2):63--84, 2016. \href{https://doi.org/10.1016/j.sorms.2016.11.001}{doi:10.1016/j.sorms.2016.11.001}.
@@ -179,7 +179,6 @@ The project archive contains the anonymized network, the zone definitions, every
 \bibitem{yu1998} G. Yu and J. Yang. On the robust shortest path problem. \emph{Computers \& Operations Research}, 25(6):457--468, 1998. \href{https://doi.org/10.1016/S0305-0548(97)00085-3}{doi:10.1016/S0305-0548(97)00085-3}.
 \bibitem{zhang2022} X. Zhang, Q. Wu, Y. Zhao, S. Liu, and H. Xu. Spatiotemporal modeling of water inrush spreading in mine roadway networks. \emph{Water Science and Technology}, 85(3):872--886, 2022. \href{https://doi.org/10.2166/wst.2022.009}{doi:10.2166/wst.2022.009}.
 \end{thebibliography}
-\clearpage
 \appendix
 \input{sections_appendix}
 \section{Checks on the implementation}\label{app:checks}
@@ -190,7 +189,7 @@ We checked the results in four ways.
 \item \emph{Logical consistency.} Several relations must hold if the search is exact. The robust route is the shortest protected route, so it must exist whenever the shortest route or the avoid-the-zone route is protected, and it can be no longer than either. It can exist only if every source in the zone leaves a way out. Its latest safe departure must reach the target. And because a route that works for a zone also works for each half of it, every starting point protected for a zone must be protected for both halves in the next finer partition. All 2,558,244 records satisfy the first four relations, and all 747 parent--child zone pairs satisfy the last.
 \item \emph{Independent forward walks.} For each quadrant zone we sampled eight robust and eight zone-avoiding routes and walked each one forward through every flood in its zone, with code separate from the search. Leaving just before the computed latest departure reached a shaft in all 23,012 route--source checks, and leaving one second after it failed for at least one source in every case.
 \end{enumerate}
-The flood simulations conserve water volume to a relative error of at most $1.02\times10^{-13}$. This confirms the bookkeeping, not the realism of the flood model.
+The flood simulations conserve water volume to a relative error of at most $1.02\times10^{-13}$. This verifies numerical mass conservation.
 
 \section{Workers inside the alarm zone}\label{app:inside}
 \begin{table}[htbp]

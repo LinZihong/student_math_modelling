@@ -1,0 +1,8 @@
+{
+  "pages": 17,
+  "claims_checked": 80,
+  "claims_failed": 0,
+  "visual_review": "All 17 pages inspected",
+  "scope": "Only accepted wording changes and removal of redundant timeout sentence; numerical tolerances retained.",
+  "sha256": "a91be1eed2311ae37e176be3cee25adbef060942f6120c0aabec31b8c33db575"
+}

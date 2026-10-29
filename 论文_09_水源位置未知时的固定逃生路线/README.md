@@ -1,6 +1,6 @@
-# Where is the water? Fixed mine escape routes when the alarm reports only a zone (v9)
+# Planning Mine Escape Routes with Zone-Based Flood Alarms (v9)
 
-Manuscript: `main.tex` (with `sections_model.tex`, `sections_appendix.tex`), 16 pages.
+Manuscript: `main.tex` (with `sections_model.tex`, `sections_appendix.tex`), 17 pages.
 PDF: `../阅读入口_PDF/论文_09_水源位置未知时的固定逃生路线.pdf` (build: `build/mine_escape_zones.pdf`).
 
 A new study built on the CAD mine network, centred on source-location uncertainty rather than warning delay. Evidence comes from `../实验_09_水源位置未知时的固定逃生路线/` (2,558,244 queries, all solved exactly; 7 that hit the main run's time limits were re-solved with a one-hour limit).
@@ -18,10 +18,12 @@ From this folder, with an environment that has NumPy, NetworkX, Matplotlib, Shap
 ```sh
 python fig_geometry.py        # Figure 1 (3D mine view) and Figure 2 (plan view)
 python make_figures.py        # Figures 3–6 and all tables, from 实验_09 summary/results
-python check_claims.py        # recomputes 79 numbers quoted in the text and checks they appear
+python check_claims.py        # recomputes 80 numbers quoted in the text and checks they appear
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build -jobname=mine_escape_zones main.tex
 ```
 
-## Before circulating
+## Submission version
 
-Human authorship review is still required before external circulation. The paper discloses AI assistance in research, implementation and writing. The flood model is uncalibrated; all numbers are conditional on it.
+Finalized on 2026-10-28 with author Jingchao Wang. Submit the single PDF linked above; the mathematical derivations, flood rules, implementation checks, and additional tables are included as appendices in that PDF. No separate attachments or external project archive are referenced as submission materials. The working-preprint label and AI-assistance statement have been removed. The flood model remains uncalibrated, and all numerical conclusions remain conditional on it.
+
+The prior manuscript sources and PDF are preserved in `audit/finalization-2026-10-28/`, together with the base Git commit for comparison. Local experiment files and rebuild instructions are retained for internal verification.

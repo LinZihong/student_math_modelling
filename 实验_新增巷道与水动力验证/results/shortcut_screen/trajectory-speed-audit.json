@@ -1,0 +1,569 @@
+[
+  {
+    "stem": "q1p4_added0_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 0.7,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 2592.0,
+    "origin_recrossings_below03": 3,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 2285.714285714285,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.35341512731143404
+          },
+          "0.3": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.35341512731143404
+          },
+          "0.4": {
+            "latest_grid_s": 1314.0,
+            "feasible_departure_count": 658,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.35341512731143404
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 1428.5714285714394,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29012612785611835
+          },
+          "0.3": {
+            "latest_grid_s": 418.0,
+            "feasible_departure_count": 210,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29012612785611835
+          },
+          "0.4": {
+            "latest_grid_s": 2170.0,
+            "feasible_departure_count": 1086,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29012612785611835
+          }
+        }
+      }
+    ]
+  },
+  {
+    "stem": "q1p4_added0_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 1.0,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 2592.0,
+    "origin_recrossings_below03": 3,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 1600.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29068753123283386
+          },
+          "0.3": {
+            "latest_grid_s": 246.0,
+            "feasible_departure_count": 124,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29068753123283386
+          },
+          "0.4": {
+            "latest_grid_s": 2000.0,
+            "feasible_departure_count": 1001,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.29068753123283386
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 1000.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.28152984380722046
+          },
+          "0.3": {
+            "latest_grid_s": 846.0,
+            "feasible_departure_count": 424,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.28152984380722046
+          },
+          "0.4": {
+            "latest_grid_s": 2600.0,
+            "feasible_departure_count": 1301,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.28152984380722046
+          }
+        }
+      }
+    ]
+  },
+  {
+    "stem": "q1p4_added0_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 1.3,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 2592.0,
+    "origin_recrossings_below03": 3,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 1230.769230769244,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.2891483948780943
+          },
+          "0.3": {
+            "latest_grid_s": 616.0,
+            "feasible_departure_count": 309,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.2891483948780943
+          },
+          "0.4": {
+            "latest_grid_s": 2368.0,
+            "feasible_departure_count": 1185,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.2891483948780943
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 769.2307692307758,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.25633644599181044
+          },
+          "0.3": {
+            "latest_grid_s": 1076.0,
+            "feasible_departure_count": 539,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.25633644599181044
+          },
+          "0.4": {
+            "latest_grid_s": 2600.0,
+            "feasible_departure_count": 1301,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.25633644599181044
+          }
+        }
+      }
+    ]
+  },
+  {
+    "stem": "q1p4_added1_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 0.7,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 126.0,
+    "origin_recrossings_below03": 5,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 2285.714285714285,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.3016022188322881
+          },
+          "0.3": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.3016022188322881
+          },
+          "0.4": {
+            "latest_grid_s": 280.0,
+            "feasible_departure_count": 140,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.3016022188322881
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 1428.5714285714394,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 74.0,
+            "feasible_departure_count": 38,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.18024364539555152
+          },
+          "0.3": {
+            "latest_grid_s": 134.0,
+            "feasible_departure_count": 65,
+            "feasibility_reopens": 2,
+            "initial_peak_depth": 0.18024364539555152
+          },
+          "0.4": {
+            "latest_grid_s": 280.0,
+            "feasible_departure_count": 140,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.18024364539555152
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "E"
+        ],
+        "travel_s": 857.1428571428596,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 76.0,
+            "feasible_departure_count": 9,
+            "feasibility_reopens": 9,
+            "initial_peak_depth": 0.24715847206651922
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.24715847206651922
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.24715847206651922
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "C",
+          "E"
+        ],
+        "travel_s": 1714.2857142857292,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 76.0,
+            "feasible_departure_count": 9,
+            "feasibility_reopens": 9,
+            "initial_peak_depth": 0.24715847206651922
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.24715847206651922
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.24715847206651922
+          }
+        }
+      }
+    ]
+  },
+  {
+    "stem": "q1p4_added1_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 1.0,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 126.0,
+    "origin_recrossings_below03": 5,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 1600.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 82.0,
+            "feasible_departure_count": 42,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.18072308599948883
+          },
+          "0.3": {
+            "latest_grid_s": 134.0,
+            "feasible_departure_count": 65,
+            "feasibility_reopens": 2,
+            "initial_peak_depth": 0.18072308599948883
+          },
+          "0.4": {
+            "latest_grid_s": 280.0,
+            "feasible_departure_count": 140,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.18072308599948883
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 1000.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 82.0,
+            "feasible_departure_count": 42,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.16546101868152618
+          },
+          "0.3": {
+            "latest_grid_s": 134.0,
+            "feasible_departure_count": 65,
+            "feasibility_reopens": 2,
+            "initial_peak_depth": 0.16546101868152618
+          },
+          "0.4": {
+            "latest_grid_s": 280.0,
+            "feasible_departure_count": 140,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.16546101868152618
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "E"
+        ],
+        "travel_s": 600.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 78.0,
+            "feasible_departure_count": 10,
+            "feasibility_reopens": 9,
+            "initial_peak_depth": 0.19212914385585758
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.19212914385585758
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.19212914385585758
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "C",
+          "E"
+        ],
+        "travel_s": 1200.0,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 78.0,
+            "feasible_departure_count": 10,
+            "feasibility_reopens": 9,
+            "initial_peak_depth": 0.19212914385585758
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.19212914385585758
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.19212914385585758
+          }
+        }
+      }
+    ]
+  },
+  {
+    "stem": "q1p4_added1_dx1p5625_dt0p03125_n0p025_bz0p5",
+    "speed": 1.3,
+    "sample_step": 0.25,
+    "origin_first_depth03_s": 126.0,
+    "origin_recrossings_below03": 5,
+    "paths": [
+      {
+        "route": [
+          "B",
+          "C",
+          "A",
+          "E"
+        ],
+        "travel_s": 1230.769230769244,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 82.0,
+            "feasible_departure_count": 42,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.1772863291777104
+          },
+          "0.3": {
+            "latest_grid_s": 132.0,
+            "feasible_departure_count": 65,
+            "feasibility_reopens": 2,
+            "initial_peak_depth": 0.1772863291777104
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.1772863291777104
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "C",
+          "E"
+        ],
+        "travel_s": 769.2307692307758,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": 82.0,
+            "feasible_departure_count": 42,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.11660084701502411
+          },
+          "0.3": {
+            "latest_grid_s": 132.0,
+            "feasible_departure_count": 65,
+            "feasibility_reopens": 2,
+            "initial_peak_depth": 0.11660084701502411
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.11660084701502411
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "E"
+        ],
+        "travel_s": 461.53846153846365,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.200128550848996
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.200128550848996
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.200128550848996
+          }
+        }
+      },
+      {
+        "route": [
+          "B",
+          "A",
+          "C",
+          "E"
+        ],
+        "travel_s": 923.0769230769318,
+        "depth_thresholds": {
+          "0.2": {
+            "latest_grid_s": null,
+            "feasible_departure_count": 0,
+            "feasibility_reopens": 0,
+            "initial_peak_depth": 0.200128550848996
+          },
+          "0.3": {
+            "latest_grid_s": 150.0,
+            "feasible_departure_count": 70,
+            "feasibility_reopens": 5,
+            "initial_peak_depth": 0.200128550848996
+          },
+          "0.4": {
+            "latest_grid_s": 282.0,
+            "feasible_departure_count": 141,
+            "feasibility_reopens": 1,
+            "initial_peak_depth": 0.200128550848996
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "case": "competition",
+    "hazard_time_compression": 1.0,
+    "origins": 664,
+    "infeasible_at_1min": 0,
+    "urgent": 3,
+    "min_baseline_tolerance_min": 12.954992992885208
+  },
+  {
+    "case": "cad",
+    "hazard_time_compression": 1.0,
+    "origins": 1587,
+    "infeasible_at_1min": 0,
+    "urgent": 2,
+    "min_baseline_tolerance_min": 3.6629155557334845
+  },
+  {
+    "case": "competition",
+    "hazard_time_compression": 2.0,
+    "origins": 664,
+    "infeasible_at_1min": 0,
+    "urgent": 13,
+    "min_baseline_tolerance_min": 5.855800153029994
+  },
+  {
+    "case": "cad",
+    "hazard_time_compression": 2.0,
+    "origins": 1587,
+    "infeasible_at_1min": 0,
+    "urgent": 27,
+    "min_baseline_tolerance_min": 1.3306079412811396
+  },
+  {
+    "case": "competition",
+    "hazard_time_compression": 5.0,
+    "origins": 664,
+    "infeasible_at_1min": 0,
+    "urgent": 13,
+    "min_baseline_tolerance_min": 1.5962844491168657
+  },
+  {
+    "case": "cad",
+    "hazard_time_compression": 5.0,
+    "origins": 1587,
+    "infeasible_at_1min": 1,
+    "urgent": 20,
+    "min_baseline_tolerance_min": 0.46976710747419476
+  }
+]

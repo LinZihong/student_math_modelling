@@ -1,0 +1,827 @@
+{
+  "q": 1.4,
+  "added": false,
+  "dx": 25.0,
+  "dt": 0.5,
+  "roughness": 0.025,
+  "bz": 1.0,
+  "continuity_error_pct": -0.221,
+  "records": [
+    {
+      "id": "L0",
+      "a": "A",
+      "b": "X0_0",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L1",
+      "a": "X0_0",
+      "b": "X0_1",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L2",
+      "a": "X0_1",
+      "b": "X0_2",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L3",
+      "a": "X0_2",
+      "b": "X0_3",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L4",
+      "a": "X0_3",
+      "b": "X0_4",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L5",
+      "a": "X0_4",
+      "b": "X0_5",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L6",
+      "a": "X0_5",
+      "b": "X0_6",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L7",
+      "a": "X0_6",
+      "b": "X0_7",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L8",
+      "a": "X0_7",
+      "b": "X0_8",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L9",
+      "a": "X0_8",
+      "b": "X0_9",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L10",
+      "a": "X0_9",
+      "b": "X0_10",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L11",
+      "a": "X0_10",
+      "b": "X0_11",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L12",
+      "a": "X0_11",
+      "b": "X0_12",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669885098934174
+    },
+    {
+      "id": "L13",
+      "a": "X0_12",
+      "b": "X0_13",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669925332069397
+    },
+    {
+      "id": "L14",
+      "a": "X0_13",
+      "b": "X0_14",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23670393228530884
+    },
+    {
+      "id": "L15",
+      "a": "X0_14",
+      "b": "X0_15",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23676015436649323
+    },
+    {
+      "id": "L16",
+      "a": "X0_15",
+      "b": "X0_16",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23742295801639557
+    },
+    {
+      "id": "L17",
+      "a": "X0_16",
+      "b": "X0_17",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.24403171241283417
+    },
+    {
+      "id": "L18",
+      "a": "X0_17",
+      "b": "X0_18",
+      "length": 25.0,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.27406013011932373
+    },
+    {
+      "id": "L19",
+      "a": "X0_18",
+      "b": "E",
+      "length": 25.0,
+      "corridor": 0,
+      "block": 1872,
+      "max_depth": 0.33630016446113586
+    },
+    {
+      "id": "L20",
+      "a": "A",
+      "b": "X1_0",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L21",
+      "a": "X1_0",
+      "b": "X1_1",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L22",
+      "a": "X1_1",
+      "b": "X1_2",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669880628585815
+    },
+    {
+      "id": "L23",
+      "a": "X1_2",
+      "b": "X1_3",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669880628585815
+    },
+    {
+      "id": "L24",
+      "a": "X1_3",
+      "b": "X1_4",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669877648353577
+    },
+    {
+      "id": "L25",
+      "a": "X1_4",
+      "b": "X1_5",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669873178005219
+    },
+    {
+      "id": "L26",
+      "a": "X1_5",
+      "b": "X1_6",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669865727424622
+    },
+    {
+      "id": "L27",
+      "a": "X1_6",
+      "b": "X1_7",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366984784603119
+    },
+    {
+      "id": "L28",
+      "a": "X1_7",
+      "b": "X1_8",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669815063476562
+    },
+    {
+      "id": "L29",
+      "a": "X1_8",
+      "b": "X1_9",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366974949836731
+    },
+    {
+      "id": "L30",
+      "a": "X1_9",
+      "b": "X1_10",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669619858264923
+    },
+    {
+      "id": "L31",
+      "a": "X1_10",
+      "b": "X1_11",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669365048408508
+    },
+    {
+      "id": "L32",
+      "a": "X1_11",
+      "b": "X1_12",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23668859899044037
+    },
+    {
+      "id": "L33",
+      "a": "X1_12",
+      "b": "X1_13",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23667863011360168
+    },
+    {
+      "id": "L34",
+      "a": "X1_13",
+      "b": "X1_14",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23665890097618103
+    },
+    {
+      "id": "L35",
+      "a": "X1_14",
+      "b": "X1_15",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23661991953849792
+    },
+    {
+      "id": "L36",
+      "a": "X1_15",
+      "b": "X1_16",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.236542746424675
+    },
+    {
+      "id": "L37",
+      "a": "X1_16",
+      "b": "X1_17",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23638980090618134
+    },
+    {
+      "id": "L38",
+      "a": "X1_17",
+      "b": "X1_18",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2360856831073761
+    },
+    {
+      "id": "L39",
+      "a": "X1_18",
+      "b": "X1_19",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23547717928886414
+    },
+    {
+      "id": "L40",
+      "a": "X1_19",
+      "b": "X1_20",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23424369096755981
+    },
+    {
+      "id": "L41",
+      "a": "X1_20",
+      "b": "X1_21",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23167186975479126
+    },
+    {
+      "id": "L42",
+      "a": "X1_21",
+      "b": "X1_22",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.22592735290527344
+    },
+    {
+      "id": "L43",
+      "a": "X1_22",
+      "b": "C",
+      "length": 25.0,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.20919641852378845
+    },
+    {
+      "id": "L44",
+      "a": "B",
+      "b": "X2_0",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16591916978359222
+    },
+    {
+      "id": "L45",
+      "a": "X2_0",
+      "b": "X2_1",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16591741144657135
+    },
+    {
+      "id": "L46",
+      "a": "X2_1",
+      "b": "X2_2",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16587448120117188
+    },
+    {
+      "id": "L47",
+      "a": "X2_2",
+      "b": "X2_3",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16601255536079407
+    },
+    {
+      "id": "L48",
+      "a": "X2_3",
+      "b": "X2_4",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16618917882442474
+    },
+    {
+      "id": "L49",
+      "a": "X2_4",
+      "b": "X2_5",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16664451360702515
+    },
+    {
+      "id": "L50",
+      "a": "X2_5",
+      "b": "X2_6",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16730009019374847
+    },
+    {
+      "id": "L51",
+      "a": "X2_6",
+      "b": "X2_7",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16823287308216095
+    },
+    {
+      "id": "L52",
+      "a": "X2_7",
+      "b": "X2_8",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1694873720407486
+    },
+    {
+      "id": "L53",
+      "a": "X2_8",
+      "b": "X2_9",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1710081845521927
+    },
+    {
+      "id": "L54",
+      "a": "X2_9",
+      "b": "X2_10",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1728246510028839
+    },
+    {
+      "id": "L55",
+      "a": "X2_10",
+      "b": "X2_11",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1748872548341751
+    },
+    {
+      "id": "L56",
+      "a": "X2_11",
+      "b": "X2_12",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1771480143070221
+    },
+    {
+      "id": "L57",
+      "a": "X2_12",
+      "b": "X2_13",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.17957305908203125
+    },
+    {
+      "id": "L58",
+      "a": "X2_13",
+      "b": "X2_14",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.18211036920547485
+    },
+    {
+      "id": "L59",
+      "a": "X2_14",
+      "b": "X2_15",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1847148835659027
+    },
+    {
+      "id": "L60",
+      "a": "X2_15",
+      "b": "X2_16",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1873529553413391
+    },
+    {
+      "id": "L61",
+      "a": "X2_16",
+      "b": "X2_17",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.18999388813972473
+    },
+    {
+      "id": "L62",
+      "a": "X2_17",
+      "b": "X2_18",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.19261209666728973
+    },
+    {
+      "id": "L63",
+      "a": "X2_18",
+      "b": "C",
+      "length": 25.0,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1951891928911209
+    },
+    {
+      "id": "L64",
+      "a": "C",
+      "b": "X3_0",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1963895708322525
+    },
+    {
+      "id": "L65",
+      "a": "X3_0",
+      "b": "X3_1",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19624583423137665
+    },
+    {
+      "id": "L66",
+      "a": "X3_1",
+      "b": "X3_2",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1961171180009842
+    },
+    {
+      "id": "L67",
+      "a": "X3_2",
+      "b": "X3_3",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19600021839141846
+    },
+    {
+      "id": "L68",
+      "a": "X3_3",
+      "b": "X3_4",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1958920657634735
+    },
+    {
+      "id": "L69",
+      "a": "X3_4",
+      "b": "X3_5",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19578997790813446
+    },
+    {
+      "id": "L70",
+      "a": "X3_5",
+      "b": "X3_6",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19569215178489685
+    },
+    {
+      "id": "L71",
+      "a": "X3_6",
+      "b": "X3_7",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19559870660305023
+    },
+    {
+      "id": "L72",
+      "a": "X3_7",
+      "b": "X3_8",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19551405310630798
+    },
+    {
+      "id": "L73",
+      "a": "X3_8",
+      "b": "X3_9",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1954544335603714
+    },
+    {
+      "id": "L74",
+      "a": "X3_9",
+      "b": "X3_10",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19546979665756226
+    },
+    {
+      "id": "L75",
+      "a": "X3_10",
+      "b": "X3_11",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1957072764635086
+    },
+    {
+      "id": "L76",
+      "a": "X3_11",
+      "b": "X3_12",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.19658224284648895
+    },
+    {
+      "id": "L77",
+      "a": "X3_12",
+      "b": "X3_13",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1991613656282425
+    },
+    {
+      "id": "L78",
+      "a": "X3_13",
+      "b": "X3_14",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.20565398037433624
+    },
+    {
+      "id": "L79",
+      "a": "X3_14",
+      "b": "X3_15",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2191247195005417
+    },
+    {
+      "id": "L80",
+      "a": "X3_15",
+      "b": "X3_16",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2416744828224182
+    },
+    {
+      "id": "L81",
+      "a": "X3_16",
+      "b": "X3_17",
+      "length": 25.0,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2729038596153259
+    },
+    {
+      "id": "L82",
+      "a": "X3_17",
+      "b": "X3_18",
+      "length": 25.0,
+      "corridor": 3,
+      "block": 2242,
+      "max_depth": 0.31065845489501953
+    },
+    {
+      "id": "L83",
+      "a": "X3_18",
+      "b": "E",
+      "length": 25.0,
+      "corridor": 3,
+      "block": 1834,
+      "max_depth": 0.352679580450058
+    },
+    {
+      "id": "L84",
+      "a": "E",
+      "b": "X4_0",
+      "length": 25.0,
+      "corridor": 4,
+      "block": 1796,
+      "max_depth": 0.3710673153400421
+    },
+    {
+      "id": "L85",
+      "a": "X4_0",
+      "b": "X4_1",
+      "length": 25.0,
+      "corridor": 4,
+      "block": 1826,
+      "max_depth": 0.3608555495738983
+    },
+    {
+      "id": "L86",
+      "a": "X4_1",
+      "b": "X4_2",
+      "length": 25.0,
+      "corridor": 4,
+      "block": 1884,
+      "max_depth": 0.33788254857063293
+    },
+    {
+      "id": "L87",
+      "a": "X4_2",
+      "b": "O",
+      "length": 25.0,
+      "corridor": 4,
+      "block": null,
+      "max_depth": 0.27056875824928284
+    }
+  ],
+  "latest": 832.0,
+  "dry_distance": 1000.0,
+  "warnings": [
+    "WARNING 04: minimum elevation drop used for Conduit L44",
+    "WARNING 04: minimum elevation drop used for Conduit L45",
+    "WARNING 04: minimum elevation drop used for Conduit L46",
+    "WARNING 04: minimum elevation drop used for Conduit L47",
+    "WARNING 04: minimum elevation drop used for Conduit L48",
+    "WARNING 04: minimum elevation drop used for Conduit L49",
+    "WARNING 04: minimum elevation drop used for Conduit L50",
+    "WARNING 04: minimum elevation drop used for Conduit L51",
+    "WARNING 04: minimum elevation drop used for Conduit L52",
+    "WARNING 04: minimum elevation drop used for Conduit L53",
+    "WARNING 04: minimum elevation drop used for Conduit L54",
+    "WARNING 04: minimum elevation drop used for Conduit L55",
+    "WARNING 04: minimum elevation drop used for Conduit L56",
+    "WARNING 04: minimum elevation drop used for Conduit L57",
+    "WARNING 04: minimum elevation drop used for Conduit L58",
+    "WARNING 04: minimum elevation drop used for Conduit L59",
+    "WARNING 04: minimum elevation drop used for Conduit L60",
+    "WARNING 04: minimum elevation drop used for Conduit L61",
+    "WARNING 04: minimum elevation drop used for Conduit L62",
+    "WARNING 04: minimum elevation drop used for Conduit L63"
+  ]
+}

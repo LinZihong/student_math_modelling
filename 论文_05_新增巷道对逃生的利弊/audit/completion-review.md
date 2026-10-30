@@ -1,0 +1,19 @@
+# Objective-level completion review
+
+Reviewed 2026-10-25 against the user's continuing research objective, rather than against compilation alone.
+
+| Requirement | Inspected evidence and judgment |
+| --- | --- |
+| Preserve previous work | No tracked changes to `preprint/` or the original PDF; original PDF SHA-256 matches the recorded value in `completion.json`. New paper, code and results use separate directories. |
+| Find a meaningful research result before writing | The chronological research ledger records unsuccessful shortcut screens, model disagreement, frozen confirmation, refinement, and only then the decision to write. The result concerns the sign of a connection's effect across departure regimes, a consequential failure of fixed-hazard route comparisons. |
+| Credible disaster conditions and substantive evidence | The paper specifies transient shallow-water equations, gentle tunnel grades, competition-scale inflow, roughness range, dry initial conditions and explicit junction assumptions. An independently implemented finite-volume calculation has dry-front convergence, equilibrium and network conservation checks. The 16-case factorial, selected mesh/junction refinements and gait stress checks support a local mechanistic counterexample. This is numerical evidence under physically explicit assumptions, not experimental validation of a real mine. The failed SWMM transient benchmark is prominently disclosed. |
+| Explain an unintuitive consequence | Early diversion improves an existing route; later accumulation raises origin depth. Proposition 1 bounds every new-layout trajectory against an explicit old-layout witness. The theorem is conditional on the hydraulic field and does not claim a PDE error bound. |
+| Adequate empirical support, without selecting only successes | Read all-case audit, frozen protocol, continuous-certificate and refinement summaries. 12/16 pass the frozen joint endpoint; four misses remain. All 96 constant-speed certificates and 64 depth-responsive witnesses are positive. Eleven refinement pairs retain positive margins, with one expanded storage sensitivity below 2 cm. |
+| Self-contained background and clear exposition | Read the full final source. Introduction defines mine inrush and the departure-delay issue. Layout, fields, objective, policy classes, equations, assumptions, certificate proof, experiments and limitations are defined within the manuscript. No prior chat or competition solution is needed. |
+| Use academic-paper-writing | Read and applied the skill: one central result, explicit question and answer, established numerical methods credited, distinct limitations, forward-looking conclusion and verification appendix. |
+| 10–15-page preprint | Delivered PDF has 11 pages. Three figures explain geometry, delay reversal and the full factorial. Latest pages 10–11 and contact sheets for pages 1–9 inspected; no clipping or overlap. Build log has no undefined references or box warnings. |
+| Concrete, reviewable delivery | Final PDF copied to `output/pdf/delayed_departure_connection_preprint.pdf` and byte-hash matched to the compiled file. Source and reproduction README retained. Confirmation raw output presence checked (128 files); hashes cover listed deliverables, code and summary evidence, not the entire raw archive. |
+
+Judgment: the requested research-and-writing deliverable is complete as a mechanistic numerical preprint. The evidence supports the stated local counterexample and its cause. It does not establish calibrated accident prediction, human safety thresholds, population prevalence, or a recommendation to close actual tunnels. Those are not claimed as achieved.
+
+The immediately preceding conversational turn explained the weakness of the original routing study but did not advance the deliverable. This turn revalidated the completed research and manuscript, checked the actual evidence and rendered pages, and produced the final delivery and audit.

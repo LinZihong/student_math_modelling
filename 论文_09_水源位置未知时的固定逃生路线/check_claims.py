@@ -14,7 +14,7 @@ fails=sum(o[r]['n']-o[r]['shortest'] for r in o);onset=sum(o[r]['shortest_fail_a
 claims={
  # abstract and introduction
  '59\\%':round(pq['shortest']*100)==59,'69\\%':round(pq['avoid']*100)==69,'79\\%':round(pq['robust']*100)==79,'99.8\\%':f"{pp['exact']*100:.1f}"=='99.8',
- '52\\% of pairs':round(R['shaftcut_k2']['30']['robust']*100)==52,'31--36\\% for two zones':rng('robust',2)=='31--36\\%',
+ '31--36\\% for two zones':rng('robust',2)=='31--36\\%',
  # Section 4
  '720 of the 1,243':(o['NW']['shortest'],o['NW']['n'])==(720,1243),'659 of 1,139':(o['SW']['shortest'],o['SW']['n'])==(659,1139),
  '45 and 63':(o['SE']['n']-o['SE']['shortest'],o['NE']['n']-o['NE']['shortest'])==(45,63),

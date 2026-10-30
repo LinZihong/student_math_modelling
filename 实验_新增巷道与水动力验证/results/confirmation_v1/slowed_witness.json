@@ -1,0 +1,584 @@
+{
+  "cases": 64,
+  "complete": 64,
+  "positive": 64,
+  "minimum_margin": 0.046032960486754454,
+  "details": [
+    {
+      "index": 0,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1612.4308059295427,
+      "peak_depth": 0.1612014185299191,
+      "margin": 0.11932149204336079
+    },
+    {
+      "index": 0,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1624.892203222209,
+      "peak_depth": 0.16141449557634355,
+      "margin": 0.11910841499693633
+    },
+    {
+      "index": 0,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1606.8163964165165,
+      "peak_depth": 0.11757425874807882,
+      "margin": 0.18693997054955913
+    },
+    {
+      "index": 0,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1613.6330587594769,
+      "peak_depth": 0.11757637178632761,
+      "margin": 0.1869378575113103
+    },
+    {
+      "index": 1,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1612.4308059295427,
+      "peak_depth": 0.1612014185299191,
+      "margin": 0.0912254362557956
+    },
+    {
+      "index": 1,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1624.892203222209,
+      "peak_depth": 0.16141449557634355,
+      "margin": 0.09101235920937115
+    },
+    {
+      "index": 1,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1606.8163964165165,
+      "peak_depth": 0.11757425874807882,
+      "margin": 0.1563773909177537
+    },
+    {
+      "index": 1,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1613.6330587594769,
+      "peak_depth": 0.11757637178632761,
+      "margin": 0.1563752778795049
+    },
+    {
+      "index": 2,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1612.4308059295427,
+      "peak_depth": 0.1612014185299191,
+      "margin": 0.06448032571834805
+    },
+    {
+      "index": 2,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1624.892203222209,
+      "peak_depth": 0.16141449557634355,
+      "margin": 0.0642672486719236
+    },
+    {
+      "index": 2,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1606.8163964165165,
+      "peak_depth": 0.11757425874807882,
+      "margin": 0.11505836337468577
+    },
+    {
+      "index": 2,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1613.6330587594769,
+      "peak_depth": 0.11757637178632761,
+      "margin": 0.11505625033643697
+    },
+    {
+      "index": 3,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1612.4308059295427,
+      "peak_depth": 0.1612014185299191,
+      "margin": 0.04624603753317891
+    },
+    {
+      "index": 3,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1624.892203222209,
+      "peak_depth": 0.16141449557634355,
+      "margin": 0.046032960486754454
+    },
+    {
+      "index": 3,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1606.8163964165165,
+      "peak_depth": 0.11757425874807882,
+      "margin": 0.0926695176925416
+    },
+    {
+      "index": 3,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1613.6330587594769,
+      "peak_depth": 0.11757637178632761,
+      "margin": 0.09266740465429281
+    },
+    {
+      "index": 4,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1613.24635509665,
+      "peak_depth": 0.1731539549578661,
+      "margin": 0.12547938950725637
+    },
+    {
+      "index": 4,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1626.5820546331681,
+      "peak_depth": 0.17378310467365926,
+      "margin": 0.1248502397914632
+    },
+    {
+      "index": 4,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1610.6317263762116,
+      "peak_depth": 0.14772562042691512,
+      "margin": 0.16650193079493242
+    },
+    {
+      "index": 4,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1621.2807581332615,
+      "peak_depth": 0.14788456069959893,
+      "margin": 0.1663429905222486
+    },
+    {
+      "index": 5,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1613.24635509665,
+      "peak_depth": 0.1731539549578661,
+      "margin": 0.09565690463308155
+    },
+    {
+      "index": 5,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1626.5820546331681,
+      "peak_depth": 0.17378310467365926,
+      "margin": 0.09502775491728838
+    },
+    {
+      "index": 5,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1610.6317263762116,
+      "peak_depth": 0.14772562042691512,
+      "margin": 0.13106360181353288
+    },
+    {
+      "index": 5,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1621.2807581332615,
+      "peak_depth": 0.14788456069959893,
+      "margin": 0.13090466154084907
+    },
+    {
+      "index": 6,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1613.24635509665,
+      "peak_depth": 0.1731539549578661,
+      "margin": 0.07647136516909078
+    },
+    {
+      "index": 6,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1626.5820546331681,
+      "peak_depth": 0.17378310467365926,
+      "margin": 0.07584221545329761
+    },
+    {
+      "index": 6,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1610.6317263762116,
+      "peak_depth": 0.14772562042691512,
+      "margin": 0.10466202243349748
+    },
+    {
+      "index": 6,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1621.2807581332615,
+      "peak_depth": 0.14788456069959893,
+      "margin": 0.10450308216081367
+    },
+    {
+      "index": 7,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1613.24635509665,
+      "peak_depth": 0.1731539549578661,
+      "margin": 0.04977603495775931
+    },
+    {
+      "index": 7,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1626.5820546331681,
+      "peak_depth": 0.17378310467365926,
+      "margin": 0.04914688524196614
+    },
+    {
+      "index": 7,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1610.6317263762116,
+      "peak_depth": 0.14772562042691512,
+      "margin": 0.0774335180141707
+    },
+    {
+      "index": 7,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1621.2807581332615,
+      "peak_depth": 0.14788456069959893,
+      "margin": 0.07727457774148688
+    },
+    {
+      "index": 8,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1621.8591122867228,
+      "peak_depth": 0.21102556877443862,
+      "margin": 0.1365455466679259
+    },
+    {
+      "index": 8,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1643.8260285951649,
+      "peak_depth": 0.21144900178421025,
+      "margin": 0.13612211365815427
+    },
+    {
+      "index": 8,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1611.2305187437553,
+      "peak_depth": 0.15081833755313254,
+      "margin": 0.22862086737812662
+    },
+    {
+      "index": 8,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1622.4613463881813,
+      "peak_depth": 0.1508217797686449,
+      "margin": 0.22861742516261427
+    },
+    {
+      "index": 9,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1621.8591122867228,
+      "peak_depth": 0.21102556877443862,
+      "margin": 0.10727498764362953
+    },
+    {
+      "index": 9,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1643.8260285951649,
+      "peak_depth": 0.21144900178421025,
+      "margin": 0.1068515546338579
+    },
+    {
+      "index": 9,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1611.2305187437553,
+      "peak_depth": 0.15081833755313254,
+      "margin": 0.19431931818188333
+    },
+    {
+      "index": 9,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1622.4613463881813,
+      "peak_depth": 0.1508217797686449,
+      "margin": 0.19431587596637098
+    },
+    {
+      "index": 10,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1621.8639541102948,
+      "peak_depth": 0.2110256662685839,
+      "margin": 0.07249953360198172
+    },
+    {
+      "index": 10,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1643.8361823379767,
+      "peak_depth": 0.21144918965442583,
+      "margin": 0.0720760102161398
+    },
+    {
+      "index": 10,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1611.2305187437553,
+      "peak_depth": 0.15081833755313254,
+      "margin": 0.1424976095026841
+    },
+    {
+      "index": 10,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1622.4613463881813,
+      "peak_depth": 0.1508217797686449,
+      "margin": 0.14249416728717176
+    },
+    {
+      "index": 11,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1621.8639541102948,
+      "peak_depth": 0.2110256662685839,
+      "margin": 0.050031992596485136
+    },
+    {
+      "index": 11,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1643.8361823379767,
+      "peak_depth": 0.21144918965442583,
+      "margin": 0.04960846921064321
+    },
+    {
+      "index": 11,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1611.2305187437553,
+      "peak_depth": 0.15081833755313254,
+      "margin": 0.11589936459721231
+    },
+    {
+      "index": 11,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1622.4613463881813,
+      "peak_depth": 0.1508217797686449,
+      "margin": 0.11589592238169996
+    },
+    {
+      "index": 12,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1623.8119184492357,
+      "peak_depth": 0.23121530798325077,
+      "margin": 0.14112902744048808
+    },
+    {
+      "index": 12,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1647.851546430307,
+      "peak_depth": 0.23248144659417203,
+      "margin": 0.13986288882956682
+    },
+    {
+      "index": 12,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1617.9406916435553,
+      "peak_depth": 0.19115087210403084,
+      "margin": 0.20178309262527824
+    },
+    {
+      "index": 12,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1635.9100138160622,
+      "peak_depth": 0.1913456528530287,
+      "margin": 0.20158831187628037
+    },
+    {
+      "index": 13,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1623.8119184492357,
+      "peak_depth": 0.23121530798325077,
+      "margin": 0.10350720924415216
+    },
+    {
+      "index": 13,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1647.851546430307,
+      "peak_depth": 0.23248144659417203,
+      "margin": 0.1022410706332309
+    },
+    {
+      "index": 13,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1617.9406916435553,
+      "peak_depth": 0.19115087210403084,
+      "margin": 0.16211652935280205
+    },
+    {
+      "index": 13,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1635.9100138160622,
+      "peak_depth": 0.1913456528530287,
+      "margin": 0.16192174860380418
+    },
+    {
+      "index": 14,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1623.8119184492357,
+      "peak_depth": 0.23121530798325077,
+      "margin": 0.08315820560435003
+    },
+    {
+      "index": 14,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1647.851546430307,
+      "peak_depth": 0.23248144659417203,
+      "margin": 0.08189206699342877
+    },
+    {
+      "index": 14,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1617.9406916435553,
+      "peak_depth": 0.19115087210403084,
+      "margin": 0.1269645112825811
+    },
+    {
+      "index": 14,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1635.9100138160622,
+      "peak_depth": 0.1913456528530287,
+      "margin": 0.12676973053358323
+    },
+    {
+      "index": 15,
+      "model": "fv",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1623.8119184492357,
+      "peak_depth": 0.23121530798325077,
+      "margin": 0.05180234243062101
+    },
+    {
+      "index": 15,
+      "model": "fv",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1647.851546430307,
+      "peak_depth": 0.23248144659417203,
+      "margin": 0.050536203819699754
+    },
+    {
+      "index": 15,
+      "model": "swmm",
+      "k": 2.0,
+      "status": "complete",
+      "arrival": 1617.9406916435553,
+      "peak_depth": 0.19115087210403084,
+      "margin": 0.09577945054306389
+    },
+    {
+      "index": 15,
+      "model": "swmm",
+      "k": 4.0,
+      "status": "complete",
+      "arrival": 1635.9100138160622,
+      "peak_depth": 0.1913456528530287,
+      "margin": 0.09558466979406602
+    }
+  ]
+}

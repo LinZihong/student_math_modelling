@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-28",
+  "author": "Jingchao Wang",
+  "pages": 16,
+  "claims_checked": 80,
+  "claims_failed": 0,
+  "visual_review": "All pages inspected; revised pages 14-16 inspected after pagination adjustment.",
+  "submission": "Single PDF with internal appendices; no attachments.",
+  "pdf": "\u9605\u8bfb\u5165\u53e3_PDF/\u8bba\u6587_09_\u6c34\u6e90\u4f4d\u7f6e\u672a\u77e5\u65f6\u7684\u56fa\u5b9a\u9003\u751f\u8def\u7ebf.pdf",
+  "sha256": "12ae38368f27de6e2860661d3bda3757d69ac1225ef34093c74f454aaafb2e23",
+  "before_sha256": "7874d29187606cd1f8a5073e94bf2837be8fc5b2d50567b9779541499a69156e",
+  "title": "Planning Mine Escape Routes with Zone-Based Flood Alarms",
+  "title_revision_check": "New first page visually inspected; pages 2-16 text and pagination unchanged."
+}

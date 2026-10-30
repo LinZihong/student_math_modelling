@@ -1,0 +1,55 @@
+{
+  "stem": "/Users/linzihong/Documents/Tutoring/student_math_modelling/investigation/results/network_fv/refine15_fv_a64_added0_dx3p125_area64p0_q0p6_end3600p0",
+  "added": false,
+  "dx": 3.125,
+  "area": 64.0,
+  "q": 0.6,
+  "end": 3600.0,
+  "bz": 0.7,
+  "roughness": 0.03,
+  "extra_length": 120.0,
+  "corridors": [
+    [
+      "A",
+      "E",
+      500.0
+    ],
+    [
+      "A",
+      "C",
+      600.0
+    ],
+    [
+      "B",
+      "C",
+      500.0
+    ],
+    [
+      "C",
+      "E",
+      500.0
+    ],
+    [
+      "E",
+      "O",
+      100.0
+    ]
+  ],
+  "z": {
+    "A": 2.0,
+    "B": 0.7,
+    "C": 1.0,
+    "E": 0.0,
+    "O": -0.2
+  },
+  "nodes": [
+    "A",
+    "B",
+    "C",
+    "E"
+  ],
+  "max_mass_residual_m3": 2.2737367544323206e-12,
+  "final_volume_m3": 1418.9437322475173,
+  "max_depth": 0.3918134597581881,
+  "origin_crossing03": null
+}

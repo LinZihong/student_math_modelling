@@ -1,0 +1,122 @@
+[
+  {
+    "q": 0.5,
+    "added": false,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.323,
+    "latest": 2600.0,
+    "dry_distance": 1000.0,
+    "warnings": []
+  },
+  {
+    "q": 0.5,
+    "added": true,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.324,
+    "latest": 3000.0,
+    "dry_distance": 600.0,
+    "warnings": []
+  },
+  {
+    "q": 1.0,
+    "added": false,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.26,
+    "latest": 2396.0,
+    "dry_distance": 1000.0,
+    "warnings": []
+  },
+  {
+    "q": 1.0,
+    "added": true,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.262,
+    "latest": 3000.0,
+    "dry_distance": 600.0,
+    "warnings": []
+  },
+  {
+    "q": 2.0,
+    "added": false,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.208,
+    "latest": -186.0,
+    "dry_distance": 1000.0,
+    "warnings": []
+  },
+  {
+    "q": 2.0,
+    "added": true,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.21,
+    "latest": 803.0,
+    "dry_distance": 600.0,
+    "warnings": []
+  },
+  {
+    "q": 4.0,
+    "added": false,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.167,
+    "latest": -566.0,
+    "dry_distance": 1000.0,
+    "warnings": []
+  },
+  {
+    "q": 4.0,
+    "added": true,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.169,
+    "latest": -96.0,
+    "dry_distance": 600.0,
+    "warnings": []
+  },
+  {
+    "q": 8.0,
+    "added": false,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.134,
+    "latest": -682.0,
+    "dry_distance": 1000.0,
+    "warnings": []
+  },
+  {
+    "q": 8.0,
+    "added": true,
+    "dx": 25.0,
+    "dt": 0.5,
+    "roughness": 0.025,
+    "bz": 1.5,
+    "continuity_error_pct": -0.136,
+    "latest": -246.0,
+    "dry_distance": 600.0,
+    "warnings": []
+  }
+]

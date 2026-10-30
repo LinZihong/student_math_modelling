@@ -1,0 +1,654 @@
+When a longer route buys time:
+fixed escape plans for regional mine-flood alarms
+Working preprint — October 26, 2026
+Abstract
+A mine-flood alarm may identify a region without locating the water source or revealing
+how long the flood has been spreading. Can a route chosen before the accident still get a
+worker out after a delayed warning? We study one fixed route for each starting point and
+reported region. The route must reach an exit for every candidate source in that region;
+distance is minimized only after this requirement is met. On a tunnel network extracted
+from a real mine plan, we evaluate all 1,587 candidate source nodes, all 1,587 starting nodes,
+four alarm regions, and three delay targets. For a northwest alarm and a 30-minute delay,
+rerouting increases the number of covered outside-region starting points from 720 of 1,243 to
+1,200. A 50% detour allowance covers 961, so much of the gain requires substantial extra
+walking. Gains occur in all four regions, but differ sharply in size and cost. They also
+depend on which water sources and inflow rates the plan is designed to withstand. An exact
+finite-scenario search separates cases that rerouting can solve from those requiring better
+source information or earlier departure. These are guarantees within an uncalibrated flood
+model, not field-validated safety predictions. The study shows how to assess a regional escape
+plan by the warning delay it can tolerate and the walking distance that tolerance costs.
+1 Introduction
+A worker receives an alarm: water has entered the eastern part of the mine. The shortest way
+to a shaft runs through that area. Another route is longer, but might remain open for longer.
+The worker does not know the exact source of the water and cannot tell how much time was lost
+before the alarm arrived. Which route should the emergency plan recommend?
+This question differs from finding the fastest route for a known flood. Water travels through
+the same tunnels that people use to escape. A route that is short on a dry map may pass through
+a tunnel that closes before the worker reaches it. A route calculated for one water source may
+fail if the source is somewhere else in the reported region. For a plan to be usable with a regional
+alarm, its recommendation must work without that missing information.
+We ask how much extra distance is needed to withstand a specified notification delay. For
+each starting point and alarm region, we choose a single route in advance. The worker follows
+it immediately on receiving the alarm. A 30-minute guarantee means that the route remains
+feasible if departure occurs at any time up to 30 minutes after the inrush begins, and that the
+worker can then complete the journey. It does not mean that the journey takes at most 30
+minutes, or that the worker should wait.
+The main finding is that this choice can matter across whole parts of a mine network. In the
+CAD-derived network studied here, a northwest alarm leaves 523 of 1,243 outside-region starting
+points without a 30-minute guarantee on their dry shortest routes. Changing the route resolves
+this for 480 of them. The gain persists at 10- and 20-minute targets. It is not always cheap:
+allowing only 20% extra distance recovers 92 of the 480 points, whereas removing the distance
+cap recovers all 480. Other regions show smaller gains or require much longer detours.
+1
+
+These results answer a planning question, not a hydraulic one. We use a volume-conserving
+flood model inherited from a modeling-competition study. The mine geometry comes from a
+CAD plan, but the flood parameters have not been calibrated to that mine. The contribution is
+to formulate the information available to the worker, compute the shortest route that meets a
+regional delay guarantee, and establish where that guarantee is valuable, costly, or impossible in
+the resulting scenarios. We do not claim a new general shortest-path algorithm or an operationally
+validated evacuation system.
+Relation to earlier work.Mine-inrush routing has been studied as an earliest-arrival problem
+on a time-varying network [1]. Sensor-placement work asks how soon an inrush can be detected
+[2]. Our question connects these two decisions: what should a fixed escape plan prescribe when
+detection supplies only a source region and may arrive late? The computational ingredients come
+from established time-dependent routing and robust optimization. In particular, first-in–first-out
+travel permits arrival-time dominance [3, 4]; selecting among prepared policies after observing
+uncertainty is the broader setting ofK-adaptability [5]. Here, the observation is deliberately
+limited to the reported region.
+The study began as a follow-up to a mine-inrush modeling competition [6]. An initial
+competition-network example suggested a benefit from detours. The main evidence in this paper
+is the subsequent enumeration of every eligible source and starting node in all four regions of the
+CAD network. The earlier example is retained as a secondary comparison in Appendix D, rather
+than used to establish how common the benefit is.
+2 A mine, a regional alarm, and a fixed route
+2.1 The network and the information available
+The network has 1,592 junctions and 2,084 undirected tunnels, totaling approximately 248km.
+Four shaft-bottom nodes are designated escape endpoints. Reaching the surface after reaching
+a shaft is outside the model. The graph was extracted from an anonymized CAD mine plan
+by snapping nearby features, splitting intersections, and connecting the shafts. Supplied roof
+elevations are used as a proxy for relative floor elevations under a constant-height assumption.
+Figure 1 shows the resulting geometry and the four alarm regions.
+The medianxandycoordinates divide the network into northwest (NW), southwest (SW),
+southeast (SE), and northeast (NE) regions. These are convenient, reproducible partitions, not
+verified sensor sectors. Excluding the four endpoints and one auxiliary reference-source node
+leaves 1,587 candidate water sources and the same 1,587 worker starting points. Each flood
+scenario hasonesource, not all sources active at once. For a regional alarm, its source may be
+any eligible node in that region.
+The plan specifies a routeP (v,R )for a worker starting at nodev when the reported source
+region isR. The route cannot depend on the precise source, which is unreported. It also does
+not change with subsequent observations. This is a mathematical model of a region-indexed
+route map, rather than a design or human-factors evaluation of physical signs.
+2.2 What it means to tolerate a late alarm
+Let t0 be the time the inrush starts,tdet the time it is detected, andtrec the time the worker
+receives the alarm. With immediate departure, the relevant delay is
+d=t rec−t0 = (t det−t0) + (trec−tdet).
+A detection timestamp need not revealt0: water may have traveled before reaching a sensor.
+Conversely, a witnessed event might identify onset closely. We do not assume that the true delay
+2
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+x (km)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+y (km)
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Elevation proxy (m)
+Vertical scale exaggerated 35×
+(a) CAD-derived tunnel geometry
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+NW
+344 sources
+NE
+449 sources
+SW
+448 sources
+SE
+346 sources
+(b) Four alarm regions
+Figure 1:The CAD-derived network in three dimensions and in plan view. Stars mark escape endpoints.
+The vertical scale is exaggerated 35 times; elevations are model inputs, not a surveyed flood surface, and
+the coordinate-based alarm regions are illustrative.
+is always known or always unknown. Any response time before departure can also be included in
+d.
+The planner selects a targetτ, such as 30 minutes. The route must work for everyd∈[0,τ],
+whether or not the worker knows the realized delay. This is a requirement against which to
+assess a plan; the calculation does not establish that an actual alarm system meets it. We also
+assume that the reported region contains the true source. An alarm that can misclassify the
+region requires a larger source set.
+2.3 Flood and walking assumptions
+The routing calculation needs to know when each tunnel becomes wet and when it becomes
+impassable. We generate those times with an event-driven volume-transfer model. Water divides
+equally among available level or downhill outlets; if none is available, it enters uphill outlets. A
+shallow advancing front covers a tunnel before it transmits water further. Water accumulates in
+blocked branches and backs up. Tunnel depth is represented by stored water volume divided by
+tunnel width and length. Appendix B gives the rules needed to interpret the schedules.
+The main experiments use a constant inflow of0.5 m3/s, a width of 4.99m, a height of 3m,
+and a front depth of 0.1m. A tunnel closes permanently when its mean depth reaches 0.3m.
+Walking speeds are 1.3m/s when dry, 0.7m/s with the assigned water-flow direction when wet,
+and 0.5m/s against it. Speed changes during traversal if the tunnel becomes wet before the
+worker leaves. These values specify a test model; they are not measured walking laws or a
+validated human-safety threshold.
+Water never recedes in this model. Earlier entry into a tunnel cannot cause later arrival at
+its far end: this is the first-in–first-out (FIFO) property. Consequently, if a fixed route works
+when departure occurs atτ, it also works at every earlier departure. We can therefore test an
+entire delay interval by testing its endpoint. The formal argument and the exact travel-time
+formula appear in Appendix A.
+3
+
+2.4 The quantity we compute
+LetSR be the finite set of source scenarios for regionR, and letL(P )be the length of routeP.
+For starting pointvand target delayτ, define
+L∗
+R(v,τ) = min{L(P) :Preaches an endpoint fromvafter departure atτin everys∈SR}.
+(1)
+If no such common route exists, the value is infinity. LetL0(v)be the shortest dry-map distance
+to an endpoint. The minimum extra distance needed is
+ρR(v,τ) =L∗
+R(v,τ)
+L0(v) −1.
+Thus a 20% allowance succeeds exactly whenρR(v,τ)≤0.20. The primary objective is escape;
+minimizing length measures the least walking burden needed to achieve it. A longer route is
+never required merely to improve an average score.
+The baseline follows one deterministically selected dry shortest route. It has no knowledge of
+the alarm region. Its guarantee is nevertheless checked against exactly the same scenarios as the
+optimized route. In graphs with nearly equal alternative paths, a small length increase can also
+represent a better choice among almost tied routes; we do not interpret every small increase as a
+substantive distance tradeoff.
+3 How much escape coverage can detours buy?
+3.1 The gain extends beyond one favorable starting point
+Table 1 reports all starting nodes outside each source region at a 30-minute target. An entry
+counts starting points for which a single prescribed route works for every candidate source in
+that row. It is not a count of successful individual-source trials. Every starting point is included,
+whether its baseline is safe, unsafe, or already impossible to improve.
+T able 1:CAD network, 30-minute target, outside-region origins. Optimized columns impose the stated
+extra-distance cap; “Any” removes it.
+Origins with a common feasible route
+Region Sources Origins Baseline +20% +50% Any Gain
+NW 344 1,243 720 812 961 1,200 480
+SW 448 1,139 659 754 760 940 281
+SE 346 1,241 1,196 1,224 1,231 1,240 44
+NE 449 1,138 1,075 1,079 1,092 1,110 35
+The largest gain occurs for a northwest alarm. Coverage rises from 720 to 1,200 of 1,243
+origins, or from 57.9% to 96.5%. Of the 523 origins whose shortest routes do not meet the target,
+480 can meet it by changing route. A southwest alarm also gives a substantial gain: 659 to 940
+of 1,139 origins. The southeast and northeast gains are smaller because their shortest-route
+baselines already cover most outside-region origins.
+This is not peculiar to the 30-minute threshold. For northwest alarms, rerouting adds 467
+origins at 10 minutes and 479 at 20 minutes; for southwest alarms, it adds 337 and 334. Figure 2
+shows these comparisons alongside the distance tradeoff. The number ofadditionalorigins need
+not decrease as the delay target increases: both the baseline and the optimized coverage can
+decrease, at different rates.
+The gains are spatially concentrated, not 480 independent replications. The 480 newly served
+northwest origins form five connected components in their induced subgraph, of sizes 402, 59, 17,
+4
+
+Dry
+shortest
+5 10 20 50 100 No
+limit
+Allowed extra distance (%)
+50
+60
+70
+80
+90
+100Origins with a 30-min guarantee (%)
+(a) More distance can buy more coverage
+NW
+SW
+SE
+NE
+10 20 30
+T arget notification delay (min)
+0
+100
+200
+300
+400
+500Additional origins served by rerouting
+NW: 480
+SW: 281
+SE: 44
+NE: 35
+(b) Gains persist across delay targets
+Figure 2:The cost and extent of rerouting gains for outside-region origins. Panel (a) fixes a 30-minute
+target; panel (b) removes the distance cap and counts improvements over the baseline at each delay target.
+1, and 1. The southwest gains occupy nine components, the largest containing 203 nodes. These
+patterns are consistent with changes that protect connected groups of starting points sharing
+escape corridors. Appendix C maps all four regions. As a check on uneven CAD segmentation,
+weighting each origin by half the total length of its incident tunnels still raises northwest coverage
+from 60.0% to 98.8%, and southwest coverage from 52.4% to 86.0%. Those weights are a geometry
+diagnostic, not a model of where workers are located.
+3.2 Small detours help, but they do not capture the full benefit
+For a northwest alarm, a 20% allowance serves 812 origins; a 50% allowance serves 961; doubling
+the allowed distance serves 1,162; removing the cap serves 1,200. The median extra distance
+among the 480 newly served origins is 49.0%. A study restricted to very small detours would
+therefore miss much of the available improvement.
+The southwest result has a different cost. Its newly served origins require a median 267.4%
+extra distance, meaning a total route about 3.67 times the original length. Increasing the
+allowance from 100% to unlimited adds another 175 origins. This is useful as a bound on what
+changing routes could achieve, but a poor reason to recommend unlimited walking in practice.
+The longest newly feasible outside-region route is about 12.48km. Fatigue, injuries, congestion,
+and shaft capacity are not modeled.
+The distinction matters for planning. The calculation can show both an economical improve-
+ment and a point at which further coverage becomes expensive. It does not prescribe a universal
+detour budget. A maximum walking distance, travel-time limit, or other operational constraint
+would have to be added before producing a usable plan.
+3.3 An example: 254 extra meters change the exit
+For a southeast alarm, consider origin P0036 in Figure 3. Its dry shortest route is 6.195km and
+ends at P1081. At least one of the 346 candidate source scenarios blocks that route even if the
+worker departs at onset. A different fixed route ends at P0986 and is 6.449km long. The extra
+254m, or 4.1%, buys a route that meets the 30-minute target forall346 sources.
+The improvement is not a tiny numerical change to the same path. About 6.176km of the
+original directed route and 6.430km of the replacement are not shared. The two routes have
+similar total lengths because different corridors lead to different shafts. This example was selected
+after the full experiment to explain the mechanism; the all-origin results, rather than this selected
+case, establish its prevalence. Both routes still involve substantial walking.
+5
+
+3 4 5 6 7 8 9
+x (km)
+2
+3
+4
+5
+6
+7y (km)
+Start: P0036
+Exit P1081
+Exit P0986
+Dry shortest: 6.195 km
+Regional route: 6.449 km (+4.1%)
+Figure 3:Two routes from P0036 under a southeast alarm. The modest difference in total length conceals
+a large change in corridor and endpoint; the alternative is checked against all 346 regional source nodes.
+3.4 Some failures require more than a different fixed route
+There are two distinct reasons a common route can fail. First, at least one source scenario may
+leave no feasible route at the target delay, even if the worker is told its precise location. Second,
+every source scenario may admit an escape route of its own, while nosingleroute works for all
+of them. The latter is a limitation of the available information and the fixed-route requirement.
+For southwest alarms at 30 minutes, 199 outside-region origins remain uncovered without a
+distance cap. Of these, 68 fail even with exact source information in at least one scenario. The
+other 131 have a route for every individual source but no common route. Better localization could
+potentially help the second group; it cannot by itself resolve the first. We have not optimized a
+finer partition or demonstrated how much a real sensor system would recover.
+Workers inside the alarm region are also evaluated, rather than discarded. Their results are
+less favorable: northwest coverage rises from 14 to 97 of 344 origins; southwest from 31 to 139 of
+448; southeast from 25 to 138 of 346; northeast from 28 to 179 of 449. Source and worker may
+coincide in this group. Outside-region coverage must not be presented as whole-mine coverage.
+Appendix C gives the remaining failure categories.
+4 How the routes are computed and checked
+The difficulty is to find one path that works in every scenario, not to find a different path for
+each source and then compare the answers. We solve this common-path problem exactly for the
+supplied finite scenario set, subject to explicit time limits. A timed-out query would be reported
+as unresolved, never as infeasible.
+6
+
+4.1 Search with several arrival times
+For a chosen set of source scenarios, a partial route has one length and one arrival time per
+scenario. At a node, we keep these quantities together as a label. Extending the route along a
+tunnel updates every arrival time using that scenario’s wetting time, closure time, and walking
+speed. An extension is rejected if it is infeasible in any scenario.
+If one label has no greater length and no later arrival ineveryscenario than another label
+at the same node, the second can be discarded. Any continuation it can use can also be used
+by the first, because earlier travel does not hurt. Otherwise, both labels are retained. A dry
+shortest-distance lower bound orders the search, so the first complete feasible route is the shortest
+common feasible route. The search also discards a label when a reverse, single-scenario calculation
+shows that it is already too late to reach any endpoint in that scenario.
+There is no approximate cap on the number of labels. The method can take exponential
+time in difficult instances; exactness is not a claim of general computational efficiency. Positive
+lengths and FIFO travel ensure that an optimal route need not contain cycles.
+4.2 Checking all sources without using all of them in every search
+A region contains hundreds of source scenarios, but not all need to be active in the search from
+the start. We use finite-scenario constraint generation:
+1. Begin with the source that is most restrictive for the baseline route, and find a shortest route
+feasible for that source.
+2. Check the proposed route againsteverysource in the region, using backward propagation of
+the latest feasible departure time.
+3. If a source violates the target, add it to the search and solve again. If none does, accept the
+route. If the search becomes infeasible, report that no common route exists.
+This is an exact reduction, not source sampling. At each step, the search solves a relaxation of
+the full problem. If its shortest route passes the full-source check, no shorter full-source-feasible
+route can exist. If even the relaxation is infeasible, so is the full problem. Each failed check
+adds a new source, so the procedure terminates after at most the number of candidate sources,
+provided the exact subproblems finish. Appendix A states this argument formally.
+4.3 Experimental scope and verification
+The primary study evaluates1,587×4×3 = 19 ,044origin–region–target combinations. A
+restricted-source comparison repeats those combinations, and a doubled-inflow study evaluates
+all origins and regions at 30 minutes, adding 6,348. All 44,436 queries returned a terminal result;
+none timed out. Search subproblems had a three-second limit and constraint-generation calls an
+overall 30-second limit. The source sets, targets, speeds, and main comparisons were recorded
+before the complete CAD outcomes; the higher-inflow redesign is a subsequent sensitivity study.
+This is an exploratory computational study, not an independent field confirmation.
+We checked the implementation at three levels. On 100 small random graphs with three
+scenarios each, exhaustive simple-path enumeration agreed with 400 feasibility and minimum-
+length comparisons; a further 100 maximum-delay brackets contained the enumerated optimum.
+On CAD subsets, 288 scalar and vector deadline evaluations agreed, and 72 constraint-generation
+solutions agreed with the full-scenario solver. Finally, five newly feasible routes per region
+were selected by a deterministic ordering and checked by independent scalar forward traversal
+against all regional sources, giving 7,935 successful checks. Every accepted nonbaseline route
+also underwent full-source backward validation during optimization.
+The largest relative volume-accounting residual across the 1,587 flood simulations was below
+1.02×10−13. This verifies the accounting, not the realism of the flood propagation. Source
+7
+
+identities, route sequences, binding or infeasibility-witness sources, and solver outcomes are
+preserved with the analysis.
+5 What changes when the hazard assumptions change?
+5.1 A route designed for one inflow may need to change
+We first hold the chosen 30-minute routes fixed and double the inflow from 0.5 to1.0 m3/s. We
+then redesign the routes for the larger inflow. These answer different questions: whether the
+original plan survives a change in conditions, and whether a suitable plan still exists.
+T able 2:Outside-region coverage at 30 minutes after doubling inflow. “Old routes” are frozen at their
+nominal-flow designs; “Redesigned” solves the problem again at the higher flow.
+AtQ= 0.5AtQ= 1.0 m 3/s
+Region Designed routes Old routes Dry shortest Redesigned
+NW 1,200 855 697 1,181
+SW 940 837 632 838
+SE 1,240 1,235 1,194 1,238
+NE 1,110 1,062 1,060 1,101
+The northwest comparison is instructive. Only 855 of the original 1,200 covered origins retain
+their guarantee under the old route assignments. Redesigning for the higher flow covers 1,181,
+compared with 697 on dry shortest routes. Much of the loss is therefore a reason to change the
+plan, rather than evidence that rerouting has ceased to help. For northeast alarms, only two of
+the 35 nominally newly served origins retain their old-route guarantee, yet redesign still adds 41
+origins over the new shortest-route baseline.
+In this particular flood model, multiplying constant inflow by a factor divides all flood event
+times by that factor. The doubled-inflow experiment uses this scaling; a direct rerun at source
+P0176 reproduced the scaled wetting and closure times exactly in the stored comparison. With
+slower wet walking and permanent closure, a route feasible at the larger inflow is also feasible
+at smaller positive inflows, for the same source and model. Thus one can design against an
+upper inflow bound without requiring the worker to estimate flow during escape. This argument
+depends on the model’s time scaling and does not carry over automatically to pumping, receding
+water, or different hydraulic dynamics.
+5.2 A smaller source set can make most of the benefit disappear
+The main source set is deliberately broad: every eligible node in the reported region. As a
+contrasting assumption, we retain only nodes within 50m of the supplied CAD water-outline
+polygons. Thereare211suchnodesintotal. Theseannotationsarenotverifiedsourceprobabilities
+or a geological risk map; the comparison asks how much the result depends on the hazard set.
+Now the shortest-route baselines are already high. Northwest gains fall from 480 to 35 origins;
+southwest gains from 281 to five; southeast gains disappear. Northeast gains remain, but many
+require almost no extra length and amount to choosing a nearly tied alternative. The large
+broad-region gains therefore cannot be advertised without explaining the uncertainty they protect
+against.
+The two source sets are alternative assumptions about the same network, not independent
+tests of a universal effect. Narrowing a source set can never make the optimal guarantee worse,
+but it can reduce theadvantage over the baseline, because the baseline also becomes safer. This
+distinction explains how a better-informed situation can need less route optimization. Whether
+8
+
+Table 3:Restricted-source comparison, with the same outside-region origins and 30-minute target as
+Table 1. Only source nodes near the CAD water annotations are retained.
+Region Retained sources Dry shortest Redesigned Gain
+NW 47 1,204 1,239 35
+SW 6 1,132 1,137 5
+SE 103 1,241 1,241 0
+NE 55 1,097 1,137 40
+either source set is defensible for a real alarm requires evidence about geology, sensors, and
+source localization that is not available here.
+6 Limitations and implications
+The strongest empirical result is a substantial improvement in coverage across several regions of
+one CAD-derived network. It does not establish the same improvement across independent mines.
+The four coordinate quadrants are not actual alarm sectors, and enumeration of every source
+node does not cover every interior point along every tunnel. Escape endpoints themselves are
+excluded as source candidates. Node counts are not survival probabilities, population estimates,
+or independent statistical replications.
+The main physical limitation is the flood model. It conserves volume but uses equal splitting, a
+propagation tree, and whole-tunnel mean depths. It does not resolve momentum, depth variation
+along a passage, junction losses, pumping, debris, or water-velocity effects on a person’s stability.
+Simultaneous-event conventions can affect a propagation-tree model. Geometry extraction,
+estimated elevations, and shaft connectors also need engineering review. The CAD network
+supplies a realistic source of geometric complexity; it does not validate the hazard schedules.
+The human side is equally limited. Routes terminate at shaft-bottom nodes and ignore
+evacuation queues, lift capacity, fatigue, injury, and route-following errors. A 12km mathematical
+escape route is not automatically an acceptable emergency instruction. The unconstrained results
+identify the available routing margin before such restrictions are imposed. The next operational
+step would be to apply defensible walking and access constraints, then measure how much of
+that margin remains.
+Within those limits, the analysis suggests a useful way to assess a plan. First identify which
+shortest routes fail under the intended alarm information. Then determine whether a different
+fixed route can meet the delay target, and measure the least extra walking it requires. Finally
+separate the failures that need better information from those that need an earlier departure even
+with perfect information. This turns a single coverage percentage into a diagnosis of what should
+change.
+7 Conclusion
+In the modeled CAD network, allowing a longer route can turn an unsafe shortest-route assignment
+into a fixed plan that tolerates a delayed regional alarm. The gain can cover connected parts
+of the network, but its walking cost and sensitivity vary greatly by region. The natural next
+questions are therefore specific: how much benefit survives calibrated hydraulic schedules and
+walking limits, and how should alarm regions be chosen to reduce the burden of fixed-route
+protection? Answering them would move the study from a conditional planning result toward a
+defensible emergency plan.
+9
+
+Data, code, and authorship.The accompanying research directory contains the anonymized
+network, source definitions, individual route results, solver checks, and figure-generation
+scripts. The primary CAD audit is incad_regional_audit/; earlier competition results are
+in regional_escape/. No public repository or field-validation dataset is asserted. Research,
+implementation, and writing received AI assistance. The present follow-up should not be
+attributed retrospectively to the original competition submission; human authorship review is
+required before external circulation.
+References
+[1] Q. Wu et al. Finding the earliest arrival path through a time-varying network for evacuation planning
+of mine water inrush.Safety Science, 130:104836, 2020. doi:10.1016/j.ssci.2020.104836.
+[2] Q. Wu, Z. Du, Y. Zhao, H. Xu, and X. Zhang. Optimal location of water level sensors for mon-
+itoring mine water inrush based on the set covering model.Scientific Reports, 11:2621, 2021.
+doi:10.1038/s41598-021-82121-7.
+[3] D. E. Kaufman and R. L. Smith. Fastest paths in time-dependent networks for intelligent vehicle-
+highway systems application.IVHS Journal, 1(1):1–11, 1993.
+[4] A. Orda and R. Rom. Shortest-path and minimum-delay algorithms in networks with time-dependent
+edge-length.Journal of the ACM, 37(3):607–625, 1990.
+[5] G. A. Hanasusanto, D. Kuhn, and W. Wiesemann.K-Adaptability in Two-Stage Robust Binary
+Programming.Operations Research, 63(4):877–891, 2015. doi:10.1287/opre.2015.1392.
+[6] China Society for Industrial and Applied Mathematics.CUMCM 2025, Problem D: Mine water-inrush
+propagation and escape planning. Supplied problem statement and network attachments, 2025.
+10
+
+A Travel times, guarantees, and exact search
+Represent each tunnel by two directed arcs. For arca in source scenarios, letℓa > 0be its
+length, ws
+a its wetting time,bs
+a its closure time, andvs
+a its wet walking speed. Dry speed is
+vd≥vs
+a>0. The uncapped arrival time for entry at timetis
+˜As
+a(t) =
+{
+t+ℓa/vd, ℓ a≤vd(ws
+a−t)+,
+max(t,w s
+a) + [ℓa−vd(ws
+a−t)+]/vs
+a,otherwise,
+where(x)+ = max(x, 0). SetAs
+a(t) = ˜As
+a(t)if it is at mostbs
+a, andAs
+a(t) = +∞otherwise. Arrival
+at the closure threshold is accepted in the numerical convention. A strict safety convention would
+require an explicit margin.
+For a pathP = (a1,...,a m), compose the arc functions to obtainAs
+P (t). These functions are
+nondecreasing, including infeasibility as+∞. In particular, earlier traversal of a path cannot
+turn a feasible journey into an infeasible one. Define its latest feasible nonnegative departure by
+Ds(P) = sup{d≥0 :As
+P (d)<∞}, DR(P) = min
+s∈SR
+Ds(P),
+with Ds(P ) = −∞if no nonnegative departure works. Backward calculations can also pro-
+duce negative algebraic deadlines, which diagnose this case; they are not physical departure
+recommendations.
+Proposition 1(A single departure-time test).For the permanent-closure travel schedules above,
+a path P is feasible in every scenarios∈ SR for every departured∈[0,τ]if and only if
+As
+P (τ)<∞for everys∈SR.
+Proof. Necessity follows by takingd =τ. For sufficiency, monotonicity givesAs
+P (d)≤As
+P (τ)<∞
+for every earlierdand every scenario.
+For an allowed extra-distance fractionε≥0, the complementary maximum-delay question is
+D∗
+R(v,ε) = max
+P:L(P)≤(1+ε)L0(v)
+DR(P).
+With the endpoint convention above,D∗
+R(v,ε)≥τexactly whenL∗
+R(v,τ)≤(1 +ε)L0(v). This
+connects the target-first experiments to the motivating question of how much delay a detour can
+buy.
+Backward deadlines and impossibility .For a tunnel with parameters( ℓ,w,b,vd,v w)and a
+required downstream deadlineq, sete = min(q,b ). The latest entry that reaches the far end bye
+is
+B(q) =
+{
+e−ℓ/vw, ℓ≤v w(e−w)+,
+min(e,w)−[ℓ−vw(e−w)+]/vd,otherwise.
+Applying this map from the last arc to the first evaluates a fixed path. A reverse label-
+setting calculation maximizes it over all routes in one known scenario; call the resultUs(v).
+If minsUs(v) < τ, at least one scenario has no feasible route. If everyUs(v)≥τbut the
+common-path problem is infeasible, the failure is due to incompatible route choices rather than
+that single-scenario obstruction.
+Proposition 2(Finite-source constraint generation).Fix an origin v, target τ, and finite
+scenario setSR. Suppose each search returns an exact shortest common feasible route for its
+active subsetT⊆SR, or certifies that none exists. If a returned route is feasible for all ofSR, it
+attains L∗
+R(v,τ). If an active-subset search is infeasible, the full problem is infeasible. Adding a
+violated source after every failed full-set check reaches one of these conclusions in finitely many
+additions.
+11
+
+Proof. Every full-set-feasible route is feasible forT, so the subset optimum is a lower bound on
+the full optimum. If its route passes all sources, it is also an upper bound, and the values agree.
+Infeasibility forT excludes feasibility for its superset. A violated source cannot already be inT;
+hence each failed check strictly enlargesT, which is contained in the finite setSR.
+The statement is conditional on exact subproblem completion. Runtime limits do not provide
+an infeasibility certificate. The production records contain no such unresolved queries. Exactness
+refers to the combinatorial search; floating-point feasibility checks use tolerances of order10−7
+seconds or smaller, not a physical safety margin.
+Why a menu indexed only by delay does not extend the guarantee.Suppose the
+source set and route constraints stay fixed, and the worker can choose a prepared route using
+the exact delay. To cover all delays up toτ, the menu must select atτsome route that works for
+every source. That route alone works for every earlier delay by the first proposition. A delay-only
+menu therefore cannot make the maximum guarantee larger, although it can spare walking when
+an early alarm permits a shorter route. Observations that also narrow the source set, or hazards
+that violate monotone feasibility, change this argument.
+B Flood schedules and reproducibility
+Each tunnel stores volume between zero and its capacityWHℓ, whereW = 4.99m and H = 3m.
+A newly reached level or downhill tunnel first receivesWh 0ℓwith h0 = 0.1m. If its far node is
+still dry, it becomes a transmitting edge in a propagation tree; if that node is already wet, it
+stores further water. An uphill tunnel fills from below before transmitting water to a previously
+dry upper node. At a reached junction, incoming flow is divided equally among available level or
+downhill outlets (using a 0.005m elevation tolerance); uphill outlets are used when none of those
+remains. A saturated dead end causes its feeding edge to stop transmitting and store water.
+Source flow trapped behind full tunnels is transferred through them to the nearest node with
+storage available; overflow after saturation is included in the volume balance.
+Events are ordered deterministically by node and edge identities when simultaneous. Flow
+assignment follows the propagation tree, and stored volume never decreases. Mean-depth closure
+at 0.3m is recorded separately from the 3m capacity. Walking becomes wet-speed travel when
+water first enters the tunnel; the routing model does not resolve a moving front inside it. These
+rules explain both conservation and the limitations of interpreting the schedules as hydraulic
+forecasts.
+The source list and input hashes are recorded incad_regional_audit/design.json; param-
+eters and the analysis design are inprotocol.json. The full_*.jsonl files contain all 19,044
+primary results. The near_*.jsonl files contain the restricted-source comparison;high_flow/
+containstheredesigneddoubled-flowresults. Thefixed-routesensitivityisin stress.json. Tables
+and figures are generated from these records byregional_alarm_paper/make_cad_figures.py.
+The accompanying README gives the run order and explains which simulation caches must be
+regenerated. No independent accident data are used for validation.
+12
+
+C Within-region origins and spatial concentration
+T able 4:Origins inside the reported source region, with a 30-minute target and no distance cap. “Known-
+source failure” means at least one scenario is individually infeasible; “No common route” means all are
+individually feasible but incompatible.
+Region Origins Baseline Redesigned Known-source failure No common route
+NW 344 14 97 172 75
+SW 448 31 139 202 107
+SE 346 25 138 105 103
+NE 449 28 179 215 55
+Source and worker may coincide in the table above. Figure 4 locates the outside-region gains;
+adjacent nodes share corridors and should not be treated as independent replications.
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+NW: 480 newly served origins
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+SW: 281 newly served origins
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+SE: 44 newly served origins
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+NE: 35 newly served origins
+Candidate sources
+Shortest route works
+Rerouting makes feasible
+No common route
+Figure 4:All outside-region origins at the 30-minute target. Orange marks points made feasible by
+rerouting; red marks points for which no common route exists, including those already impossible for at
+least one known source.
+13
+
+D The earlier competition-network evidence
+An initial screen used two networks, four regions per network, and eight design plus eight
+held-out sources per region. It selected 123 origin–region pairs for closer study. A promising
+competition-network case was then expanded to all 113 candidate source nodes in its southeast
+quadrant. This was adaptive investigation, not a prespecified external confirmation.
+With the same slower walking speeds used in this paper, all 548 outside-region origins were
+evaluated at three delay targets. At 30 minutes, dry shortest routes covered 268 origins, a 20%
+allowance covered 501, and unlimited distance covered 545. This supports the possibility of a
+substantial routing benefit in a different graph, but it covers only one region and cannot replace
+the four-region CAD analysis.
+The earlier study also exposed the danger of a small scenario set. A route designed for
+eight sources and successful on eight held-out sources supported only about 90 seconds when a
+previously omitted node source was included. Redesigning against the full set repaired that case.
+Twenty-four additional tunnel-midpoint sources were checked for one selected competition route,
+but this limited check does not certify continuous source coverage for the CAD study. These
+results motivate exhaustivenodeenumeration and an explicit statement of what remains outside
+it.
+14

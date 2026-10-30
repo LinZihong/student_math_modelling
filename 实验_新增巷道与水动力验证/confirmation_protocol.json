@@ -1,0 +1,18 @@
+{
+  "name": "delay_reversal_v1",
+  "status": "locally frozen before running these combinations; not external preregistration",
+  "origin": "synthetic low-lying B node; not a calibrated mine",
+  "factorial": {"q": [0.4, 0.6], "roughness": [0.02, 0.03], "bz": [0.3, 0.7], "extra_length": [80.0, 120.0]},
+  "dx": 6.25,
+  "swmm_dt": 0.125,
+  "fv_chamber_area": 16.0,
+  "human_speed": 1.0,
+  "exposure": "minimum over all simple B-E routes of maximum trajectory-interpolated water depth, without waiting",
+  "early_departure_s": 0,
+  "late_departure_s": 600,
+  "minimum_material_difference_m": 0.02,
+  "primary_prediction": "added passage reduces exposure by at least 0.02 m at departure 0 and increases it by at least 0.02 m at departure 600, in both models",
+  "reporting": "all 16 combinations, both model pairs, including failures, opposite signs, shallow differences and numerical warnings; no population probability",
+  "numerical_gates": "no negative depth, no roof exceedance (3m), finite residual; SWMM mass error below 1 percent; FV below 1e-6 m3; no reported nonconvergence or flooding loss",
+  "remaining_gates": "confirmation is model robustness, not field validation; junction physics, realistic hazard/speed assumptions, related-work novelty and spatial refinement remain separate requirements"
+}

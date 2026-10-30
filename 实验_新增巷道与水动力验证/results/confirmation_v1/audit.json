@@ -1,0 +1,761 @@
+{
+  "cases": 16,
+  "expected_cases": 16,
+  "primary_both_reversal": 12,
+  "all_gates_cases": 16,
+  "both_certified_cases": 16,
+  "details": [
+    {
+      "index": 0,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 5.6843418860808015e-12,
+              "max_depth": 0.2518711582321811,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.1027623258996755e-11,
+              "max_depth": 0.6840102345536302,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2805229105732799,
+          "old_witness_peak": 0.16097453379383028,
+          "certificate_margin_m": 0.1195483767794496,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.07,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.2023194134235382,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.029,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.7571572661399841,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.30451422929763794,
+          "old_witness_peak": 0.1175721287727356,
+          "certificate_margin_m": 0.18694210052490234,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 1,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 5.6843418860808015e-12,
+              "max_depth": 0.2518711582321811,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.6143530956469476e-11,
+              "max_depth": 0.649024784723288,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2524268547857147,
+          "old_witness_peak": 0.16097453379383028,
+          "certificate_margin_m": 0.09145232099188441,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.07,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.2023194134235382,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.031,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.7128299474716187,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2739516496658325,
+          "old_witness_peak": 0.1175721287727356,
+          "certificate_margin_m": 0.15637952089309692,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 2,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 6.59383658785373e-12,
+              "max_depth": 0.23468328017606538,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.1596057447604835e-11,
+              "max_depth": 0.4534923802035528,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.22568174424826715,
+          "old_witness_peak": 0.16097453379383028,
+          "certificate_margin_m": 0.06470721045443686,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.072,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.1456216722726822,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.057,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.47256240248680115,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2326326221227646,
+          "old_witness_peak": 0.1175721287727356,
+          "certificate_margin_m": 0.11506049335002899,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 3,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 6.59383658785373e-12,
+              "max_depth": 0.23468328017606538,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 9.492850949754938e-12,
+              "max_depth": 0.4429695095885172,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.207447456063098,
+          "old_witness_peak": 0.16097453379383028,
+          "certificate_margin_m": 0.04647292226926772,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.072,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.1456216722726822,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.049,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.45378124713897705,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.21024377644062042,
+          "old_witness_peak": 0.1175721287727356,
+          "certificate_margin_m": 0.09267164766788483,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 4,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 9.43600753089413e-12,
+              "max_depth": 0.2924130380685412,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.6825651982799172e-11,
+              "max_depth": 0.6909324502848606,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.29863334446512246,
+          "old_witness_peak": 0.17251218055510156,
+          "certificate_margin_m": 0.1261211639100209,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.059,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.16715796291828156,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.03,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.7496098875999451,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.31422755122184753,
+          "old_witness_peak": 0.14756128191947937,
+          "certificate_margin_m": 0.16666626930236816,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 5,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 9.43600753089413e-12,
+              "max_depth": 0.2924130380685412,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 2.0691004465334117e-11,
+              "max_depth": 0.6530181114932574,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.26881085959094764,
+          "old_witness_peak": 0.17251218055510156,
+          "certificate_margin_m": 0.09629867903584607,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.059,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.16715796291828156,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.032,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.7022546529769897,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.278789222240448,
+          "old_witness_peak": 0.14756128191947937,
+          "certificate_margin_m": 0.13122794032096863,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 6,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 9.43600753089413e-12,
+              "max_depth": 0.2961164657629207,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.7053025658242404e-11,
+              "max_depth": 0.46971944708017355,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.24962532012695687,
+          "old_witness_peak": 0.17251218055510156,
+          "certificate_margin_m": 0.07711313957185531,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.17571616172790527,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.031,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.4977659583091736,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2523876428604126,
+          "old_witness_peak": 0.14756128191947937,
+          "certificate_margin_m": 0.10482636094093323,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 7,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 9.43600753089413e-12,
+              "max_depth": 0.2961164657629207,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.864464138634503e-11,
+              "max_depth": 0.4512667613267382,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2229299899156254,
+          "old_witness_peak": 0.17251218055510156,
+          "certificate_margin_m": 0.05041780936052384,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.17571616172790527,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.034,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.4713207185268402,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.22515913844108582,
+          "old_witness_peak": 0.14756128191947937,
+          "certificate_margin_m": 0.07759785652160645,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 8,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 8.071765478234738e-12,
+              "max_depth": 0.38574121213776247,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.1596057447604835e-11,
+              "max_depth": 0.8399595621083223,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.3475711154423645,
+          "old_witness_peak": 0.21057150867053678,
+          "certificate_margin_m": 0.13699960677182774,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.062,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.3322150707244873,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.044,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.8861919641494751,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.37943920493125916,
+          "old_witness_peak": 0.15081892907619476,
+          "certificate_margin_m": 0.2286202758550644,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 9,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 8.071765478234738e-12,
+              "max_depth": 0.38574121213776247,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.0800249583553523e-11,
+              "max_depth": 0.8095816457771055,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.31830055641806815,
+          "old_witness_peak": 0.21057150867053678,
+          "certificate_margin_m": 0.10772904774753136,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.062,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.3322150707244873,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.036,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.8584502339363098,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.34513765573501587,
+          "old_witness_peak": 0.15081892907619476,
+          "certificate_margin_m": 0.1943187266588211,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 10,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 8.185452315956354e-12,
+              "max_depth": 0.31310108094356737,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.3415046851150692e-11,
+              "max_depth": 0.5485008904305236,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2835251998705656,
+          "old_witness_peak": 0.21057150867053678,
+          "certificate_margin_m": 0.07295369120002884,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.1868859827518463,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.065,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.5437909364700317,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.29331594705581665,
+          "old_witness_peak": 0.15081892907619476,
+          "certificate_margin_m": 0.1424970179796219,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 11,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 8.185452315956354e-12,
+              "max_depth": 0.31310108094356737,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.2505552149377763e-11,
+              "max_depth": 0.5473352949923483,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.26105765886506904,
+          "old_witness_peak": 0.21057150867053678,
+          "certificate_margin_m": 0.05048615019453226,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.1868859827518463,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.063,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.5264912247657776,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.26671770215034485,
+          "old_witness_peak": 0.15081892907619476,
+          "certificate_margin_m": 0.11589877307415009,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 12,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 1.3415046851150692e-11,
+              "max_depth": 0.3938971933149214,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 8.526512829121202e-12,
+              "max_depth": 0.8517125538446735,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.37234433542373885,
+          "old_witness_peak": 0.22990632207713874,
+          "certificate_margin_m": 0.1424380133466001,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.062,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.23142194747924805,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.026,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.9051064252853394,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.3929339647293091,
+          "old_witness_peak": 0.19092227518558502,
+          "certificate_margin_m": 0.20201168954372406,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 13,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 1.3415046851150692e-11,
+              "max_depth": 0.3938971933149214,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 7.844391802791506e-12,
+              "max_depth": 0.8127171370507494,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.3347225172274029,
+          "old_witness_peak": 0.22990632207713874,
+          "certificate_margin_m": 0.10481619515026419,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.062,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.23142194747924805,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.028,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.8670307397842407,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.3532674014568329,
+          "old_witness_peak": 0.19092227518558502,
+          "certificate_margin_m": 0.16234512627124786,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 14,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 1.4779288903810084e-11,
+              "max_depth": 0.4002111366272504,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.750777300912887e-11,
+              "max_depth": 0.5786863222599429,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.3143735135876008,
+          "old_witness_peak": 0.22990632207713874,
+          "certificate_margin_m": 0.08446719151046206,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.23794445395469666,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.053,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.5919490456581116,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.31811538338661194,
+          "old_witness_peak": 0.19092227518558502,
+          "certificate_margin_m": 0.12719310820102692,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    },
+    {
+      "index": 15,
+      "models": {
+        "fv": {
+          "numerical_gates": [
+            {
+              "mass_error_m3": 1.4779288903810084e-11,
+              "max_depth": 0.4002111366272504,
+              "passed": true
+            },
+            {
+              "mass_error_m3": 1.7280399333685637e-11,
+              "max_depth": 0.567509918417201,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2830176504138718,
+          "old_witness_peak": 0.22990632207713874,
+          "certificate_margin_m": 0.053111328336733044,
+          "certificate_above_2cm": true
+        },
+        "swmm": {
+          "numerical_gates": [
+            {
+              "continuity_error_pct": -0.064,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.23794445395469666,
+              "passed": true
+            },
+            {
+              "continuity_error_pct": -0.047,
+              "nonconverging_pct": 0.0,
+              "flooding_report_units": 0.0,
+              "max_depth": 0.5670909285545349,
+              "passed": true
+            }
+          ],
+          "origin_depth_new": 0.2869303226470947,
+          "old_witness_peak": 0.19092227518558502,
+          "certificate_margin_m": 0.0960080474615097,
+          "certificate_above_2cm": true
+        }
+      },
+      "both_certified": true,
+      "all_numerical_gates": true
+    }
+  ]
+}

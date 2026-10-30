@@ -1,0 +1,1598 @@
+{
+  "q": 1.4,
+  "added": false,
+  "dx": 12.5,
+  "dt": 0.25,
+  "roughness": 0.025,
+  "bz": 0.5,
+  "continuity_error_pct": -0.101,
+  "records": [
+    {
+      "id": "L0",
+      "a": "A",
+      "b": "X0_0",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L1",
+      "a": "X0_0",
+      "b": "X0_1",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L2",
+      "a": "X0_1",
+      "b": "X0_2",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L3",
+      "a": "X0_2",
+      "b": "X0_3",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L4",
+      "a": "X0_3",
+      "b": "X0_4",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L5",
+      "a": "X0_4",
+      "b": "X0_5",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L6",
+      "a": "X0_5",
+      "b": "X0_6",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L7",
+      "a": "X0_6",
+      "b": "X0_7",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L8",
+      "a": "X0_7",
+      "b": "X0_8",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L9",
+      "a": "X0_8",
+      "b": "X0_9",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L10",
+      "a": "X0_9",
+      "b": "X0_10",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L11",
+      "a": "X0_10",
+      "b": "X0_11",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L12",
+      "a": "X0_11",
+      "b": "X0_12",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L13",
+      "a": "X0_12",
+      "b": "X0_13",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L14",
+      "a": "X0_13",
+      "b": "X0_14",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L15",
+      "a": "X0_14",
+      "b": "X0_15",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L16",
+      "a": "X0_15",
+      "b": "X0_16",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L17",
+      "a": "X0_16",
+      "b": "X0_17",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L18",
+      "a": "X0_17",
+      "b": "X0_18",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L19",
+      "a": "X0_18",
+      "b": "X0_19",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L20",
+      "a": "X0_19",
+      "b": "X0_20",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L21",
+      "a": "X0_20",
+      "b": "X0_21",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669883608818054
+    },
+    {
+      "id": "L22",
+      "a": "X0_21",
+      "b": "X0_22",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669885098934174
+    },
+    {
+      "id": "L23",
+      "a": "X0_22",
+      "b": "X0_23",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669889569282532
+    },
+    {
+      "id": "L24",
+      "a": "X0_23",
+      "b": "X0_24",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669902980327606
+    },
+    {
+      "id": "L25",
+      "a": "X0_24",
+      "b": "X0_25",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23669935762882233
+    },
+    {
+      "id": "L26",
+      "a": "X0_25",
+      "b": "X0_26",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23670022189617157
+    },
+    {
+      "id": "L27",
+      "a": "X0_26",
+      "b": "X0_27",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23670248687267303
+    },
+    {
+      "id": "L28",
+      "a": "X0_27",
+      "b": "X0_28",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.2367083877325058
+    },
+    {
+      "id": "L29",
+      "a": "X0_28",
+      "b": "X0_29",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23672378063201904
+    },
+    {
+      "id": "L30",
+      "a": "X0_29",
+      "b": "X0_30",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23676393926143646
+    },
+    {
+      "id": "L31",
+      "a": "X0_30",
+      "b": "X0_31",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23686857521533966
+    },
+    {
+      "id": "L32",
+      "a": "X0_31",
+      "b": "X0_32",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23714056611061096
+    },
+    {
+      "id": "L33",
+      "a": "X0_32",
+      "b": "X0_33",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.2378431111574173
+    },
+    {
+      "id": "L34",
+      "a": "X0_33",
+      "b": "X0_34",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.23962895572185516
+    },
+    {
+      "id": "L35",
+      "a": "X0_34",
+      "b": "X0_35",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.24399147927761078
+    },
+    {
+      "id": "L36",
+      "a": "X0_35",
+      "b": "X0_36",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.2537364363670349
+    },
+    {
+      "id": "L37",
+      "a": "X0_36",
+      "b": "X0_37",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.27199164032936096
+    },
+    {
+      "id": "L38",
+      "a": "X0_37",
+      "b": "X0_38",
+      "length": 12.5,
+      "corridor": 0,
+      "block": null,
+      "max_depth": 0.29946762323379517
+    },
+    {
+      "id": "L39",
+      "a": "X0_38",
+      "b": "E",
+      "length": 12.5,
+      "corridor": 0,
+      "block": 1858,
+      "max_depth": 0.3343188166618347
+    },
+    {
+      "id": "L40",
+      "a": "A",
+      "b": "X1_0",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L41",
+      "a": "X1_0",
+      "b": "X1_1",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669882118701935
+    },
+    {
+      "id": "L42",
+      "a": "X1_1",
+      "b": "X1_2",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669880628585815
+    },
+    {
+      "id": "L43",
+      "a": "X1_2",
+      "b": "X1_3",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669880628585815
+    },
+    {
+      "id": "L44",
+      "a": "X1_3",
+      "b": "X1_4",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669880628585815
+    },
+    {
+      "id": "L45",
+      "a": "X1_4",
+      "b": "X1_5",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669879138469696
+    },
+    {
+      "id": "L46",
+      "a": "X1_5",
+      "b": "X1_6",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669879138469696
+    },
+    {
+      "id": "L47",
+      "a": "X1_6",
+      "b": "X1_7",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669877648353577
+    },
+    {
+      "id": "L48",
+      "a": "X1_7",
+      "b": "X1_8",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669874668121338
+    },
+    {
+      "id": "L49",
+      "a": "X1_8",
+      "b": "X1_9",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.236698716878891
+    },
+    {
+      "id": "L50",
+      "a": "X1_9",
+      "b": "X1_10",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366986870765686
+    },
+    {
+      "id": "L51",
+      "a": "X1_10",
+      "b": "X1_11",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669862747192383
+    },
+    {
+      "id": "L52",
+      "a": "X1_11",
+      "b": "X1_12",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669855296611786
+    },
+    {
+      "id": "L53",
+      "a": "X1_12",
+      "b": "X1_13",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366984486579895
+    },
+    {
+      "id": "L54",
+      "a": "X1_13",
+      "b": "X1_14",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669829964637756
+    },
+    {
+      "id": "L55",
+      "a": "X1_14",
+      "b": "X1_15",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669809103012085
+    },
+    {
+      "id": "L56",
+      "a": "X1_15",
+      "b": "X1_16",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669780790805817
+    },
+    {
+      "id": "L57",
+      "a": "X1_16",
+      "b": "X1_17",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669740557670593
+    },
+    {
+      "id": "L58",
+      "a": "X1_17",
+      "b": "X1_18",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669683933258057
+    },
+    {
+      "id": "L59",
+      "a": "X1_18",
+      "b": "X1_19",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366960644721985
+    },
+    {
+      "id": "L60",
+      "a": "X1_19",
+      "b": "X1_20",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669499158859253
+    },
+    {
+      "id": "L61",
+      "a": "X1_20",
+      "b": "X1_21",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669347167015076
+    },
+    {
+      "id": "L62",
+      "a": "X1_21",
+      "b": "X1_22",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23669137060642242
+    },
+    {
+      "id": "L63",
+      "a": "X1_22",
+      "b": "X1_23",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23668844997882843
+    },
+    {
+      "id": "L64",
+      "a": "X1_23",
+      "b": "X1_24",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23668436706066132
+    },
+    {
+      "id": "L65",
+      "a": "X1_24",
+      "b": "X1_25",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23667868971824646
+    },
+    {
+      "id": "L66",
+      "a": "X1_25",
+      "b": "X1_26",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23667076230049133
+    },
+    {
+      "id": "L67",
+      "a": "X1_26",
+      "b": "X1_27",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366597205400467
+    },
+    {
+      "id": "L68",
+      "a": "X1_27",
+      "b": "X1_28",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23664435744285583
+    },
+    {
+      "id": "L69",
+      "a": "X1_28",
+      "b": "X1_29",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2366229146718979
+    },
+    {
+      "id": "L70",
+      "a": "X1_29",
+      "b": "X1_30",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23659305274486542
+    },
+    {
+      "id": "L71",
+      "a": "X1_30",
+      "b": "X1_31",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2365514039993286
+    },
+    {
+      "id": "L72",
+      "a": "X1_31",
+      "b": "X1_32",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2364933043718338
+    },
+    {
+      "id": "L73",
+      "a": "X1_32",
+      "b": "X1_33",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23641225695610046
+    },
+    {
+      "id": "L74",
+      "a": "X1_33",
+      "b": "X1_34",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23629909753799438
+    },
+    {
+      "id": "L75",
+      "a": "X1_34",
+      "b": "X1_35",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23614095151424408
+    },
+    {
+      "id": "L76",
+      "a": "X1_35",
+      "b": "X1_36",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23591966927051544
+    },
+    {
+      "id": "L77",
+      "a": "X1_36",
+      "b": "X1_37",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2356094866991043
+    },
+    {
+      "id": "L78",
+      "a": "X1_37",
+      "b": "X1_38",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23517359793186188
+    },
+    {
+      "id": "L79",
+      "a": "X1_38",
+      "b": "X1_39",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2345588207244873
+    },
+    {
+      "id": "L80",
+      "a": "X1_39",
+      "b": "X1_40",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.23368725180625916
+    },
+    {
+      "id": "L81",
+      "a": "X1_40",
+      "b": "X1_41",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2324422001838684
+    },
+    {
+      "id": "L82",
+      "a": "X1_41",
+      "b": "X1_42",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2306433916091919
+    },
+    {
+      "id": "L83",
+      "a": "X1_42",
+      "b": "X1_43",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.22799888253211975
+    },
+    {
+      "id": "L84",
+      "a": "X1_43",
+      "b": "X1_44",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2239997237920761
+    },
+    {
+      "id": "L85",
+      "a": "X1_44",
+      "b": "X1_45",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.2176402062177658
+    },
+    {
+      "id": "L86",
+      "a": "X1_45",
+      "b": "X1_46",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.20635659992694855
+    },
+    {
+      "id": "L87",
+      "a": "X1_46",
+      "b": "C",
+      "length": 12.5,
+      "corridor": 1,
+      "block": null,
+      "max_depth": 0.17986837029457092
+    },
+    {
+      "id": "L88",
+      "a": "B",
+      "b": "X2_0",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2578,
+      "max_depth": 0.5195826888084412
+    },
+    {
+      "id": "L89",
+      "a": "X2_0",
+      "b": "X2_1",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2616,
+      "max_depth": 0.5065472722053528
+    },
+    {
+      "id": "L90",
+      "a": "X2_1",
+      "b": "X2_2",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2654,
+      "max_depth": 0.49483805894851685
+    },
+    {
+      "id": "L91",
+      "a": "X2_2",
+      "b": "X2_3",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2694,
+      "max_depth": 0.481558620929718
+    },
+    {
+      "id": "L92",
+      "a": "X2_3",
+      "b": "X2_4",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2742,
+      "max_depth": 0.4696570634841919
+    },
+    {
+      "id": "L93",
+      "a": "X2_4",
+      "b": "X2_5",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2786,
+      "max_depth": 0.4567444622516632
+    },
+    {
+      "id": "L94",
+      "a": "X2_5",
+      "b": "X2_6",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2836,
+      "max_depth": 0.44447240233421326
+    },
+    {
+      "id": "L95",
+      "a": "X2_6",
+      "b": "X2_7",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2888,
+      "max_depth": 0.43184956908226013
+    },
+    {
+      "id": "L96",
+      "a": "X2_7",
+      "b": "X2_8",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 2942,
+      "max_depth": 0.4194034934043884
+    },
+    {
+      "id": "L97",
+      "a": "X2_8",
+      "b": "X2_9",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3000,
+      "max_depth": 0.40689510107040405
+    },
+    {
+      "id": "L98",
+      "a": "X2_9",
+      "b": "X2_10",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3058,
+      "max_depth": 0.3944213390350342
+    },
+    {
+      "id": "L99",
+      "a": "X2_10",
+      "b": "X2_11",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3120,
+      "max_depth": 0.38195914030075073
+    },
+    {
+      "id": "L100",
+      "a": "X2_11",
+      "b": "X2_12",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3186,
+      "max_depth": 0.36951756477355957
+    },
+    {
+      "id": "L101",
+      "a": "X2_12",
+      "b": "X2_13",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3252,
+      "max_depth": 0.3571063280105591
+    },
+    {
+      "id": "L102",
+      "a": "X2_13",
+      "b": "X2_14",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3322,
+      "max_depth": 0.34473106265068054
+    },
+    {
+      "id": "L103",
+      "a": "X2_14",
+      "b": "X2_15",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3396,
+      "max_depth": 0.332405149936676
+    },
+    {
+      "id": "L104",
+      "a": "X2_15",
+      "b": "X2_16",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3470,
+      "max_depth": 0.3201412558555603
+    },
+    {
+      "id": "L105",
+      "a": "X2_16",
+      "b": "X2_17",
+      "length": 12.5,
+      "corridor": 2,
+      "block": 3548,
+      "max_depth": 0.30795779824256897
+    },
+    {
+      "id": "L106",
+      "a": "X2_17",
+      "b": "X2_18",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.2958771288394928
+    },
+    {
+      "id": "L107",
+      "a": "X2_18",
+      "b": "X2_19",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.2839277386665344
+    },
+    {
+      "id": "L108",
+      "a": "X2_19",
+      "b": "X2_20",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.2721458077430725
+    },
+    {
+      "id": "L109",
+      "a": "X2_20",
+      "b": "X2_21",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.26057642698287964
+    },
+    {
+      "id": "L110",
+      "a": "X2_21",
+      "b": "X2_22",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.24927644431591034
+    },
+    {
+      "id": "L111",
+      "a": "X2_22",
+      "b": "X2_23",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.2383156567811966
+    },
+    {
+      "id": "L112",
+      "a": "X2_23",
+      "b": "X2_24",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.22777852416038513
+    },
+    {
+      "id": "L113",
+      "a": "X2_24",
+      "b": "X2_25",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.21776430308818817
+    },
+    {
+      "id": "L114",
+      "a": "X2_25",
+      "b": "X2_26",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.20838485658168793
+    },
+    {
+      "id": "L115",
+      "a": "X2_26",
+      "b": "X2_27",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.19975830614566803
+    },
+    {
+      "id": "L116",
+      "a": "X2_27",
+      "b": "X2_28",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.19199761748313904
+    },
+    {
+      "id": "L117",
+      "a": "X2_28",
+      "b": "X2_29",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.18519513309001923
+    },
+    {
+      "id": "L118",
+      "a": "X2_29",
+      "b": "X2_30",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.17940488457679749
+    },
+    {
+      "id": "L119",
+      "a": "X2_30",
+      "b": "X2_31",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.17462889850139618
+    },
+    {
+      "id": "L120",
+      "a": "X2_31",
+      "b": "X2_32",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1708131730556488
+    },
+    {
+      "id": "L121",
+      "a": "X2_32",
+      "b": "X2_33",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16785597801208496
+    },
+    {
+      "id": "L122",
+      "a": "X2_33",
+      "b": "X2_34",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1656257063150406
+    },
+    {
+      "id": "L123",
+      "a": "X2_34",
+      "b": "X2_35",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.163981631398201
+    },
+    {
+      "id": "L124",
+      "a": "X2_35",
+      "b": "X2_36",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.162790909409523
+    },
+    {
+      "id": "L125",
+      "a": "X2_36",
+      "b": "X2_37",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16193898022174835
+    },
+    {
+      "id": "L126",
+      "a": "X2_37",
+      "b": "X2_38",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.16133344173431396
+    },
+    {
+      "id": "L127",
+      "a": "X2_38",
+      "b": "C",
+      "length": 12.5,
+      "corridor": 2,
+      "block": null,
+      "max_depth": 0.1609031856060028
+    },
+    {
+      "id": "L128",
+      "a": "C",
+      "b": "X3_0",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16070982813835144
+    },
+    {
+      "id": "L129",
+      "a": "X3_0",
+      "b": "X3_1",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16068188846111298
+    },
+    {
+      "id": "L130",
+      "a": "X3_1",
+      "b": "X3_2",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16065575182437897
+    },
+    {
+      "id": "L131",
+      "a": "X3_2",
+      "b": "X3_3",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16063134372234344
+    },
+    {
+      "id": "L132",
+      "a": "X3_3",
+      "b": "X3_4",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16060854494571686
+    },
+    {
+      "id": "L133",
+      "a": "X3_4",
+      "b": "X3_5",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16058728098869324
+    },
+    {
+      "id": "L134",
+      "a": "X3_5",
+      "b": "X3_6",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1605674773454666
+    },
+    {
+      "id": "L135",
+      "a": "X3_6",
+      "b": "X3_7",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16054904460906982
+    },
+    {
+      "id": "L136",
+      "a": "X3_7",
+      "b": "X3_8",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1605318933725357
+    },
+    {
+      "id": "L137",
+      "a": "X3_8",
+      "b": "X3_9",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16051599383354187
+    },
+    {
+      "id": "L138",
+      "a": "X3_9",
+      "b": "X3_10",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16050124168395996
+    },
+    {
+      "id": "L139",
+      "a": "X3_10",
+      "b": "X3_11",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1604876071214676
+    },
+    {
+      "id": "L140",
+      "a": "X3_11",
+      "b": "X3_12",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16047507524490356
+    },
+    {
+      "id": "L141",
+      "a": "X3_12",
+      "b": "X3_13",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16046364605426788
+    },
+    {
+      "id": "L142",
+      "a": "X3_13",
+      "b": "X3_14",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16045339405536652
+    },
+    {
+      "id": "L143",
+      "a": "X3_14",
+      "b": "X3_15",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1604444980621338
+    },
+    {
+      "id": "L144",
+      "a": "X3_15",
+      "b": "X3_16",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16043737530708313
+    },
+    {
+      "id": "L145",
+      "a": "X3_16",
+      "b": "X3_17",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1604328155517578
+    },
+    {
+      "id": "L146",
+      "a": "X3_17",
+      "b": "X3_18",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16043232381343842
+    },
+    {
+      "id": "L147",
+      "a": "X3_18",
+      "b": "X3_19",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16043879091739655
+    },
+    {
+      "id": "L148",
+      "a": "X3_19",
+      "b": "X3_20",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1604575514793396
+    },
+    {
+      "id": "L149",
+      "a": "X3_20",
+      "b": "X3_21",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16049855947494507
+    },
+    {
+      "id": "L150",
+      "a": "X3_21",
+      "b": "X3_22",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16058021783828735
+    },
+    {
+      "id": "L151",
+      "a": "X3_22",
+      "b": "X3_23",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16073636710643768
+    },
+    {
+      "id": "L152",
+      "a": "X3_23",
+      "b": "X3_24",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16102845966815948
+    },
+    {
+      "id": "L153",
+      "a": "X3_24",
+      "b": "X3_25",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16156628727912903
+    },
+    {
+      "id": "L154",
+      "a": "X3_25",
+      "b": "X3_26",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1625395268201828
+    },
+    {
+      "id": "L155",
+      "a": "X3_26",
+      "b": "X3_27",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.16425783932209015
+    },
+    {
+      "id": "L156",
+      "a": "X3_27",
+      "b": "X3_28",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1671813428401947
+    },
+    {
+      "id": "L157",
+      "a": "X3_28",
+      "b": "X3_29",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1718984693288803
+    },
+    {
+      "id": "L158",
+      "a": "X3_29",
+      "b": "X3_30",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.17900636792182922
+    },
+    {
+      "id": "L159",
+      "a": "X3_30",
+      "b": "X3_31",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.1889168620109558
+    },
+    {
+      "id": "L160",
+      "a": "X3_31",
+      "b": "X3_32",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2017088681459427
+    },
+    {
+      "id": "L161",
+      "a": "X3_32",
+      "b": "X3_33",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.21713635325431824
+    },
+    {
+      "id": "L162",
+      "a": "X3_33",
+      "b": "X3_34",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2347644865512848
+    },
+    {
+      "id": "L163",
+      "a": "X3_34",
+      "b": "X3_35",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2541206181049347
+    },
+    {
+      "id": "L164",
+      "a": "X3_35",
+      "b": "X3_36",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.2747865319252014
+    },
+    {
+      "id": "L165",
+      "a": "X3_36",
+      "b": "X3_37",
+      "length": 12.5,
+      "corridor": 3,
+      "block": null,
+      "max_depth": 0.29642969369888306
+    },
+    {
+      "id": "L166",
+      "a": "X3_37",
+      "b": "X3_38",
+      "length": 12.5,
+      "corridor": 3,
+      "block": 1960,
+      "max_depth": 0.3187999427318573
+    },
+    {
+      "id": "L167",
+      "a": "X3_38",
+      "b": "E",
+      "length": 12.5,
+      "corridor": 3,
+      "block": 1838,
+      "max_depth": 0.34171369671821594
+    },
+    {
+      "id": "L168",
+      "a": "E",
+      "b": "X4_0",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1824,
+      "max_depth": 0.35200533270835876
+    },
+    {
+      "id": "L169",
+      "a": "X4_0",
+      "b": "X4_1",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1834,
+      "max_depth": 0.34896352887153625
+    },
+    {
+      "id": "L170",
+      "a": "X4_1",
+      "b": "X4_2",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1848,
+      "max_depth": 0.3447381556034088
+    },
+    {
+      "id": "L171",
+      "a": "X4_2",
+      "b": "X4_3",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1866,
+      "max_depth": 0.33870938420295715
+    },
+    {
+      "id": "L172",
+      "a": "X4_3",
+      "b": "X4_4",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1898,
+      "max_depth": 0.3297103941440582
+    },
+    {
+      "id": "L173",
+      "a": "X4_4",
+      "b": "X4_5",
+      "length": 12.5,
+      "corridor": 4,
+      "block": 1990,
+      "max_depth": 0.31541627645492554
+    },
+    {
+      "id": "L174",
+      "a": "X4_5",
+      "b": "X4_6",
+      "length": 12.5,
+      "corridor": 4,
+      "block": null,
+      "max_depth": 0.29009222984313965
+    },
+    {
+      "id": "L175",
+      "a": "X4_6",
+      "b": "O",
+      "length": 12.5,
+      "corridor": 4,
+      "block": null,
+      "max_depth": 0.2398565113544464
+    }
+  ],
+  "latest": 836.0,
+  "dry_distance": 1000.0,
+  "warnings": []
+}

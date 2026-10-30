@@ -1,0 +1,739 @@
+Planning Mine Escape Routes
+with Zone-Based Flood Alarms
+Jingchao Wang
+Abstract
+Mine escape routes are fixed in advance, usually as the shortest way to a shaft, but when
+water breaks in, the alarm reports only which zone of the mine is flooding. We ask what a
+fixed escape plan needs to know about where the water enters. On a 248-km tunnel network
+from a real coal mine, we simulate a flood from each of its 1,587 junctions and compare three
+plans: the shortest route, a simple rule that avoids the alarm zone, and the shortest route
+that is guaranteed for every possible source in the zone, which we compute exactly. Three
+findings stand out. First, shortest routes fail not because the warning is late but because they
+converge on the shafts, where the water arrives first; with four alarm zones and a 30-minute
+delay, they can be guaranteed for only 59% of (worker, flood) pairs. Second, the shortest
+route that survives every possible source in the zone raises this to 79%; a simple rule that
+steers clear of the alarm zone, without checking the flood, reaches 69% but with much longer
+walks. Third, almost all of the remaining gap to the 99.8% possible with the exact source is
+a lack of information, not of time: finer alarm zones close it, and drawing zone boundaries
+through the shafts is worth about as much as doubling the number of zones. The results rest
+on one mine and an uncalibrated flood model.
+1 Introduction
+A water inrush happens when groundwater, or water stored in old workings, suddenly breaks into
+an operating mine. It is among the most dangerous accidents underground [4, 14, 15], because
+the water and the miners move through the same tunnels. A large mine can have hundreds of
+kilometers of tunnels connected to the surface by only a few shafts. Water entering at one point
+runs downhill, fills low sections, and can cut off passages far from where it started. Workers who
+are still underground have to reach a shaft before the tunnels on their way become too deep to
+pass.
+Escape routes are therefore planned in advance. Each work area is assigned a route to a
+shaft, the route is marked underground, and workers practice it in drills [12]. In an emergency
+people follow what they have practiced; nobody computes a fresh route for each worker. The
+natural route to practice is the shortest one.
+The difficulty is that a route fixed in advance cannot know where the water will come from.
+Even after the alarm sounds, the source is usually known only roughly. A water-level sensor or a
+report from a work face tells the control room that water has appeared in some part of the mine,
+and the alarm passes that zone on to workers. A route that is safe for a flood in one corner of
+that zone may run straight into a flood from another corner. The warning may also arrive late,
+because water can travel some distance before it reaches a sensor.
+Earlier work has treated these two sides separately. Escape-route studies find the fastest
+path through a mine whose flooding has been simulated in advance [16], and sensor studies place
+water-level sensors so that an inrush is detected quickly [17]. What connects them is the plan
+itself: what route should a worker be told to take when the alarm reports only a zone? This
+paper asks what a fixed escape plan needs to know about where the water comes from, and what
+it should do with the little that an alarm reveals. We break the question into three parts.
+1
+1. How often does the shortest route fail when only the zone is known, and why?
+2. How much better can a route do if it is checked against every possible source in the zone,
+how much walking does it cost, and does a simple rule do as well?
+3. When no fixed route works, is what is missing better information about the source, or an
+earlier warning?
+We study these questions on a tunnel network taken from the plan of a real coal mine, with
+1,592 junctions and about 248km of tunnels. For each of its 1,587 junctions we simulate a flood
+that starts there, using a simple model of how water spreads and when each tunnel becomes
+impassable. We then compare plans for every starting point and every alarm zone. Besides the
+shortest route, we test a rule that a planner could apply with a map alone: avoid the tunnels of
+the alarm zone. Against both we set therobust route, the shortest route that reaches a shaft
+for every possible source in the zone. Finding it means searching for one route that works in
+hundreds of floods at once, which we do exactly. Finally, we vary the alarm itself, from no
+location information at all to 128 small zones, and compare the result with the ceiling set by
+knowing the exact source.
+The main findings are as follows. With four alarm zones and a 30-minute warning delay,
+shortest routes can be guaranteed for 59% of all (worker, flood) pairs, the avoid-the-zone rule
+for 69%, and robust routes for 79%, whereas knowing the exact source would allow 99.8%. The
+shortest routes do not fail because the warning is late: most fail even for a worker who leaves at
+once, and they are cut within a few hundred meters of the shafts, where routes from all over the
+mine meet. The avoid-the-zone rule fixes many of the same workers, but often by sending them
+on very long detours that a robust route avoids. Nearly all of the remaining gap is a matter of
+information rather than time, and it closes as the alarm zones become finer. Where the zone
+boundaries fall matters as much as how many zones there are. A zone that contains the whole
+shaft area is a weak point that more zones elsewhere do not remove, and two zones divided at
+the shafts protect 52% of pairs, against 31–36% for two zones of equal size.
+The numbers come from a single mine and an uncalibrated flood model, so they show what
+the planning method can reveal rather than how safe this particular mine is. Section 8 discusses
+the limits.
+Related work.Wu et al. [16] find earliest-arrival escape paths through a mine network whose
+roadways flood over time, using the results of a flood simulation for a given inrush, and Zhang et
+al. [19] model the spreading itself in more detail. Water-level sensors can be placed to detect an
+inrush quickly [17]; our results suggest that where zone boundaries fall relative to the shafts also
+matters for what the detection can be used for. Evacuation planning on networks more generally
+has a large optimization literature [1].
+Our computational tools come from time-dependent and robust routing. Shortest paths with
+travel times that change over time go back to Dreyfus [5]; when arriving earlier never means
+leaving later, arrival times can be compared directly and label-setting search stays exact [8, 13].
+Comparing partial routes on several criteria at once follows multicriteria shortest-path methods
+[9], including time-dependent versions [6]. Uncertain travel times have been handled through
+expected arrival times [10] and through robust shortest paths that guard against the worst of
+several scenarios [18, 3]; Ben-Tal et al. [2] survey robust optimization in general. Our search adds
+a scenario only when a candidate route fails it, in the spirit of cutting-set methods [11]. Choosing
+among prepared plans after part of the uncertainty is revealed is studied asK-adaptability [7];
+here the revealed part is the alarm zone, and we study how its resolution changes what a plan
+can guarantee.
+Section 2 sets up the problem and Section 3 explains how robust routes are computed.
+Sections 4–6 answer the three questions in turn, Section 7 tests how the answers change with the
+inflow and the set of possible sources, and Section 8 discusses limitations.
+2
+0
+2
+4
+6
+8
+10
+x (km)
+0
+2
+4
+6
+8
+10
+y (km)
+20
+40
+60
+80
+100
+120
+floor elevation (m, relative)
+4 shafts (to the surface;
+height not to scale)
+longwall panels,
+highest in the west
+main roadway
+lowest point
+(far northeast)
+Figure 1:The mine in three dimensions, with the vertical scale exaggerated 60 times. Dark lines are the
+tunnels at their floor elevation; light gray lines are the same tunnels projected onto the floor of the box.
+The workings dip gently from the longwall panels in the west, about 80m above the lowest point, toward
+the far northeast. The four shafts (red) stand close together on the main roadway near the middle of the
+mine; their height above the workings is not to scale.
+2 The planning problem
+2.1 The mine
+Our test case is a tunnel network extracted from an anonymized CAD plan of a working longwall
+coal mine (Figure 1). It has 1,592 junctions and 2,084 tunnels with a total length of about
+248km. A main roadway runs diagonally across the mine, and longwall panels branch off it on
+both sides. The seam dips gently: tunnel floors in the west lie about 80m higher than those
+in the far northeast, so water tends to run east and northeast. All four shafts stand on the
+main roadway, within about half a kilometer of each other near the middle of the mine. Once a
+worker reaches the bottom of a shaft we count the escape as complete; the trip up the shaft is
+not modeled.
+To build the network we joined nearly touching lines on the plan, split lines where they cross,
+and connected the shafts to the tunnels. The plan gives roof elevations, which we use as relative
+floor elevations by assuming all tunnels have the same height.
+3
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+NW NE
+SW
+SE
+main roadway
+longwall panels
+shaft area (1.1 km)
+Figure 2:Plan view of the mine and the four quadrant alarm zones (dashed boundaries). All four shafts
+(red squares) sit on the main roadway where the zone boundaries cross; the inset enlarges this area.
+2.2 Sources and alarm zones
+Any junction except the four shafts and one auxiliary node can be the place where water enters,
+which we call thesource. That gives 1,587 possible sources, and the same 1,587 junctions are the
+possible starting points of workers. Each flood has exactly one source, and we treat all sources
+as equally likely.
+The alarm divides the mine into zones and reports the zone that contains the source. It does
+not report the source itself. We use two kinds of zones. The first is the fourquadrantsformed by
+the medianx and y coordinates of the junctions (Figure 2); they are the simplest possible split.
+Their boundaries happen to cross right at the shaft cluster, a fact that turns out to matter. The
+second is a family of finer zones that we use to measure the value of better information. We cut
+the mine along a straight line into two halves that contain the same tunnel length, cut each half
+along the perpendicular direction, and so on, which gives 2, 4, 8, ..., 128 zones of roughly equal
+tunnel length. With 128 zones, a zone holds about 2km of tunnel. To check that the results do
+not depend on where the cuts fall, we repeat the construction with the first cut at three angles,
+0, 60 and 120 degrees. In a real mine, the zones would follow the placement of water sensors;
+ours are geometric stand-ins that let us vary the resolution in a controlled way.
+2.3 How late the warning can be
+The alarm also comes late. Water may travel some distance before it reaches a sensor, and
+passing the warning on to workers takes more time. If the inrush starts at timet0 and the worker
+leaves on receiving the alarm at timetrec, the worker sets off a delayd =trec−t0 after the inrush
+began. The planner cannot knowd in advance, so we ask for routes that work for every delay up
+to a targetτ. Our main target is 30 minutes, and we vary it from zero to two hours. The target
+is about how late the worker may set off, not about how long the walk takes.
+4
+2.4 The flood and walking model
+To check a route, we need to know, for each source, when each tunnel first gets wet and when it
+becomes too deep to pass. We compute these times with an event-driven model that tracks the
+volume of water in every tunnel, developed for a modeling-competition problem on mine inrush
+[4]. More detailed models add pipe-flow dynamics, energy losses at junctions and pumping [19];
+we use the simpler model because the routing questions need flood times for all 1,587 sources.
+Water arriving at a junction divides equally among the level or downhill tunnels leaving it, and
+goes uphill only when no such tunnel is available. A thin layer of water covers a tunnel before
+the water moves on beyond it. Dead-end branches fill up, and water then backs up behind them.
+The depth in a tunnel is its stored volume divided by its floor area. Appendix B gives the full
+rules.
+The main runs use a constant inflow of0.5 m3/s, tunnels 4.99m wide and 3m high, and a
+0.1m water layer at the advancing front. A tunnel closes for good when its mean depth reaches
+0.3m. Workers walk at 1.3m/s in dry tunnels; in wet tunnels they walk at 0.7m/s with the flow
+and 0.5m/s against it. If water reaches a tunnel while a worker is inside it, the worker slows
+down from that moment. These values define a test case; they are not measured walking speeds
+or a validated safety threshold.
+One property of this model simplifies everything that follows. Water never recedes, so a
+worker who enters a tunnel earlier never leaves it later. It follows that a route that works for
+a worker who sets off atτalso works for any earlier departure, and checking a whole range of
+delays only requires checking the latest one (Appendix A).
+2.5 Four plans
+A plan assigns each starting pointv and each alarm zoneZ one route, fixed in advance. Every
+route in every plan ends at the bottom of one of the four shafts; the plans differ in which shaft
+they choose and how they get there. We compare four plans.
+Shortest route. Every worker takes the shortest route to the nearest shaft, whatever the alarm
+says. This is the natural default.
+Avoid-the-zone rule.Among all routes to a shaft, the worker takes the shortest of those that
+spend the least distance in tunnels touching the alarm zone. A planner could apply this rule
+with a map alone. The rule does not look at the flood when it picks a route; we check its
+routes afterwards, with the same test as every other plan.
+Robust route. Among all routes to a shaft, the shortest one that gets the worker out for every
+possible source in the zone, checked one flood at a time, and for every delay up toτ. Unlike
+the avoid-the-zone rule, it uses the flood model to pick the route, and it may cross tunnels of
+the zone that the water reaches late. Finding it requires the search described in Section 3.
+When no such route exists, the starting point cannot be protected by any fixed plan for that
+zone.
+Exact source. For comparison only, the best route for a worker who is told the exact source.
+No alarm system delivers this, but it marks a ceiling that no plan can beat.
+LetS Z be the sources in zoneZandL(P)the length of routeP. The robust route has length
+L∗
+Z(v,τ) = min
+{
+L(P) :Pleads fromvto a shaft and works
+for departure atτfor every source inSZ
+}
+, (1)
+which is infinite when no route qualifies. Because it is the shortest route with the guarantee, its
+extra length over the shortest dry route measures the least walking that the guarantee demands,
+and any cap on walking can be applied afterwards.
+5
+2.6 How we measure protection
+We say a planprotectsa starting point for a zone when the route it assigns works for every
+source in the zone and every delay up toτ. For the quadrants, we count protected starting
+points outside and inside each zone separately. Workers inside the zone may be standing next to
+the source, and their prospects are much worse.
+To compare zones of different sizes, we also use a whole-mine measure. Consider every pair
+of a starting point and a source, 1,587 by 1,587 pairs in all. A pair is protected if the plan’s
+route for the source’s zone is guaranteed for that starting point. The share of protected pairs
+is the chance that a randomly placed worker is protected in a flood from a randomly placed
+source. Each unprotected pair falls into one of two groups. If even the exact source would not
+help, because the worker has no way out of that flood after a delay ofτ, we call the pairno way
+out. Otherwise, a route exists for that flood, but no single route works for the whole zone; we
+call the pairinformation-limited, because a finer alarm could help it.
+3 Finding a route that works for every source
+Computing the best route for each source separately and comparing the answers does not give
+one route that works for all of them, so the search has to consider all floods in the zone at once.
+We do this exactly for a finite set of sources.
+One clock for each flood.Imagine that a partial route carries one clock for each flood,
+showing when the worker would reach the current junction in that flood. The search storeslabels
+at each junction, each recording a route length and the arrival times in all floods. Extending
+a route along a tunnel updates every clock, using that flood’s wetting time, closure time and
+walking speed. If the tunnel would already be closed in any flood when the worker gets there,
+the extension is discarded. If one label at a junction is no longer than another and arrives no
+later in every flood, the other label can be dropped, since arriving earlier never hurts; this is the
+dominance rule of multicriteria shortest-path search [9, 6]. The search expands labels in order
+of length plus the remaining dry distance to a shaft, so the first complete route it finds is the
+shortest route that works in every flood.
+Adding floods only when needed.A zone can hold hundreds of sources, and most of them
+do not matter for a given starting point. We start with the source that is worst for the shortest
+route, find the shortest route that works for it, and check that route against every source in the
+zone with a fast backward calculation. If some source defeats the route, we add that source and
+search again; otherwise the route is optimal for the whole zone. If no route works even for the
+sources added so far, none works for the zone. This is a cutting-set scheme [11] with the flood
+model as the oracle that finds a defeating source. The procedure is exact and ends after at most
+as many rounds as there are sources (Appendix A).
+Scale.Our experiments solve this problem 2,558,244 times, once for every starting point, zone,
+delay target and inflow considered. With time limits of three seconds per search and 30 seconds
+per query, all but seven finished. We re-solved those seven, all for workers inside zones that cover
+at least a quarter of the mine, with a limit of one hour. Each finished within 18 seconds and
+showed that no common route exists, so every result reported here is exact. We checked the
+implementation against brute-force enumeration on small networks, confirmed that the results
+obey the logical relations that must hold between the four plans, and walked a sample of routes
+forward against every source with separate code (Appendix C).
+6
+(a) Northwest alarm, 30-minute target: starting points outside the zone
+possible sources (NW zone)
+where shortest routes are cut
+shortest route works
+needs a different route
+no fixed route works
+shaft
+0 20 40 60 80 100
+Starting points outside the zone (%)
+NW
+SW
+SE
+NE
+523 fail
+480 fail
+45 fail
+63 fail
+(b) Shortest routes, 30-minute target
+works
+fails even leaving at once
+fails only because of the delay
+Figure 3:Where and why shortest routes fail, at a 30-minute delay target. (a) Northwest alarm. Purple
+dots are the possible sources; colored dots are starting points outside the zone. Starting points whose
+shortest route fails (orange and red) cover much of the mine, because their routes are cut near the shafts
+(red squares), which lie at the edge of the zone. (b) For every quadrant zone, the share of outside starting
+points whose shortest route works, fails even if the worker leaves at once, or fails only because of the delay.
+4 Why the shortest route fails
+We begin with the four quadrant zones and a 30-minute delay target. Table 1 gives, for each zone,
+how many starting points outside it each plan protects. Workers inside the zone are discussed at
+the end of Section 5.
+The shortest route works poorly for alarms in the two western zones. For a northwest alarm
+it protects 720 of the 1,243 starting points outside the zone (58%), and for a southwest alarm
+659 of 1,139 (58%). The southeast and northeast zones lose far fewer: 45 and 63 starting points.
+These failures are not caused by the late warning. Of the 523 northwest failures, 473 would
+happen even if the worker left at the moment the inrush began, and the same holds for 441 of
+the 480 southwest failures (Figure 3b). Across all four zones, 91% of the shortest routes that fail
+would fail without any delay at all.
+They fail because of where the shafts are. To see where, we followed each failing shortest
+route through the flood that defeats it and recorded where the worker is stopped. For a northwest
+alarm, the median stopping point lies 130m along the tunnels from a shaft, and 508 of the 523 lie
+within a kilometer of one; for a southwest alarm the median is 280m. All four shafts stand close
+together on the main roadway, right where the northwest and southwest zones meet (Figure 2).
+Water from a source in either zone runs into the junctions around the shafts, where routes from
+every part of the mine converge. A worker far from the flood, walking the shortest route, walks
+into it at the very end.
+Seen over the whole mine, a shortest-route plan with quadrant alarms can guarantee an
+escape for 58.7% of all (worker, flood) pairs. The guarantee is a demanding standard, because
+it must hold for every source in the zone. A complementary measure asks how often the route
+actually fails for the source that occurs. By this measure the shortest route traps 2.8% of workers
+when the warning comes 30 minutes late, which is 13 times the 0.2% who would have no way out
+even with the exact source known.
+7
+50 60 70 80 90 100
+Starting points outside the alarm zone that are protected (%)
+NW alarm
+SW alarm
+SE alarm
+NE alarm
+shortest route avoid-the-zone rule robust, ≤20% longer robust, any length exact source known
+Figure 4:Share of starting points outside each quadrant zone protected by each plan at a 30-minute
+delay target. The gray bar spans the shortest route and the ceiling set by the exact source.
+5 Routes checked against every source in the zone
+The robust route protects nearly all outside starting points for a northwest alarm: 1,200 of 1,243
+(96.5%), up from 720. For a southwest alarm it protects 940 of 1,139, up from 659 (Table 1).
+The fix usually means going to a different shaft. Of the 480 northwest starting points that only
+the robust plan protects, 462 end at a different shaft from their shortest route; in the southwest
+the figure is 207 of 281. Because it must work for every source in the zone, the robust route
+reaches the shaft cluster by an approach that none of those floods closes in time.
+Table 1:Starting points outside each quadrant zone that are protected at a 30-minute delay target. The
+robust columns allow routes up to 20% or 50% longer than the shortest route, or of any length. The last
+column counts starting points that the exact source would protect, the ceiling for any fixed plan.
+Robust route
+Zone Sources Starting points Shortest Avoid zone≤+20%≤+50% Any Exact source
+NW 344 1,243 720 1,166 812 961 1,200 1,223
+SW 448 1,139 659 838 754 760 940 1,071
+SE 346 1,241 1,196 1,233 1,224 1,231 1,240 1,240
+NE 449 1,138 1,075 1,102 1,079 1,092 1,110 1,130
+The simple avoid-the-zone rule does surprisingly well on this count. It protects 1,166 northwest
+starting points and 838 southwest ones, so it recovers 446 of the 480 northwest starting points
+that the robust route adds and 179 of the 281 southwest gains (Figure 4). Where it fails, it fails
+because it is blind to the flood: it treats every tunnel of the zone as equally dangerous and every
+tunnel outside it as safe.
+The rule pays for its simplicity in walking. For the northwest starting points it newly protects,
+its median route is 364% longer than the shortest route; the robust route protects the same
+workers with a median of 54% extra. The robust route cannot be longer, since it is the shortest
+route with the guarantee, so the difference measures what the rule wastes. In the southwest,
+where the robust route itself is long (a median of 267% extra for newly protected starting points),
+the two medians are the same. The detours that robust routes need are not always small either.
+In the northwest, a 20% allowance protects 812 starting points and a 50% allowance 961, against
+1,200 with no limit (Table 1). A practical plan would cap walking distance or time, and the same
+calculation shows how much protection remains under the cap.
+8
+2 4 6 8
+x (km)
+2
+4
+6
+8y (km)
+ cut by the flood
+shaft P0986
+shaft P1081
+start P0014
+shortest route: 6.88 km
+robust route: 8.36 km (+22%)
+Figure 5:A worker starting at junction P0014 under a northwest alarm. The shortest route (red) follows
+the main roadway to shaft P0986 and can be cut near the shaft (black cross) by a flood from the northwest
+zone (purple dots), even with no delay. The robust route (blue) reaches shaft P1081 along a parallel
+roadway and is safe for every northwest source.
+Figure 5 shows a typical case. A worker starts in the far northeast, well outside the northwest
+zone. The shortest route, 6.88km along the main roadway, ends at shaft P0986 at the northern
+end of the shaft cluster, and a flood from the northwest zone can cut it 130m before the shaft even
+if the worker leaves at once. The robust route runs down a parallel roadway to the southernmost
+shaft, P1081. It is 8.36km long, 22% more, and it works for every northwest source as long as
+the worker sets off within about four hours of the inrush.
+Workers inside the alarm zone are much harder to protect, because the source may be next
+to them. Robust routes raise the number protected from 14 to 97 of the 344 northwest starting
+points, from 31 to 139 of 448 in the southwest, from 25 to 138 of 346 in the southeast, and from
+28 to 179 of 449 in the northeast (Appendix D). The avoid-the-zone rule helps little here and
+in the southwest protects fewer workers than the shortest route, since a worker inside the zone
+cannot avoid it.
+Over the whole mine, robust routes raise the guaranteed share of (worker, flood) pairs from
+58.7% to 78.8%, and the avoid-the-zone rule to 69.2%. If the robust plan falls back on the
+avoid-the-zone rule where no robust route exists, it traps 1.3% of workers at a 30-minute delay,
+compared with 2.8% for the shortest route and 1.8% for the rule alone.
+9
+6 Information or time?
+6.1 The gap is a matter of information
+Under quadrant alarms, 21.2% of (worker, flood) pairs remain unprotected by robust routes at a
+30-minute target. Only 0.2% have no way out, in the sense that even the exact source would not
+save the worker. The other 21.0% are information-limited: a route exists for that flood, but no
+single route works for every source in the zone. Almost the whole gap is therefore a matter of
+information.
+6.2 Finer zones, and where their boundaries fall
+To see how much information is needed, we replaced the quadrants by zones of equal tunnel
+length, from a single zone covering the whole mine up to 128 zones (Table 2 and Figure 6a). With
+no location information at all, robust routes can be guaranteed for only 10% of pairs. Protection
+then rises with the number of zones, to 51–61% with four zones, 82% with sixteen, and 97% with
+sixty-four, close to the 99.8% ceiling. The three cutting angles agree within a few points, except
+with four, eight and thirty-two zones, where a small shift of the boundaries changes the result by
+up to nine points.
+Table 2:Share of (worker, flood) pairs (%) protected at a 30-minute delay target, for alarm zones of
+equal tunnel length. Where the three cutting angles differ, the mean is followed by the range. The last
+column is the information-limited share: pairs that the exact source would protect but the zone does not.
+Zones Shortest route Avoid zone Robust route Information-limited
+1 2.3 2.3 10.1 89.7
+2 23.9 (22.4–25.1) 23.8 (23.2–25.0) 33.6 (31.1–36.0) 66.1 (63.8–68.7)
+4 42.2 (36.7–49.1) 44.9 (39.1–53.1) 55.4 (51.3–60.5) 44.4 (39.3–48.5)
+8 58.9 (55.5–64.1) 61.7 (59.4–66.2) 72.9 (69.1–76.7) 26.9 (23.1–30.7)
+16 68.9 (68.0–70.6) 70.7 (69.1–73.3) 81.8 (81.5–82.0) 18.0 (17.8–18.3)
+32 76.8 (74.3–80.9) 82.1 (77.1–89.1) 92.2 (87.1–95.0) 7.5 (4.8–12.7)
+64 84.6 (83.0–87.1) 90.3 (87.0–92.2) 97.2 (97.1–97.4) 2.6 (2.4–2.7)
+128 87.8 (86.2–89.6) 92.8 (89.7–95.4) 98.3 (98.1–98.5) 1.5 (1.3–1.7)
+Exact source 97.2 – 99.8 0.0
+The four quadrants stand out. They protect 78.8% of pairs, about as much as sixteen equal
+zones and far more than four. The reason is again the shafts. In every equal-length partition
+with up to sixteen zones, a single zone contains all 167 junctions within 300m of a shaft. When
+that zone raises the alarm, any source in it can flood the approach to every shaft, and robust
+routes exist for only 10–33% of starting points. The large step between sixteen and sixty-four
+zones is the point at which the boundaries first split the shaft area. The quadrant boundaries
+happen to cross right at the shafts, splitting this area almost in half, so that even their worst
+alarm leaves 82% of starting points protected.
+To test this directly, we drew zones through the shaft cluster on purpose. One straight line
+across the main roadway between the shafts gives two zones with two shafts on each side; a
+second line along the roadway gives four zones. Two zones divided at the shafts protect 51.7%
+of pairs, against 31–36% for two zones of equal tunnel length, and four protect 69.0%, against
+51–61% (Figure 6a). Drawing the boundaries through the shafts is worth about as much as
+doubling the number of zones. It is not the whole story, since the quadrants, which also split the
+shaft area, do better still; where the other boundaries fall matters too.
+10
+1 2 4 8 16 32 64 128 exact
+Number of alarm zones
+0
+20
+40
+60
+80
+100Protected (worker, flood) pairs (%)
+shortest route,
+exact source
+(a) Finer alarm zones, 30-minute target
+shortest route
+avoid-the-zone rule
+robust fixed route
+exact source known (ceiling)
+robust, quadrants
+robust, zones divided at the shafts
+0 20 40 60 80 100 120
+Warning delay target (min)
+0
+20
+40
+60
+80
+100Protected (worker, flood) pairs (%)
+(b) Later warnings, four quadrant zones
+shortest route, quadrant zones
+avoid-the-zone rule, quadrant zones
+robust fixed route, quadrant zones
+exact source known
+Figure 6:(a) Share of (worker, flood) pairs protected at a 30-minute target, against the number of
+equal-length alarm zones; bands span the three cutting angles. The star marks the four quadrants and
+the diamonds the zones divided at the shafts. The gray dot at the right is the shortest route when the
+exact source is known. The dashed line is the ceiling set by the exact source. (b) The same share for
+quadrant zones, against the warning delay. Knowing the source makes delay almost harmless; with zone
+alarms, the plan loses protection with every minute of delay.
+6.3 Delay makes information more valuable
+Delay by itself costs very little in this model. With the exact source known, the share of pairs
+with a way out falls only from 100% to 99.8% as the delay grows from zero to 30 minutes, and to
+99.5% at two hours (Figure 6b). Under quadrant alarms, the picture is different. Robust routes
+protect 96.9% of pairs when workers leave at once, 84.1% at 10 minutes, 78.8% at 30 minutes
+and 69.4% at two hours. The information-limited share grows accordingly, from 3% to 30%.
+Delay and information therefore interact. A worker who leaves immediately can almost always
+find one route that stays ahead of every possible flood in the zone. The longer the warning takes,
+the more the floods from different sources have spread, and the less likely it is that one route
+avoids all of them. With finer zones the effect shrinks: with 128 zones, protection falls only from
+98.9% at 10 minutes to 97.9% at 60 minutes. A faster alarm and a more precise alarm are partly
+substitutes, but the precise one is worth more.
+7 Sensitivity to inflow and to the set of possible sources
+A stronger inflow.Doubling the inflow to1 .0 m3/s halves every flood time. With quadrant
+alarms and a 30-minute target, the guaranteed share falls to 56.9% for shortest routes, 66.5%
+for the avoid-the-zone rule and 71.6% for robust routes, while the ceiling stays at 99.7%. The
+pattern across zone resolutions is unchanged, including the jump at the point where the shaft
+area is split (Appendix E). Because flood times scale with the inflow (Appendix B) and walking
+is slower in wet tunnels, in this model a route that works at a higher inflow also works at any
+lower one, so a plan designed for an upper bound on the inflow covers all smaller inflows.
+Fewer possible sources.So far every junction in the reported zone could be the source. In
+practice some places are much more likely than others. As a contrasting case, we kept only
+junctions within a given distance of the water areas marked on the CAD plan, which we treat
+as a rough stand-in for likely sources (Table 3). With sources within 50m of these areas, 211
+junctions in all, shortest routes can already be guaranteed for 93.8% of pairs, robust routes
+raise this to 97.8%, and the information-limited share is 2.1%. As the radius grows to 1km, the
+information-limited share rises to 19.0%, close to the 21.0% for whole zones. The fewer places
+11
+the water can come from, the less the alarm needs to say, and the less a robust plan adds. Any
+estimate of what rerouting is worth therefore depends on which sources the plan is meant to
+withstand.
+Table 3:Share of (worker, flood) pairs (%) protected under quadrant alarms at a 30-minute target, when
+the possible sources are restricted to junctions within a given distance of the water areas marked on the
+CAD plan.
+Possible sources Junctions Shortest Avoid zone Robust Information-limited Exact source
+Within 50m 211 93.8 93.7 97.8 2.1 99.9
+Within 100m 258 92.4 92.6 96.8 3.1 99.9
+Within 200m 436 82.7 87.1 93.3 6.5 99.8
+Within 500m 871 70.6 78.0 87.9 11.9 99.8
+Within 1000m 1,346 60.1 70.7 80.8 19.0 99.8
+Whole zone 1,587 58.7 69.2 78.8 21.0 99.8
+8 Limitations and implications
+The results come from a single mine, so they show what can happen rather than how often it
+happens in mines generally. In particular, the strong effect of the shafts depends on this mine’s
+layout, with all four shafts close together on one roadway; a mine with shafts far apart would
+behave differently. Our zones are geometric stand-ins for sensor zones. We treated every junction
+as an equally likely source and did not consider points partway along a tunnel. The counts in
+our tables are numbers of junctions, which are not the same as numbers of workers.
+The flood model is the main physical limitation. It conserves water volume, but it splits flow
+equally at junctions, spreads water along a tree of tunnels, and tracks only the mean depth of
+each tunnel. It ignores momentum, changes in depth along a tunnel, losses at junctions, pumping,
+debris, and the force of moving water on a person. Its timing has not been calibrated against
+any measurement. The extracted geometry and estimated elevations would also need review by
+mining engineers. The routing questions are realistic; the flood times are not.
+The model of the workers is equally simple. Routes end at the bottom of a shaft, and the
+model ignores queues, hoist capacity, fatigue, injury, and the chance of a wrong turn. Some
+robust routes are long, and a long route may be safe in the model and still be a poor emergency
+instruction.
+Within these limits, the study suggests three practical points. First, check the shortest routes
+against every source in each alarm zone, not just against the most likely one; a route can fail far
+from where the water starts. Second, look at the area around the shafts: if all shaft approaches
+lie in one alarm zone, that zone is the weak point of the plan, and splitting it is worth more than
+adding zones elsewhere. Third, a simple rule of avoiding the alarm zone captures much of the
+benefit of rerouting, but checking routes against a flood model can find much shorter ones and
+can show which workers no fixed route can protect.
+9 Conclusion
+A fixed escape plan has to work without knowing where the water comes from. In the mine we
+studied, the shortest routes fail for many workers far from any flood, because the water reaches
+the shaft area first. Routes checked against every possible source in the alarm zone repair most
+of these failures, and a simple rule of avoiding the zone repairs many of them at a higher walking
+cost. What remains is almost entirely a matter of information: alarm zones that narrow down
+the source, and in particular zones that separate the approaches to different shafts, would let a
+12
+fixed plan protect nearly every worker, while an earlier warning helps mainly by making that
+information less critical. The natural next steps are to test these findings with a calibrated flood
+model and with mines whose shafts are spread out, and to design alarm zones and escape routes
+together.
+References
+[1] V. Bayram. Optimization models for large scale network evacuation planning and management:
+A literature review.Surveys in Operations Research and Management Science, 21(2):63–84, 2016.
+doi:10.1016/j.sorms.2016.11.001.
+[2] A. Ben-Tal, L. El Ghaoui, and A. Nemirovski.Robust Optimization. Princeton University Press,
+2009. doi:10.1515/9781400831050.
+[3] D. Bertsimas and M. Sim. Robust discrete optimization and network flows.Mathematical Program-
+ming, 98(1–3):49–71, 2003. doi:10.1007/s10107-003-0396-4.
+[4] China Society for Industrial and Applied Mathematics. 2025 Higher Education Press Cup China
+Undergraduate Mathematical Contest in Modeling (CUMCM), Problem D: Spreading model of mine
+water inrush and escape plan. Problem statement and network data, 2025.
+[5] S. E. Dreyfus. An appraisal of some shortest-path algorithms.Operations Research, 17(3):395–412,
+1969. doi:10.1287/opre.17.3.395.
+[6] H. W. Hamacher, S. Ruzika, and S. A. Tjandra. Algorithms for time-dependent bicriteria shortest
+path problems.Discrete Optimization, 3(3):238–254, 2006. doi:10.1016/j.disopt.2006.05.006.
+[7] G. A. Hanasusanto, D. Kuhn, and W. Wiesemann.K-adaptability in two-stage robust binary
+programming.Operations Research, 63(4):877–891, 2015. doi:10.1287/opre.2015.1392.
+[8] D. E. Kaufman and R. L. Smith. Fastest paths in time-dependent networks for intelligent vehicle-
+highway systems application.IVHS Journal, 1(1):1–11, 1993. doi:10.1080/10248079308903779.
+[9] E. Q. V. Martins. On a multicriteria shortest path problem.European Journal of Operational
+Research, 16(2):236–245, 1984. doi:10.1016/0377-2217(84)90077-8.
+[10] E. D. Miller-Hooks and H. S. Mahmassani. Least expected time paths in stochastic, time-varying trans-
+portation networks.Transportation Science, 34(2):198–215, 2000. doi:10.1287/trsc.34.2.198.12304.
+[11] A. Mutapcic and S. Boyd. Cutting-set methods for robust convex optimization with pessimizing
+oracles.Optimization Methods and Software, 24(3):381–406, 2009. doi:10.1080/10556780802712889.
+[12] National Research Council.Improving Self-Escape from Underground Coal Mines. The National
+Academies Press, Washington, DC, 2013. doi:10.17226/18300.
+[13] A. Orda and R. Rom. Shortest-path and minimum-delay algorithms in networks with time-dependent
+edge-length.Journal of the ACM, 37(3):607–625, 1990. doi:10.1145/79147.214078.
+[14] W. Sun, W. Zhou, and J. Jiao. Hydrogeological classification and water inrush accidents in China’s
+coal mines.Mine Water and the Environment, 35(2):214–220, 2016. doi:10.1007/s10230-015-0363-3.
+[15] W. Sun, W. Li, L. Ren, and K. Li. Spatial and temporal characterization of mine water inrush
+accidents in China, 2014–2022.Water, 16(5):656, 2024. doi:10.3390/w16050656.
+[16] Q. Wu, Y. Du, H. Xu, Y. Zhao, X. Zhang, and Y. Yao. Finding the earliest arrival path through a
+time-varying network for evacuation planning of mine water inrush.Safety Science, 130:104836, 2020.
+doi:10.1016/j.ssci.2020.104836.
+[17] Q. Wu, Z. Du, Y. Zhao, H. Xu, and X. Zhang. Optimal location of water level sensors for mon-
+itoring mine water inrush based on the set covering model.Scientific Reports, 11:2621, 2021.
+doi:10.1038/s41598-021-82121-7.
+13
+[18] G. Yu and J. Yang. On the robust shortest path problem.Computers & Operations Research,
+25(6):457–468, 1998. doi:10.1016/S0305-0548(97)00085-3.
+[19] X. Zhang, Q. Wu, Y. Zhao, S. Liu, and H. Xu. Spatiotemporal modeling of water inrush
+spreading in mine roadway networks.Water Science and Technology, 85(3):872–886, 2022.
+doi:10.2166/wst.2022.009.
+A Travel times, guarantees, and exact search
+Represent each tunnel by two directed arcs. For arca in the flood from sources, letℓa> 0be
+its length,ws
+a the time it gets wet,bs
+a the time it closes, andvs
+a the walking speed once it is wet.
+The dry speed satisfiesvd≥vs
+a > 0. Ignoring closure, a worker who enters the arc at timet
+arrives at its far end at
+˜As
+a(t) =
+{
+t+ℓa/vd, ℓ a≤vd(ws
+a−t)+,
+max(t,w s
+a) + [ℓa−vd(ws
+a−t)+]/vs
+a,otherwise,
+where( x)+ = max(x, 0). Set As
+a(t) = ˜As
+a(t)if this is at mostbs
+a, andAs
+a(t) = +∞otherwise.
+Arriving exactly at the closure time counts as success; a stricter safety convention would add an
+explicit margin.
+For a pathP = (a1,...,a m), composing the arc functions givesAs
+P (t). These functions are
+nondecreasing (counting+∞as infeasible), so traversing a path earlier cannot turn a feasible
+journey into an infeasible one. The latest safe departure alongPis
+Ds(P) = sup{d≥0 :As
+P (d)<∞}, DZ(P) = min
+s∈SZ
+Ds(P),
+withD s(P) =−∞if no nonnegative departure works.
+Proposition 1(Checking one departure time is enough).For the permanent-closure travel
+times above, a pathP works in every floods∈SZ for every departured∈[0,τ]if and only if
+As
+P (τ)<∞for everys∈SZ.
+Proof. Necessity follows by takingd =τ. For sufficiency, monotonicity givesAs
+P (d)≤As
+P (τ)<∞
+for every earlierdand every flood.
+Backward deadlines.For a tunnel with parameters( ℓ,w,b,vd,v w)and a deadline q at its far
+end, sete= min(q,b). The latest entry time that reaches the far end byeis
+B(q) =
+{
+e−ℓ/vw, ℓ≤v w(e−w)+,
+min(e,w)−[ℓ−vw(e−w)+]/vd,otherwise.
+Applying this map from the last arc back to the first evaluates a fixed path. A reverse label-setting
+search maximizes it over all routes for one known source; call the resultUs(v). The exact-source
+plan protects the pair(v,s)exactly whenU s(v)≥τ; a pair withUs(v)<τhas no way out.
+Proposition 2(Adding sources one at a time).Fix a starting pointv, a targetτ, and a finite
+source setSZ. Suppose each search either returns an exact shortest route that works for its active
+subset T⊆SZ, or certifies that none exists. If a returned route works for all ofSZ, its length is
+L∗
+Z(v,τ). If the search for some subset finds no route, no route works forSZ. Adding a violated
+source after every failed check reaches one of these conclusions after finitely many additions.
+Proof. Every route that works forSZ also works forT, so the subset optimum is a lower bound
+on the full optimum. If the subset route passes all sources, it is also an upper bound, and the
+two agree. Infeasibility forT implies infeasibility for any larger set. A violated source cannot
+already be inT, so each failed check strictly enlargesT, which stays inside the finite setSZ.
+14
+The result assumes that each search finishes; a search stopped by a time limit would prove
+nothing. Floating-point feasibility checks use tolerances of10−7seconds or less, which are not a
+physical safety margin.
+Two consequences used in the paper.First, splitting a zone can only help: a route that
+works for every source inZ works for every source in any part ofZ, so the robust plan for a finer
+partition protects every pair that the coarser one protects. Second, a menu of routes indexed by
+the known delay cannot extend the guarantee for a fixed zone: to cover all delays up toτ, the
+menu must include, for delayτ, a route that works for every source, and by the first proposition
+that route alone also works for every earlier delay.
+B Flood propagation rules
+Each tunnel stores a volume between zero and its capacityWHℓ, whereW = 4.99m andH = 3m.
+When water first reaches a level or downhill tunnel, the tunnel receives a layer of volumeWh 0ℓ
+with h0 = 0.1m. If its far junction is still dry, the tunnel then passes water on and joins a
+propagation tree; if the far junction is already wet, it stores further water. An uphill tunnel fills
+from below before passing water to a dry junction above it. At a wet junction, incoming flow
+is divided equally among the level or downhill tunnels still available (with a 0.005m elevation
+tolerance), and uphill tunnels are used only when none remain. When a dead end fills up, the
+tunnel feeding it stops passing water on and stores it instead. Inflow trapped behind full tunnels
+is moved through them to the nearest junction that can still store water, and overflow after
+saturation is counted in the volume balance. Simultaneous events are ordered by junction and
+tunnel identifiers. A tunnel closes when its mean depth reaches 0.3m. Walking switches to wet
+speed when water first enters a tunnel; the model does not track a moving front inside a tunnel.
+Multiplying a constant inflow by a factor divides every flood event time by the same factor,
+so the doubled-inflow floods are the nominal floods with all times halved. A direct rerun for one
+source reproduced the scaled times exactly.
+C Checks on the implementation
+We checked the results in four ways.
+1. Brute force on small networks.The search code was tested on 100 small random networks
+with three floods each, against enumeration of every simple path; all 400 comparisons of
+feasibility and minimum length agreed.
+2. Reproduction.For the quadrant zones at 10, 20 and 30 minutes, the current code reproduces
+an earlier run of the same 19,044 queries, made with separate driver code, exactly, including
+every route length.
+3. Logical consistency.Several relations must hold if the search is exact. The robust route is the
+shortest protected route, so it must exist whenever the shortest route or the avoid-the-zone
+route is protected, and it can be no longer than either. It can exist only if every source in
+the zone leaves a way out. Its latest safe departure must reach the target. And because a
+route that works for a zone also works for each half of it, every starting point protected for
+a zone must be protected for both halves in the next finer partition. All 2,558,244 records
+satisfy the first four relations, and all 747 parent–child zone pairs satisfy the last.
+4. Independent forward walks.For each quadrant zone we sampled eight robust and eight
+zone-avoiding routes and walked each one forward through every flood in its zone, with code
+separate from the search. Leaving just before the computed latest departure reached a shaft
+15
+in all 23,012 route–source checks, and leaving one second after it failed for at least one source
+in every case.
+The flood simulations conserve water volume to a relative error of at most1.02×10−13. This
+confirms the bookkeeping, not the realism of the flood model.
+D Workers inside the alarm zone
+Table 4:Starting points inside each quadrant zone at a 30-minute target. “No way out” counts starting
+points for which at least one source in the zone leaves no route even if the source is known; “No common
+route” counts those for which every source leaves a route, but no single route works for all of them.
+Zone Starting points Shortest Avoid zone Robust No way out No common route
+NW 344 14 33 97 172 75
+SW 448 31 21 139 202 107
+SE 346 25 55 138 105 103
+NE 449 28 13 179 215 55
+E Delay, inflow and zone resolution
+Table 5:Share of (worker, flood) pairs (%) guaranteed by robust routes for several alarm partitions, at
+three delay targets with the nominal inflow of0.5 m3/s, and at 30 minutes with the inflow doubled. The
+equal-length zones use the first cutting angle.
+0.5 m3/s 1.0 m 3/s
+Alarm zones 10 min 30 min 60 min 30 min
+1 equal zone (no location) 16.4 10.1 3.5 1.4
+2 equal zones 43.2 36.0 28.3 25.6
+4 equal zones 59.9 54.5 48.7 47.4
+8 equal zones 76.7 72.9 67.2 63.8
+16 equal zones 84.8 82.0 77.0 74.0
+32 equal zones 91.2 87.1 81.2 79.6
+64 equal zones 98.2 97.4 96.6 95.9
+128 equal zones 98.9 98.4 97.9 97.6
+4 quadrants 84.1 78.8 73.6 71.6
+2 zones cut at the shafts 54.8 51.7 49.1 –
+4 zones cut at the shafts 73.2 69.0 63.5 –
+Exact source 99.9 99.8 99.7 99.7
+16

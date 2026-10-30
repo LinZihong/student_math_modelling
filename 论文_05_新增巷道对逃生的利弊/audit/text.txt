@@ -1,0 +1,425 @@
+Delayed departure can reverse the exposure benefit
+of a mine escape connection
+Working preprint — October 25, 2026
+Abstract
+An additional tunnel gives evacuees more route choices, but also gives floodwater another
+route. Can the same connection reduce flood exposure for an early evacuee and increase it for a
+late evacuee, even when each chooses the best available route? We construct a low-lying tunnel-
+network motif in which this reversal occurs under two different hydraulic models. An added
+connection initially diverts water away from an existing escape route, then feeds accumulation
+at the worker’s origin. A simple origin-depth lower bound certifies late harm independently of
+route optimization: the worker already encounters more water at departure than an explicit
+escape trajectory encounters anywhere in the original layout. In a locally frozen 16-condition
+factorial, 12 conditions meet a prespecified 2cm early-benefit/late-harm criterion in both models.
+All 16 admit the late-harm certificate in both models at three walking speeds. Refinement,
+junction-storage changes, and depth-responsive walking preserve the sign in the tested cases,
+although not every sensitivity retains a 2cm margin. The result is a mechanistic modeling
+counterexample, not a calibrated mine safety prediction. It shows why evaluating an escape
+connection requires recomputing the hazard field and specifying the departure-delay regime,
+rather than comparing route lengths alone.
+1 Introduction
+A mine escape passage can carry both people and the water from which they are escaping. This
+creates a difficulty that a shortest-path map cannot resolve: changing the walking network changes
+the hazard itself. A connection that appears beneficial on a dry map may redirect water into a
+previously sheltered part of the mine.
+Mine water inrush is the sudden entry of water into underground workings, for example when
+excavation intersects a water-bearing formation or a flooded void. Water spreads through connected
+roadways, follows elevation gradients, and can accumulate behind restrictions or in depressions.
+An evacuation instruction reaches workers only after detection, interpretation, communication,
+and response. The relevant comparison is therefore not just between routes, but betweenlayout–
+departure-time pairs. Published mine-evacuation research already couples evolving water conditions
+to route planning [1]; three-dimensional tunnel studies also identify cross passages as important
+channels for both water and escape [2].
+This study asks a narrower question:
+Can opening a connection improve early escape exposure but worsen late escape exposure,
+even after allowing the evacuee to change routes?
+We answer yes within a specified family of hydraulic models and tunnel geometries. The mechanism
+is a competition between diversion and accumulation. Initially, the connection diverts part of an
+1
+inrush away from an existing downstream escape route. A worker who leaves promptly can benefit
+without using the new connection. Later, the same connection supplies a low-lying origin. Once
+that origin is deep enough, no route choice can undo the exposure already present at departure.
+Our principal contribution is the combination of a reproducible counterexample family and an
+elementary but useful certificate of this mechanism. We compare two hydraulic treatments, retain
+their disagreements, and distinguish numerical verification from physical calibration. The certificate
+is stronger than a comparison between two routing heuristics: its lower bound applies to every
+new-layout trajectory starting at the prescribed origin and time, including trajectories with waiting
+or repeated vertices. Its upper bound needs only one explicit old-layout escape trajectory.
+The investigation began as a follow-up to the 2025 CUMCM mine-inrush routing problem [3].
+That problem motivates network representations and a baseline inflow of0.5 m3 s−1. Here we change
+the research question from routing within a fixed network to evaluating a network alteration. The
+study below is self-contained; it does not require the competition solution or its data. We use
+an idealized motif to isolate the mechanism. Supplied competition and CAD-derived networks
+motivated the setting, but neither is presented as a calibrated hydraulic case study.
+2 What is compared
+2.1 Two layouts and two hazard fields
+Let G0 be a tunnel network with worker originb and escape endpointe. LetG1 contain the same
+tunnels plus a connection. A hydraulic calculation produces water-depth fieldsh0(x,t )and h1(x,t ),
+respectively. Depth is measured above the local tunnel floor. The fields depend on the layout, the
+inrush, boundary conditions, and hydraulic parameters.
+This distinction is essential. If the hazard field on every old tunnel were held fixed, every old
+route would remain an option after adding a connection. Optimizing over a larger route set could
+not worsen the optimum. Any adverse effect in our comparison must therefore arise through a
+changed hazard field, not through the existence of an additional walking option by itself.
+A trajectoryγstarts atb at timed after the inrush begins and reachese at timeTγ. Define its
+peak-depth exposure by
+Jj(γ;d) = sup
+t∈[d,Tγ]
+hj(γ(t),t), j∈{0,1}.(1)
+For an admissible trajectory classPj(d), write
+Ej(d) = inf
+γ∈Pj (d)
+Jj(γ;d).(2)
+A positive differenceE1(d)−E0(d)means that the added connection worsens the best achievable
+value of this metric. The infimum of an empty trajectory class is+∞.
+Peak depth is an exposure measure, not a probability of injury or successful escape. Velocity,
+footing, darkness, debris, and individual mobility matter in actual inundation. We use depth because
+it admits a transparent trajectory comparison and a route-independent lower bound. We do not
+translate a few centimeters of difference into a mortality estimate.
+For the main numerical comparison,Pj(d)consists of all simpleb-to-e paths traversed at1m s−1,
+without waiting, with arrival before the one-hour simulation ends. Denote this restricted optimum
+by Esp
+j (d). There are only two such paths in the original motif and four after the connection is
+added, so they can be enumerated completely. The early-benefit claim concerns this explicit class.
+The late-harm certificate below applies to a much larger class.
+2
+2.2 A certificate that route choice cannot repair the loss
+The maximum in(1) includes the departure point. This gives a lower bound independent of walking
+speed, search algorithm, or future behavior.
+Proposition 1(Origin-depth certificate).Fix a departure time d, two nonnegative depth fields
+h0,h 1, and trajectory classesP0(d),P 1(d)whose members start at the same originb at time d.
+Suppose an explicit trajectoryγ0∈P0(d)reaches the escape endpoint with finite peak depth
+W0(d) =J 0(γ0;d).
+Then
+E1(d)−E0(d)≥h1(b,d)−W0(d).(3)
+In particular,h1(b,d )>W 0(d)certifies a strictly worse optimum in the added layout. No restriction
+on waiting, repeated vertices, or speed is needed for the new-layout class.
+Proof. Every γ∈P1(d)encounters h1(b,d )at its initial point, soJ1(γ;d)≥h1(b,d ), and hence
+E1(d)≥h1(b,d). The old-layout witness givesE0(d)≤W0(d). Subtract the inequalities.
+This is a conditional statement about given fields. It is not a numerical-error bound for a
+hydraulic solver. Its purpose is to eliminate a different explanation for an observed loss: failure to
+find a clever new route. A positive certificate remains valid even if the new-layout routing method
+is replaced by an ideal controller. An earlier relocation of the worker changes the prescribed origin
+or departure time and is outside that comparison.
+Corollary 1(A threshold interval).Under Proposition 1, ifW0(d)<h 1(b,d ), then for every depth
+thresholdθsatisfying
+W0(d)<θ<h 1(b,d),
+the witness stays belowθ, whereas every new-layout trajectory exceedsθalready at departure.
+The interval is a mathematical comparison, not a recommendation of a universal pedestrian-
+safety threshold. Reporting its endpoints is more informative than selecting a single threshold that
+happens to favor a desired conclusion.
+3 A tunnel motif that separates diversion from accumulation
+Figure 1 gives the entire network. Water enters atA; a worker starts atB and escapes atE. A
+separate link fromE to O represents downstream drainage. The hydraulic outletO is not an
+additional human escape endpoint.
+The original links areAE = 500, AC = 600, BC = 500, CE = 500, andEO = 100, with lengths
+in meters. The added link isAB. Elevations arezA = 2, zC = 1, zE = 0, andzO =−0.2meters; zB
+varies. Each tunnel has rectangular width4meters and nominal height3meters, with a linear floor
+profile between endpoints. The original shortest walking distance is1000meters, alongBCE. With
+an 80- or 120-meter connection it becomes 580 or 620 meters, alongBAE.
+The worker’s origin is lower than bothA and C. In the original layout, water can reach that
+depression only through the longer route viaC. AddingAB creates a more direct downhill supply
+from the inrush. It also diverts flow away from other branches. These two hydraulic effects act on
+different timescales. A prompt evacuee can leave the depression before substantial accumulation; a
+late evacuee starts in the accumulated water.
+3
+Figure 1: The original network and the dashed added connection. The elevation profile illustrates
+the representative case; the network drawing is schematic, not a surveyed mine plan.
+The dimensions are a controlled hydraulic scenario, not a reconstruction of an accident. The
+width and central inflow follow the competition setting. The inflow range0.4–0.6 m3 s−1brackets
+that value. The short-connection grades are approximately1.1%–2.1%; the other links have smaller
+grades. Manning coefficients0.02–0.03 s m−1/3are sensitivity values of the order used for excavated
+channels [4], not measured coefficients for a particular mine.
+We deliberately retain a small topology. It permits complete path enumeration, examination
+of the water field, and an explicit witness. A large CAD network would add uncertain junctions,
+interpolated elevations, and unspecified hydraulic outlets before clarifying the mechanism. The
+numerical evidence here supports a possibility and its cause, not its frequency across operating
+mines.
+4 Hydraulic calculations and numerical verification
+4.1 Independent finite-volume calculation
+The main independent calculation solves one-dimensional shallow-water equations in each constant-
+width tunnel. Leth be water depth,q =hu discharge per unit width,u mean velocity, andz bed
+elevation. With gravitational accelerationg= 9.81 m s−2,
+∂th+∂xq= 0,(4)
+∂tq+∂x
+(
+q2
+h + gh2
+2
+)
+=−gh∂xz−gn2q|q|
+hR4/3 , R= wh
+w+ 2h ,(5)
+where w is width,R the hydraulic radius, andn Manning roughness. Dry states use zero discharge.
+We use a first-order Harten–Lax–van Leer flux with dry-bed wave-speed bounds and hydrostatic
+reconstruction following Audusse et al. [5]. Friction is updated semi-implicitly. A Courant factor
+of0 .35, additional local draining limits, and a maximum one-second step preserve nonnegative
+depths in the network runs. These are established numerical methods; the solver is an independently
+implemented check, not a proposed new hydrodynamic scheme.
+Junctions are finite-area mixed chambers with common water level and no resolved momentum.
+4
+A chamber of plan areaSj obeys
+Sj
+dhj
+dt =Q source
+j +
+∑
+Qin
+j −
+∑
+Qout
+j .
+The same interface flux updates the adjacent channel and chamber, so internal transfers cancel
+exactly in the volume balance. The base area is16 m2. This coupling represents a specified
+storage/mixing idealization; it does not resolve three-dimensional junction circulation or guarantee
+the correct loss coefficient for an actual intersection. We vary the area rather than conceal that
+assumption.
+The network starts dry. A constant source entersA at time zero. The downstream boundary is
+transmissive. No pumping, infiltration, debris, roof collapse, or pressurized flow is included. The
+modeled depths in the confirmation runs remain below the nominal roof.
+4.2 SWMM comparison
+The second calculation uses the United States Environmental Protection Agency’s Storm Water
+Management Model (SWMM), accessed throughswmm-toolkit 0.17.0, with dynamic-wave routing
+[6]. The same links, elevations, cross sections, roughness, and source are supplied, but SWMM uses
+its own junction and outlet treatment. The source enters a junction andO is a free outfall. The
+main factorial uses 6.25-meter maximum segment length, a fixed 0.125-second routing step, and
+two-second output intervals.
+The two calculations are not independent samples from a distribution of true models. They
+share depth-averaged physics and idealized geometry. Agreement is evidence of robustness to these
+two implementations and their junction treatments. Disagreement is also evidence and is reported
+below.
+4.3 Checks that passed, and one that did not
+Mass conservation alone is insufficient to verify flood arrival times. We therefore checked steady
+flow, an advancing dry-bed front, and network equilibrium separately.
+For SWMM, six uniform-flow tests used a 500-meter rectangular channel, prescribed upstream
+flow, a downstream stage equal to Manning normal depth, and initial uniform depth. These check
+the interface and a steady solution, not a transient mine inrush.
+For the independent finite-volume core, we used Ritter’s frictionless dry-bed dam-break solution,
+a standard shallow-water benchmark [7]. With one meter of water initially to the left ofx = 0, the
+solution before boundary influence is
+h(x,t) =
+
+
+
+1, x≤− √gt,
+(2√g−x/t)2/(9g),−√gt<x<2 √gt,
+0, x≥2 √gt.
+Att = 100seconds, mean absolute depth error over|x|<700meters decreased from0 .01634to
+0.00421meters as cell size decreased from 25 to 3.125 meters. Mass residual was at most2.3×10−13
+per unit width. A nonflat lake-at-rest test preserved depth to6.7×10−16meters. Network checks
+preserved a symmetric dry-start fork exactly and a nonflat closed-loop lake at rest; the fork’s volume
+residual was7.1×10−15m3.
+The analogous SWMM dry-bed test was unsatisfactory. Even with inertial damping disabled,
+the tested setup at 6.25-meter spacing placed theh> 0.01meter front at 281.25 meters after 100
+5
+seconds, versus the analyticalh = 0.01meter location of 532.46 meters. Its mean depth error was
+approximately0.0795meters. SWMM also issued minimum-elevation-drop warnings for the flat
+links. This test does not establish that every SWMM configuration fails; initialization and model
+options matter. It does prevent treating the SWMM results as a validated transient reference. The
+finite-volume result is the main physically explicit calculation; SWMM is a robustness comparison
+with a documented limitation.
+The finite-volume front also converges more slowly than its integrated depth error: at 3.125-meter
+spacing itsh> 0.01front was 495.31 meters. We therefore do not infer subsecond arrival precision
+from small volume residuals.
+5 Experiment and trajectory evaluation
+5.1 Frozen factorial after exploratory discovery
+An exploratory search identified the low-lying-origin mechanism. We then wrote a local protocol
+before running new parameter combinations:
+Q∈{0.4,0.6}, n∈{0.02,0.03}, zB∈{0.3,0.7}, LAB∈{80,120}.
+The resulting2 4 = 16cases were each run with and without the connection under both hydraulic
+models, giving 64 calculations. The protocol and its SHA-256 digest were saved before execution.
+This was a frozen follow-up to adaptive discovery, not external preregistration or a representative
+sample of mines.
+The primary prediction required both
+Esp
+1 (0)−Esp
+0 (0)≤−0.02 m, Esp
+1 (600)−Esp
+0 (600)≥0.02 m(6)
+inbothmodels. The 2cm threshold is a prespecified materiality margin for this numerical comparison,
+not a medical threshold. We report every case, including misses.
+Numerical gates required finite values, nonnegative depths, no roof exceedance, SWMM continuity
+error below1%, no reported SWMM flooding loss or nonconverging steps, and finite-volume mass
+residual below10 −6m3. These gates catch implementation failures; they do not replace the
+benchmark tests or establish field calibration.
+5.2 Route envelopes and continuous witness peaks
+The path comparison interpolates the saved depth field in space and time, permits depth to recede,
+and does not permanently close a tunnel at its first threshold crossing. The main factorial samples
+trajectories at intervals of at most one second. It includes the origin, all segment endpoints, and
+arrival. Departure-grid results elsewhere use two-second increments and explicitly censor arrivals
+beyond the one-hour horizon.
+For the certificate, we removed trajectory sampling error relative to the saved reconstruction.
+In one space–time cell, bilinear depth interpolation composed with constant-speed motion is a
+quadratic function of time. Split the trajectory whenever it crosses a spatial knot or an output
+time. On each resulting interval, evaluate both endpoints and any interior concave quadratic vertex.
+Taking their maximum gives the exact peak for that reconstruction, up to floating-point arithmetic.
+This calculation is exact for interpolated output, not for the unknown continuum hydraulic
+solution. The distinction matters: spatial refinement and hydraulic time-step checks remain necessary.
+We verified the evaluator on a fieldh(x,t ) = x(1−t), whose trajectoryx = t has the interior
+maximum1/4, and on its reverse traversal.
+6
+The old-layout witness is alwaysBCE. At departured = 600seconds we evaluate it at speeds
+0.7, 1.0, 1.3 m s−1, then compare its peak toh1(B, 600). This post-hoc mechanism analysis is separate
+from the frozen primary prediction.
+6 Results
+6.1 The benefit changes sign with delay
+Figure 2 shows a representative exploratory case withQ = 0.5 m3 s−1, n = 0.025, zB = 0.5meters,
+and LAB = 100meters. The two models disagree on the exact crossover time and depths, but both
+show the same reversal.
+Figure 2: Best simple-route peak depth versus departure delay in the representative case. The
+dotted origin-depth lower bound eventually coincides with the added-layout envelope.
+For immediate departure, finite-volume peak exposure decreases from approximately0.144
+to0 .011meters; SWMM decreases from0.132to zero. At a ten-minute delay, the finite-volume
+comparison is0.196versus0 .285meters, and SWMM is0 .154versus0 .296meters. At twenty
+minutes, the corresponding comparisons are approximately0.207versus0 .381, and0.155versus
+0.402meters.
+The early improvement should not be attributed automatically to walking along the shortcut.
+In the confirmation factorial,BCE, an old route, is early peak-depth optimal in all 16 added-layout
+finite-volume cases and 15 of 16 SWMM cases. The connection changes the water field enough to
+improve an existing route. As water accumulates atB, that hydraulic advantage reverses. This
+separates a hydraulic mechanism from a claim about a superior path-search algorithm.
+6.2 Confirmation, including the misses
+Twelve of the 16 new parameter combinations satisfy(6) in both models (Figure 3). Cases 4–7 fail
+the primary criterion because SWMM’s early improvement is about1.98centimeters, just below the
+frozen 2cm cutoff. They are not rounded into successes. All 16 show late deterioration of at least
+2cm in both models.
+7
+Figure 3: All 16 frozen cases. Negative values favor the added connection; dashed lines mark the
+prespecified 2cm margins. Case indices follow lexicographic order ofQ,n,zB,LAB.
+All confirmation runs pass the numerical gates. The largest absolute SWMM global continuity
+error is0.072%; the largest finite-volume absolute volume residual is2.1×10−11m3. These small
+residuals establish accounting consistency, not precise arrival-time prediction.
+The continuous certificate is positive in all 96 combinations of 16 cases, two models, and three
+witness speeds. Its smallest margin is0.0350meters. Thus the late loss is not explained by restricting
+the new-layout route search to simple paths: even an unrestricted new-layout policy must incur the
+origin depth. The old-layout origin remains dry up to 600 seconds in all confirmation outputs, so
+including predeparture waiting exposure does not increase the old witness bound. The count of 96
+is a collection of designed checks with shared inputs, not 96 statistically independent observations.
+6.3 Refinement and junction storage
+We refined three cases: the first factorial corner (0), a weak early-benefit case (7), and the smallest
+late-certificate case (15). The finite-volume calculation used 3.125- and 1.5625-meter cells; SWMM
+used 3.125-meter segments and a 0.0625-second routing step. Table 1 reports the certificate for the
+slowest constant-speed witness,0.7 m s−1.
+Table 1: Late certificate margins, in centimeters. All signs persist; the values are not claimed to be
+fully converged.
+Calculation Case 0 Case 7 Case 15
+Finite volume, 3.125 m 10.44 3.13 3.21
+Finite volume, 1.5625 m 9.76 2.84 2.95
+SWMM, 3.125 m 18.73 7.44 9.37
+For case 15, the finite-volume margin decreases from3.50centimeters at 6.25-meter spacing to
+2.95centimeters at 1.5625-meter spacing. The sign survives, but the trend precludes presenting the
+coarser number as exact.
+Changing the mixed-chamber area from16to4or64 m2, at 3.125-meter spacing in case 15,
+8
+gives margins of3.52and1 .93centimeters. Larger storage weakens the effect. The latter remains
+positive but falls below the original 2cm materiality criterion; not every expanded sensitivity passes
+that threshold.
+6.4 Depth-responsive walking and model disagreement
+Constant speed could favor a witness that becomes implausibly fast in water. We therefore evaluated
+two additional witness policies. At each one-meter spatial step, the worker sets
+v= 1 m s−1
+1 +kh current
+, k∈{2,4}m−1,
+and holds that speed to the next step. These are stress-test laws, not fitted gait models. Each
+step is a linear trajectory, so its reconstructed-field peak can still be evaluated continuously. All 64
+checks finish within the simulation horizon and retain a positive certificate; the minimum margin is
+0.0460meters.
+The models do not agree universally. An earlier matched sweep used seven flows from0.5to
+2.0 m3 s−1, with a fixed low origin, and gives different classifications under a 0.3-meter closure
+threshold. Both models show harm at flows0.5,0 .8, and1.0, disagree at1.2and1 .4, and provide a
+feasible sampled route only after adding the connection at1.6and2 .0, in the same flow units. At
+Q = 1.4, the finite-volume model finds no old-layout route below 0.3 meters, whereas SWMM does.
+These findings rule out a universal claim that added connections worsen escape.
+They also motivate the exposure comparison and certificate: a single binary safety threshold
+can hide both the magnitude of disagreement and the reason for a route’s failure. The favorable
+confirmation result is local to its stated parameter family.
+7 Interpretation and limitations
+The result is a failure of fixed-hazard network intuition. On a graph with unchanged edge conditions,
+an extra option cannot worsen an optimal route. Here the added connection changes the conditions
+on existing routes and at the origin. Early diversion and later accumulation can have opposite
+effects even when the worker uses the same escape path.
+This does not imply that removing mine connections is a safety strategy. Cross passages can be
+indispensable for other inrush locations, fires, ventilation, rescue access, and congestion. Nor does
+the experiment optimize a door-closing schedule or establish that a water barrier can be operated
+safely. It identifies a quantity that a layout assessment should examine: whether a connection’s
+hydraulic effect raises origin exposure during a plausible response delay.
+Several boundaries are substantial.
+1. No field calibration.The geometry is idealized, the inflow is prescribed, and the junction
+treatments are approximations. Neither model is validated against measurements of the
+proposed motif or an operating mine. The credible component is the stated conservation-law
+model and its numerical checks; the study does not establish predictive accuracy at a site.
+2. Depth is not complete hazard.Velocity and human stability are omitted from the objective.
+A lower peak depth need not mean a safer journey if the current is faster. The conclusion is
+specifically about depth exposure.
+3. A local network family.All confirmation cases share a low-lying origin and one topology.
+They establish persistence under several parameter changes, not prevalence across mine layouts.
+Large junction storage and alternative drainage may mitigate or remove the effect.
+9
+4. Numerical uncertainty remains.The certificate is exact only for reconstructed outputs.
+Refinement preserves its sign in selected cases but does not supply a rigorous PDE error
+bound. SWMM’s dry-front discrepancy and the models’ threshold disagreements are material
+qualifications.
+5. The early comparison has a restricted policy class.It enumerates simple paths at a
+fixed speed. The late certificate has broader scope, but it still prescribes the worker’s location
+and departure time. Advance relocation and a different warning policy change the problem.
+The practical lesson is therefore methodological: evaluate the hydraulic and evacuation effects
+of an added connection together, and report the departure regime. A shorter dry route and an early
+favorable simulation do not settle the late-evacuation comparison.
+8 Conclusion
+An added tunnel can initially shield an escape route by diverting water, then increase unavoidable
+exposure by supplying the worker’s low-lying origin. The tested reversal survives two hydraulic
+treatments and a frozen parameter study, while its magnitude and some threshold classifications
+remain model dependent.
+The next question is whether the origin-depth certificate can guide selective, field-informed
+analysis of larger networks. Candidate connections could first be screened for short hydraulic access
+to occupied depressions, then checked with measured junction geometry and transient observations.
+A second question is whether detection, relocation, or controlled hydraulic isolation can preserve
+early benefits without creating late accumulation. Answering either requires information beyond a
+dry connectivity map.
+A Reproducibility and scope of the research record
+The accompanying local research package contains all inputs, code, hydraulic output, and negative
+findings. The original competition work and earlier manuscript are preserved separately. The new
+computation is organized as follows:
+•shallow_water.py and network_fv.py: independent finite-volume implementation and its
+checks.
+•benchmark_swmm.py , benchmark_transient.py, and shortcut_screen.py: SWMM verifi-
+cation and synthetic networks.
+•confirmation_protocol.json and run_confirmation.py: frozen conditions and the full
+factorial.
+•continuous_certificate.py , refine_confirmation.py, and slowed_witness.py: contin-
+uous reconstructed-field evaluation and sensitivity checks.
+The principal result files are:
+confirmation_v1/results.json
+confirmation_v1/audit.json
+confirmation_v1/continuous_certificate.json
+confirmation_refinement/results.json
+Figure generation uses retained results rather than rerunning selected successes.
+10
+The original exploratory search and the later confirmation are intentionally distinguished.
+Exploratory variants include higher flows, alternative depth thresholds, and an earlier simplified
+volume-transfer model. Those variants were not used as an independent test set. The confirmation
+was frozen only after the candidate mechanism was identified.
+No surveyed CAD drawing is required to reproduce this paper. No real accident, field validation,
+author identity, affiliation, or publication status is inferred from the numerical record. The
+implementation, mathematical development, and manuscript were prepared with AI assistance;
+human authorship review and responsibility are required before external circulation.
+References
+[1] Q. Wu et al. Finding the earliest arrival path through a time-varying network for evacuation planning of
+mine water inrush.Safety Science130 (2020), 104836. doi:10.1016/j.ssci.2020.104836.
+[2] D. Pan, S. Tai, W. Xu, Y. Du, H. Chen, and A. Hu. Volume of Fluid Implementation of Water Inrush and
+Escape Route Optimization in Tunnel.Periodica Polytechnica Civil Engineering69(3) (2025), 850–868.
+doi:10.3311/PPci.39878.
+[3] China Society for Industrial and Applied Mathematics.CUMCM 2025, Problem D: Mine water-inrush
+propagation and escape planning. Supplied problem statement and attachments; competition information:
+https://en.mcm.edu.cn/.
+[4] USDA Agricultural Research Service.WEPP User Summary, channel roughness tables.https://www.
+ars.usda.gov/ARSUserFiles/50201000/WEPP/usersum.pdf.
+[5] E. Audusse, F. Bouchut, M.-O. Bristeau, R. Klein, and B. Perthame. A fast and stable well-balanced
+scheme with hydrostatic reconstruction for shallow water flows.SIAM Journal on Scientific Computing
+25(6) (2004), 2050–2065. doi:10.1137/S1064827503431090.
+[6] US Environmental Protection Agency.Storm Water Management Model User’s Manual, Version 5.2.
+EPA/600/R-22/030, February 2022. Official manual.
+[7] O. Delestre et al. SWASHES: a compilation of shallow water analytic solutions for hydraulic and
+environmental studies.International Journal for Numerical Methods in Fluids72(3) (2013), 269–300.
+doi:10.1002/fld.3741.
+11

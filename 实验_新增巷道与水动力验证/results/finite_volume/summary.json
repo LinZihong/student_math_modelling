@@ -1,0 +1,40 @@
+[
+  {
+    "test": "ritter",
+    "dx": 25.0,
+    "mean_absolute_error": 0.01633583579452257,
+    "mass_residual_per_width": 0.0,
+    "front_h001": 462.5,
+    "exact_front_h001": 532.4556319544381
+  },
+  {
+    "test": "ritter",
+    "dx": 12.5,
+    "mean_absolute_error": 0.010660597911689565,
+    "mass_residual_per_width": 0.0,
+    "front_h001": 468.75,
+    "exact_front_h001": 532.4556319544381
+  },
+  {
+    "test": "ritter",
+    "dx": 6.25,
+    "mean_absolute_error": 0.006770082231960179,
+    "mass_residual_per_width": 2.2737367544323206e-13,
+    "front_h001": 478.125,
+    "exact_front_h001": 532.4556319544381
+  },
+  {
+    "test": "ritter",
+    "dx": 3.125,
+    "mean_absolute_error": 0.004209599499543334,
+    "mass_residual_per_width": 2.2737367544323206e-13,
+    "front_h001": 495.3125,
+    "exact_front_h001": 532.4556319544381
+  },
+  {
+    "test": "lake_at_rest",
+    "max_depth_error": 6.661338147750939e-16,
+    "max_discharge": 3.2618166446478742e-15,
+    "mass_residual_per_width": 2.2710932147126094e-14
+  }
+]

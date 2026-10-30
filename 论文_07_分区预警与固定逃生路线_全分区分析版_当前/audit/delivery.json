@@ -1,0 +1,49 @@
+{
+  "pages": 12,
+  "target_queries": 1644,
+  "dense_sources": 113,
+  "midpoint_tests": 24,
+  "all_origin_30min": {
+    "baseline": 268,
+    "20pct": 501,
+    "uncapped": 545,
+    "denominator": 548
+  },
+  "fixed_route_sensitivity": {
+    "Q0.25": 545,
+    "Q0.5": 545,
+    "Q1.0": 329,
+    "reverse_ties": 545
+  },
+  "old_pdfs_unchanged": true,
+  "no_compile_warnings": true,
+  "output_sha256": "d9d956a688e3643801ca74ecba20ef7926f9b7f7f97f46d9b3f7c14b25691a47",
+  "scope": "Finite-scenario model-relative route planning; no field hydraulic calibration, accident probability, or continuous-source guarantee. Time-menu corollary requires downward-closed feasibility and unchanged source information.",
+  "hashes": {
+    "regional_alarm_paper/main.tex": "d51fb71e5dc19aaaaf77d0956cbf53d285e642ace48a9582be99eaf9f350970f",
+    "regional_alarm_paper/README.md": "78114c7ad127433dc6c362a361d37cf6c2b67137e163fa56f606f05a94f7a21a",
+    "regional_alarm_paper/make_figures.py": "a4cbb5072ea8100461b04235b97b4c701e45796ddd94ae0b9825f06225fc3949",
+    "output/pdf/regional_alarm_escape_preprint.pdf": "d9d956a688e3643801ca74ecba20ef7926f9b7f7f97f46d9b3f7c14b25691a47",
+    "regional_alarm_paper/figures/source_coverage.png": "54bd126bcebc338be3510e293f2e1a44baa8f9789aab1a28877ed32075a458f2",
+    "regional_alarm_paper/figures/target_counts.png": "f2e78ffc4af5de1a09acde35b591994beab815ed3d37d331b7e131fb735d7408",
+    "regional_escape/summarize_longer.py": "7876daa176c58dcdcbef1fb9baa693cb8878c8aefb9ab87b02fcadeffcf9c257",
+    "regional_escape/longer_detours.py": "25d69eb10ec6cb533bff418b690d01a025f866a92d4a86e1953a663ea78e0311",
+    "regional_escape/plot.py": "72c7ac31d2e54bc34d3df74d2810844b687f6185b50ae8283f37010bda6c017b",
+    "regional_escape/dense.py": "33cb3dd4f24e03aa83c9f3f35262c941f45dded0f934170b5fd0801e9ca10736",
+    "regional_escape/dense_optimize.py": "11a6c9c14d9d42956716605f74a0a4ca791a307f34b81154e7b859eace7c3703",
+    "regional_escape/target_guarantees.py": "5a8b0da23e5e02178b21ff5c22b70de62822a647fd267645ea9140a30b1abe50",
+    "regional_escape/paper_sensitivity.py": "0d8f7425348366564cb8fc0edf04e9b45fcb1ab183dc780f8f21f4a49216d83b",
+    "regional_escape/uncapped_example.py": "0c83fc919afc043d35a8065a222bffefa8e7c02b9c43fbabfb71f4b55b889a9e",
+    "regional_escape/midpoint_check.py": "7208b18138a6ae2d9ce32b7a7b994ff06b61d2211028f199a91dce47e32c8dba",
+    "regional_escape/summarize.py": "a1e912af8f31b413caa572181f2361f6b64bde1da4ec6de2ead204d943142c3a",
+    "regional_escape/test_solver.py": "7e75ff021958d24060b80a81076f85b817ee7a11339463d8addcefec2c041232",
+    "regional_escape/prepare.py": "19770eb09685fc917dc138d4ce0d0d2fd8e0d096822910a87d1a491a1d1bbb51",
+    "regional_escape/study.py": "b209152111e957604925d1956d41c50b7ee7520316978fffc99c1006fc79d322",
+    "regional_escape/protocol.json": "2cfcb745405da1712f87675b3883de285b6c5afad96e03c573690fa132a6f51d",
+    "regional_escape/summary.json": "7c29934eda7d6c181c01452beb2b69507c5f6ab80342f45d7a35b4de843858c1",
+    "regional_escape/target_guarantees.json": "b1aed021621b071ab85a431437ea65f8e395c06d660d47e586354c3a006405b2",
+    "regional_escape/paper_sensitivity.json": "e7841ebf254952e0d17cb3db3a2b77736f96351f7593b7393a5a5c848c5daf72",
+    "regional_escape/dense_optimum.json": "042089eb457ca59069773a9694c135d820796f4317d8c330fdfbdbffd7c3e95a",
+    "regional_escape/uncapped_example.json": "eb8d3a8a085bc0614dcb80005c884b0edf69bf5907705c920960ed65bf82c638"
+  }
+}

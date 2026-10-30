@@ -1,0 +1,50 @@
+\section{Travel times, guarantees, and exact search}\label{app:math}
+Represent each tunnel by two directed arcs. For arc $a$ in the flood from source $s$, let $\ell_a>0$ be its length, $w_a^s$ the time it gets wet, $b_a^s$ the time it closes, and $v_a^s$ the walking speed once it is wet. The dry speed satisfies $v_d\ge v_a^s>0$. Ignoring closure, a worker who enters the arc at time $t$ arrives at its far end at
+\[
+ \widetilde A_a^s(t)=
+ \begin{cases}
+ t+\ell_a/v_d,&\ell_a\le v_d(w_a^s-t)_+,\\
+ \max(t,w_a^s)+[\ell_a-v_d(w_a^s-t)_+]/v_a^s,&\text{otherwise},
+ \end{cases}
+\]
+where $(x)_+=\max(x,0)$. Set $A_a^s(t)=\widetilde A_a^s(t)$ if this is at most $b_a^s$, and $A_a^s(t)=+\infty$ otherwise. Arriving exactly at the closure time counts as success; a stricter safety convention would add an explicit margin.
+
+For a path $P=(a_1,\ldots,a_m)$, composing the arc functions gives $A_P^s(t)$. These functions are nondecreasing (counting $+\infty$ as infeasible), so traversing a path earlier cannot turn a feasible journey into an infeasible one. The latest safe departure along $P$ is
+\[
+ D_s(P)=\sup\{d\ge0:A_P^s(d)<\infty\},\qquad
+ D_Z(P)=\min_{s\in\Sc_Z}D_s(P),
+\]
+with $D_s(P)=-\infty$ if no nonnegative departure works.
+
+\begin{proposition}[Checking one departure time is enough]
+For the permanent-closure travel times above, a path $P$ works in every flood $s\in\Sc_Z$ for every departure $d\in[0,\tau]$ if and only if $A_P^s(\tau)<\infty$ for every $s\in\Sc_Z$.
+\end{proposition}
+\begin{proof}
+Necessity follows by taking $d=\tau$. For sufficiency, monotonicity gives $A_P^s(d)\le A_P^s(\tau)<\infty$ for every earlier $d$ and every flood.
+\end{proof}
+
+\paragraph{Backward deadlines.}
+For a tunnel with parameters $(\ell,w,b,v_d,v_w)$ and a deadline $q$ at its far end, set $e=\min(q,b)$. The latest entry time that reaches the far end by $e$ is
+\[
+ B(q)=\begin{cases}
+ e-\ell/v_w,&\ell\le v_w(e-w)_+,\\
+ \min(e,w)-[\ell-v_w(e-w)_+]/v_d,&\text{otherwise}.
+ \end{cases}
+\]
+Applying this map from the last arc back to the first evaluates a fixed path. A reverse label-setting search maximizes it over all routes for one known source; call the result $U_s(v)$. The exact-source plan protects the pair $(v,s)$ exactly when $U_s(v)\ge\tau$; a pair with $U_s(v)<\tau$ has no way out.
+
+\begin{proposition}[Adding sources one at a time]
+Fix a starting point $v$, a target $\tau$, and a finite source set $\Sc_Z$. Suppose each search either returns an exact shortest route that works for its active subset $T\subseteq\Sc_Z$, or certifies that none exists. If a returned route works for all of $\Sc_Z$, its length is $L_Z^*(v,\tau)$. If the search for some subset finds no route, no route works for $\Sc_Z$. Adding a violated source after every failed check reaches one of these conclusions after finitely many additions.
+\end{proposition}
+\begin{proof}
+Every route that works for $\Sc_Z$ also works for $T$, so the subset optimum is a lower bound on the full optimum. If the subset route passes all sources, it is also an upper bound, and the two agree. Infeasibility for $T$ implies infeasibility for any larger set. A violated source cannot already be in $T$, so each failed check strictly enlarges $T$, which stays inside the finite set $\Sc_Z$.
+\end{proof}
+The result assumes that each search finishes; a search stopped by a time limit would prove nothing. Floating-point feasibility checks use tolerances of $10^{-7}$ seconds or less, which are not a physical safety margin.
+
+\paragraph{Two consequences used in the paper.}
+First, splitting a zone can only help: a route that works for every source in $Z$ works for every source in any part of $Z$, so the robust plan for a finer partition protects every pair that the coarser one protects. Second, a menu of routes indexed by the known delay cannot extend the guarantee for a fixed zone: to cover all delays up to $\tau$, the menu must include, for delay $\tau$, a route that works for every source, and by the first proposition that route alone also works for every earlier delay.
+
+\section{Flood propagation rules}\label{app:flood}
+Each tunnel stores a volume between zero and its capacity $WH\ell$, where $W=4.99$\,m and $H=3$\,m. When water first reaches a level or downhill tunnel, the tunnel receives a layer of volume $Wh_0\ell$ with $h_0=0.1$\,m. If its far junction is still dry, the tunnel then passes water on and joins a propagation tree; if the far junction is already wet, it stores further water. An uphill tunnel fills from below before passing water to a dry junction above it. At a wet junction, incoming flow is divided equally among the level or downhill tunnels still available (with a 0.005\,m elevation tolerance), and uphill tunnels are used only when none remain. When a dead end fills up, the tunnel feeding it stops passing water on and stores it instead. Inflow trapped behind full tunnels is moved through them to the nearest junction that can still store water, and overflow after saturation is counted in the volume balance. Simultaneous events are ordered by junction and tunnel identifiers. A tunnel closes when its mean depth reaches 0.3\,m. Walking switches to wet speed when water first enters a tunnel; the model does not track a moving front inside a tunnel.
+
+Multiplying a constant inflow by a factor divides every flood event time by the same factor, so the doubled-inflow floods are the nominal floods with all times halved. A direct rerun for one source reproduced the scaled times exactly.

@@ -1,0 +1,65 @@
+{
+  "engine": 52004,
+  "cases": [
+    {
+      "q": 0.5,
+      "slope": 0.001,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.26199605501234635,
+      "simulated_depth": 0.2619698941707611,
+      "relative_error": 9.98520438943995e-05
+    },
+    {
+      "q": 0.5,
+      "slope": 0.005,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.15866499149394686,
+      "simulated_depth": 0.15864858031272888,
+      "relative_error": 0.00010343290642411684
+    },
+    {
+      "q": 0.5,
+      "slope": 0.02,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.10360353471667216,
+      "simulated_depth": 0.1035928800702095,
+      "relative_error": 0.00010284056901921357
+    },
+    {
+      "q": 2.0,
+      "slope": 0.001,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.6403192958750306,
+      "simulated_depth": 0.6402707695960999,
+      "relative_error": 7.578450195599995e-05
+    },
+    {
+      "q": 2.0,
+      "slope": 0.005,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.3789641868646695,
+      "simulated_depth": 0.37892386317253113,
+      "relative_error": 0.00010640502067482682
+    },
+    {
+      "q": 2.0,
+      "slope": 0.02,
+      "roughness": 0.025,
+      "segments": 10,
+      "step": 0.5,
+      "analytical_depth": 0.2442611323559306,
+      "simulated_depth": 0.2442355901002884,
+      "relative_error": 0.00010456946381875998
+    }
+  ]
+}

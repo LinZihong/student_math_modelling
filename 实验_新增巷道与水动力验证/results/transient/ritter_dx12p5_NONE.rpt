@@ -1,0 +1,967 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.2 (Build 5.2.4)
+  PYSWMM TOOLKIT API - VERSION v1.0 (2026-02-26)
+  ------------------------------------------------------------
+
+  Ritter benchmark 
+  WARNING 04: minimum elevation drop used for Conduit C0
+  WARNING 04: minimum elevation drop used for Conduit C1
+  WARNING 04: minimum elevation drop used for Conduit C2
+  WARNING 04: minimum elevation drop used for Conduit C3
+  WARNING 04: minimum elevation drop used for Conduit C4
+  WARNING 04: minimum elevation drop used for Conduit C5
+  WARNING 04: minimum elevation drop used for Conduit C6
+  WARNING 04: minimum elevation drop used for Conduit C7
+  WARNING 04: minimum elevation drop used for Conduit C8
+  WARNING 04: minimum elevation drop used for Conduit C9
+  WARNING 04: minimum elevation drop used for Conduit C10
+  WARNING 04: minimum elevation drop used for Conduit C11
+  WARNING 04: minimum elevation drop used for Conduit C12
+  WARNING 04: minimum elevation drop used for Conduit C13
+  WARNING 04: minimum elevation drop used for Conduit C14
+  WARNING 04: minimum elevation drop used for Conduit C15
+  WARNING 04: minimum elevation drop used for Conduit C16
+  WARNING 04: minimum elevation drop used for Conduit C17
+  WARNING 04: minimum elevation drop used for Conduit C18
+  WARNING 04: minimum elevation drop used for Conduit C19
+  WARNING 04: minimum elevation drop used for Conduit C20
+  WARNING 04: minimum elevation drop used for Conduit C21
+  WARNING 04: minimum elevation drop used for Conduit C22
+  WARNING 04: minimum elevation drop used for Conduit C23
+  WARNING 04: minimum elevation drop used for Conduit C24
+  WARNING 04: minimum elevation drop used for Conduit C25
+  WARNING 04: minimum elevation drop used for Conduit C26
+  WARNING 04: minimum elevation drop used for Conduit C27
+  WARNING 04: minimum elevation drop used for Conduit C28
+  WARNING 04: minimum elevation drop used for Conduit C29
+  WARNING 04: minimum elevation drop used for Conduit C30
+  WARNING 04: minimum elevation drop used for Conduit C31
+  WARNING 04: minimum elevation drop used for Conduit C32
+  WARNING 04: minimum elevation drop used for Conduit C33
+  WARNING 04: minimum elevation drop used for Conduit C34
+  WARNING 04: minimum elevation drop used for Conduit C35
+  WARNING 04: minimum elevation drop used for Conduit C36
+  WARNING 04: minimum elevation drop used for Conduit C37
+  WARNING 04: minimum elevation drop used for Conduit C38
+  WARNING 04: minimum elevation drop used for Conduit C39
+  WARNING 04: minimum elevation drop used for Conduit C40
+  WARNING 04: minimum elevation drop used for Conduit C41
+  WARNING 04: minimum elevation drop used for Conduit C42
+  WARNING 04: minimum elevation drop used for Conduit C43
+  WARNING 04: minimum elevation drop used for Conduit C44
+  WARNING 04: minimum elevation drop used for Conduit C45
+  WARNING 04: minimum elevation drop used for Conduit C46
+  WARNING 04: minimum elevation drop used for Conduit C47
+  WARNING 04: minimum elevation drop used for Conduit C48
+  WARNING 04: minimum elevation drop used for Conduit C49
+  WARNING 04: minimum elevation drop used for Conduit C50
+  WARNING 04: minimum elevation drop used for Conduit C51
+  WARNING 04: minimum elevation drop used for Conduit C52
+  WARNING 04: minimum elevation drop used for Conduit C53
+  WARNING 04: minimum elevation drop used for Conduit C54
+  WARNING 04: minimum elevation drop used for Conduit C55
+  WARNING 04: minimum elevation drop used for Conduit C56
+  WARNING 04: minimum elevation drop used for Conduit C57
+  WARNING 04: minimum elevation drop used for Conduit C58
+  WARNING 04: minimum elevation drop used for Conduit C59
+  WARNING 04: minimum elevation drop used for Conduit C60
+  WARNING 04: minimum elevation drop used for Conduit C61
+  WARNING 04: minimum elevation drop used for Conduit C62
+  WARNING 04: minimum elevation drop used for Conduit C63
+  WARNING 04: minimum elevation drop used for Conduit C64
+  WARNING 04: minimum elevation drop used for Conduit C65
+  WARNING 04: minimum elevation drop used for Conduit C66
+  WARNING 04: minimum elevation drop used for Conduit C67
+  WARNING 04: minimum elevation drop used for Conduit C68
+  WARNING 04: minimum elevation drop used for Conduit C69
+  WARNING 04: minimum elevation drop used for Conduit C70
+  WARNING 04: minimum elevation drop used for Conduit C71
+  WARNING 04: minimum elevation drop used for Conduit C72
+  WARNING 04: minimum elevation drop used for Conduit C73
+  WARNING 04: minimum elevation drop used for Conduit C74
+  WARNING 04: minimum elevation drop used for Conduit C75
+  WARNING 04: minimum elevation drop used for Conduit C76
+  WARNING 04: minimum elevation drop used for Conduit C77
+  WARNING 04: minimum elevation drop used for Conduit C78
+  WARNING 04: minimum elevation drop used for Conduit C79
+  WARNING 04: minimum elevation drop used for Conduit C80
+  WARNING 04: minimum elevation drop used for Conduit C81
+  WARNING 04: minimum elevation drop used for Conduit C82
+  WARNING 04: minimum elevation drop used for Conduit C83
+  WARNING 04: minimum elevation drop used for Conduit C84
+  WARNING 04: minimum elevation drop used for Conduit C85
+  WARNING 04: minimum elevation drop used for Conduit C86
+  WARNING 04: minimum elevation drop used for Conduit C87
+  WARNING 04: minimum elevation drop used for Conduit C88
+  WARNING 04: minimum elevation drop used for Conduit C89
+  WARNING 04: minimum elevation drop used for Conduit C90
+  WARNING 04: minimum elevation drop used for Conduit C91
+  WARNING 04: minimum elevation drop used for Conduit C92
+  WARNING 04: minimum elevation drop used for Conduit C93
+  WARNING 04: minimum elevation drop used for Conduit C94
+  WARNING 04: minimum elevation drop used for Conduit C95
+  WARNING 04: minimum elevation drop used for Conduit C96
+  WARNING 04: minimum elevation drop used for Conduit C97
+  WARNING 04: minimum elevation drop used for Conduit C98
+  WARNING 04: minimum elevation drop used for Conduit C99
+  WARNING 04: minimum elevation drop used for Conduit C100
+  WARNING 04: minimum elevation drop used for Conduit C101
+  WARNING 04: minimum elevation drop used for Conduit C102
+  WARNING 04: minimum elevation drop used for Conduit C103
+  WARNING 04: minimum elevation drop used for Conduit C104
+  WARNING 04: minimum elevation drop used for Conduit C105
+  WARNING 04: minimum elevation drop used for Conduit C106
+  WARNING 04: minimum elevation drop used for Conduit C107
+  WARNING 04: minimum elevation drop used for Conduit C108
+  WARNING 04: minimum elevation drop used for Conduit C109
+  WARNING 04: minimum elevation drop used for Conduit C110
+  WARNING 04: minimum elevation drop used for Conduit C111
+  WARNING 04: minimum elevation drop used for Conduit C112
+  WARNING 04: minimum elevation drop used for Conduit C113
+  WARNING 04: minimum elevation drop used for Conduit C114
+  WARNING 04: minimum elevation drop used for Conduit C115
+  WARNING 04: minimum elevation drop used for Conduit C116
+  WARNING 04: minimum elevation drop used for Conduit C117
+  WARNING 04: minimum elevation drop used for Conduit C118
+  WARNING 04: minimum elevation drop used for Conduit C119
+  WARNING 04: minimum elevation drop used for Conduit C120
+  WARNING 04: minimum elevation drop used for Conduit C121
+  WARNING 04: minimum elevation drop used for Conduit C122
+  WARNING 04: minimum elevation drop used for Conduit C123
+  WARNING 04: minimum elevation drop used for Conduit C124
+  WARNING 04: minimum elevation drop used for Conduit C125
+  WARNING 04: minimum elevation drop used for Conduit C126
+  WARNING 04: minimum elevation drop used for Conduit C127
+  WARNING 04: minimum elevation drop used for Conduit C128
+  WARNING 04: minimum elevation drop used for Conduit C129
+  WARNING 04: minimum elevation drop used for Conduit C130
+  WARNING 04: minimum elevation drop used for Conduit C131
+  WARNING 04: minimum elevation drop used for Conduit C132
+  WARNING 04: minimum elevation drop used for Conduit C133
+  WARNING 04: minimum elevation drop used for Conduit C134
+  WARNING 04: minimum elevation drop used for Conduit C135
+  WARNING 04: minimum elevation drop used for Conduit C136
+  WARNING 04: minimum elevation drop used for Conduit C137
+  WARNING 04: minimum elevation drop used for Conduit C138
+  WARNING 04: minimum elevation drop used for Conduit C139
+  WARNING 04: minimum elevation drop used for Conduit C140
+  WARNING 04: minimum elevation drop used for Conduit C141
+  WARNING 04: minimum elevation drop used for Conduit C142
+  WARNING 04: minimum elevation drop used for Conduit C143
+  WARNING 04: minimum elevation drop used for Conduit C144
+  WARNING 04: minimum elevation drop used for Conduit C145
+  WARNING 04: minimum elevation drop used for Conduit C146
+  WARNING 04: minimum elevation drop used for Conduit C147
+  WARNING 04: minimum elevation drop used for Conduit C148
+  WARNING 04: minimum elevation drop used for Conduit C149
+  WARNING 04: minimum elevation drop used for Conduit C150
+  WARNING 04: minimum elevation drop used for Conduit C151
+  WARNING 04: minimum elevation drop used for Conduit C152
+  WARNING 04: minimum elevation drop used for Conduit C153
+  WARNING 04: minimum elevation drop used for Conduit C154
+  WARNING 04: minimum elevation drop used for Conduit C155
+  WARNING 04: minimum elevation drop used for Conduit C156
+  WARNING 04: minimum elevation drop used for Conduit C157
+  WARNING 04: minimum elevation drop used for Conduit C158
+  WARNING 04: minimum elevation drop used for Conduit C159
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CMS
+  Process Models:
+    Rainfall/Runoff ........ NO
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/2026 00:00:00
+  Ending Date .............. 01/01/2026 00:02:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:00:01
+  Routing Time Step ........ 0.05 sec
+  Variable Time Step ....... NO
+  Maximum Trials ........... 40
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.000010 m
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.000         0.000
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.000         0.000
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.398         3.975
+  Final Stored Volume ......         0.398         3.975
+  Continuity Error (%) .....         0.000
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node J45 (-242.22%)
+  Node J46 (-209.34%)
+  Node J47 (-177.75%)
+  Node J48 (-148.09%)
+  Node J49 (-121.19%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *********************************
+  Most Frequent Nonconverging Nodes
+  *********************************
+  Convergence obtained at all time steps.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     0.05 sec
+  Average Time Step           :     0.05 sec
+  Maximum Time Step           :     0.05 sec
+  % of Time in Steady State   :     0.00
+  Average Iterations per Step :     6.04
+  % of Steps Not Converging   :     0.00
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  J0                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J1                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J2                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J3                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J4                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J5                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J6                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J7                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J8                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J9                   JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J10                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J11                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J12                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J13                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J14                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J15                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J16                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J17                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J18                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J19                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J20                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J21                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J22                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J23                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J24                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J25                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J26                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J27                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J28                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J29                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J30                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J31                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J32                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J33                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J34                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J35                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J36                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J37                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J38                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J39                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J40                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J41                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J42                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J43                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J44                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J45                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J46                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J47                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J48                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J49                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J50                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J51                  JUNCTION     1.00     1.00     1.00     0  00:00        1.00
+  J52                  JUNCTION     0.99     1.00     1.00     0  00:00        1.00
+  J53                  JUNCTION     0.99     1.00     1.00     0  00:00        1.00
+  J54                  JUNCTION     0.99     1.00     1.00     0  00:00        1.00
+  J55                  JUNCTION     0.98     1.00     1.00     0  00:00        1.00
+  J56                  JUNCTION     0.98     1.00     1.00     0  00:00        1.00
+  J57                  JUNCTION     0.97     1.00     1.00     0  00:00        1.00
+  J58                  JUNCTION     0.96     1.00     1.00     0  00:00        1.00
+  J59                  JUNCTION     0.95     1.00     1.00     0  00:00        1.00
+  J60                  JUNCTION     0.94     1.00     1.00     0  00:00        1.00
+  J61                  JUNCTION     0.93     1.00     1.00     0  00:00        1.00
+  J62                  JUNCTION     0.92     1.00     1.00     0  00:00        1.00
+  J63                  JUNCTION     0.91     1.00     1.00     0  00:00        1.00
+  J64                  JUNCTION     0.89     1.00     1.00     0  00:00        1.00
+  J65                  JUNCTION     0.88     1.00     1.00     0  00:00        1.00
+  J66                  JUNCTION     0.86     1.00     1.00     0  00:00        1.00
+  J67                  JUNCTION     0.84     1.00     1.00     0  00:00        1.00
+  J68                  JUNCTION     0.83     1.00     1.00     0  00:00        1.00
+  J69                  JUNCTION     0.81     1.00     1.00     0  00:00        1.00
+  J70                  JUNCTION     0.79     1.00     1.00     0  00:00        1.00
+  J71                  JUNCTION     0.77     1.00     1.00     0  00:00        1.00
+  J72                  JUNCTION     0.76     1.00     1.00     0  00:00        1.00
+  J73                  JUNCTION     0.74     1.00     1.00     0  00:00        1.00
+  J74                  JUNCTION     0.72     1.00     1.00     0  00:00        1.00
+  J75                  JUNCTION     0.71     1.00     1.00     0  00:00        1.00
+  J76                  JUNCTION     0.69     1.00     1.00     0  00:00        1.00
+  J77                  JUNCTION     0.67     1.00     1.00     0  00:00        1.00
+  J78                  JUNCTION     0.64     1.00     1.00     0  00:00        1.00
+  J79                  JUNCTION     0.21     1.00     1.00     0  00:00        0.98
+  J80                  JUNCTION     0.41     0.90     0.90     0  00:02        0.90
+  J81                  JUNCTION     0.42     0.93     0.93     0  00:00        0.93
+  J82                  JUNCTION     0.29     1.09     1.09     0  00:00        1.09
+  J83                  JUNCTION     0.35     1.02     1.02     0  00:00        1.01
+  J84                  JUNCTION     0.34     1.03     1.03     0  00:00        1.03
+  J85                  JUNCTION     0.32     1.03     1.03     0  00:00        1.03
+  J86                  JUNCTION     0.29     1.13     1.13     0  00:01        1.13
+  J87                  JUNCTION     0.26     1.09     1.09     0  00:01        1.08
+  J88                  JUNCTION     0.23     1.14     1.14     0  00:01        1.14
+  J89                  JUNCTION     0.21     1.11     1.11     0  00:01        1.11
+  J90                  JUNCTION     0.17     1.16     1.16     0  00:01        1.16
+  J91                  JUNCTION     0.14     1.14     1.14     0  00:01        1.14
+  J92                  JUNCTION     0.14     1.16     1.16     0  00:01        1.16
+  J93                  JUNCTION     0.14     1.17     1.17     0  00:01        1.16
+  J94                  JUNCTION     0.14     1.19     1.19     0  00:01        1.18
+  J95                  JUNCTION     0.14     1.20     1.20     0  00:01        1.20
+  J96                  JUNCTION     0.14     1.21     1.21     0  00:01        1.20
+  J97                  JUNCTION     0.12     1.21     1.21     0  00:01        1.20
+  J98                  JUNCTION     0.08     0.96     0.96     0  00:01        0.96
+  J99                  JUNCTION     0.07     0.95     0.95     0  00:01        0.94
+  J100                 JUNCTION     0.07     0.95     0.95     0  00:01        0.94
+  J101                 JUNCTION     0.07     0.94     0.94     0  00:01        0.93
+  J102                 JUNCTION     0.06     0.93     0.93     0  00:01        0.93
+  J103                 JUNCTION     0.06     0.93     0.93     0  00:01        0.92
+  J104                 JUNCTION     0.02     0.82     0.82     0  00:02        0.82
+  J105                 JUNCTION     0.00     0.10     0.10     0  00:02        0.10
+  J106                 JUNCTION     0.00     0.00     0.00     0  00:02        0.00
+  J107                 JUNCTION     0.00     0.00     0.00     0  00:02        0.00
+  J108                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J109                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J110                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J111                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J112                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J113                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J114                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J115                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J116                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J117                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J118                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J119                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J120                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J121                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J122                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J123                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J124                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J125                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J126                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J127                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J128                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J129                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J130                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J131                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J132                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J133                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J134                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J135                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J136                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J137                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J138                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J139                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J140                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J141                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J142                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J143                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J144                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J145                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J146                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J147                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J148                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J149                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J150                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J151                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J152                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J153                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J154                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J155                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J156                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J157                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J158                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J159                 JUNCTION     0.00     0.00     0.00     0  00:00        0.00
+  J160                 OUTFALL      0.00     0.00     0.00     0  00:00        0.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CMS      CMS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  J0                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J1                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J2                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J3                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J4                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J5                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J6                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J7                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J8                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J9                   JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J10                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J11                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J12                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J13                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J14                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J15                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J16                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J17                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J18                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J19                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J20                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J21                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J22                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J23                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J24                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J25                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J26                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J27                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J28                  JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J29                  JUNCTION     0.000    0.000     0  00:00           0           0      -0.000 ltr
+  J30                  JUNCTION     0.000    0.000     0  00:02           0    2.66e-22      -0.000 ltr
+  J31                  JUNCTION     0.000    0.000     0  00:02           0    6.52e-17      -0.000 ltr
+  J32                  JUNCTION     0.000    0.000     0  00:02           0    1.07e-15      -0.000 ltr
+  J33                  JUNCTION     0.000    0.000     0  00:02           0    9.93e-15      -0.000 ltr
+  J34                  JUNCTION     0.000    0.000     0  00:02           0    8.07e-14      -0.000 ltr
+  J35                  JUNCTION     0.000    0.000     0  00:02           0    6.11e-13      -0.000 ltr
+  J36                  JUNCTION     0.000    0.000     0  00:02           0    4.36e-12      -0.000 ltr
+  J37                  JUNCTION     0.000    0.000     0  00:02           0    2.94e-11      -0.000 ltr
+  J38                  JUNCTION     0.000    0.000     0  00:02           0    1.86e-10      -0.001 ltr
+  J39                  JUNCTION     0.000    0.000     0  00:02           0     1.1e-09      -0.005 ltr
+  J40                  JUNCTION     0.000    0.000     0  00:02           0    6.14e-09      -0.026 ltr
+  J41                  JUNCTION     0.000    0.000     0  00:02           0    3.18e-08      -0.122 ltr
+  J42                  JUNCTION     0.000    0.000     0  00:02           0    1.53e-07      -0.530 ltr
+  J43                  JUNCTION     0.000    0.000     0  00:02           0    6.84e-07      -2.123 ltr
+  J44                  JUNCTION     0.000    0.001     0  00:02           0    2.81e-06      -7.746 ltr
+  J45                  JUNCTION     0.000    0.004     0  00:02           0    1.06e-05     -70.779
+  J46                  JUNCTION     0.000    0.011     0  00:02           0    3.61e-05     -67.673
+  J47                  JUNCTION     0.000    0.031     0  00:02           0    0.000112     -63.997
+  J48                  JUNCTION     0.000    0.077     0  00:02           0     0.00031     -59.691
+  J49                  JUNCTION     0.000    0.166     0  00:02           0     0.00077     -54.791
+  J50                  JUNCTION     0.000    0.313     0  00:02           0      0.0017     -49.465
+  J51                  JUNCTION     0.000    0.522     0  00:02           0     0.00337     -44.013
+  J52                  JUNCTION     0.000    0.779     0  00:02           0     0.00602     -38.774
+  J53                  JUNCTION     0.000    1.060     0  00:02           0     0.00983     -34.020
+  J54                  JUNCTION     0.000    1.345     0  00:02           0      0.0149     -29.890
+  J55                  JUNCTION     0.000    1.620     0  00:02           0      0.0212     -26.393
+  J56                  JUNCTION     0.000    1.880     0  00:02           0      0.0289     -23.468
+  J57                  JUNCTION     0.000    2.121     0  00:02           0      0.0377     -21.024
+  J58                  JUNCTION     0.000    2.343     0  00:02           0      0.0478     -18.973
+  J59                  JUNCTION     0.000    2.547     0  00:02           0      0.0589     -17.239
+  J60                  JUNCTION     0.000    2.734     0  00:02           0      0.0712     -15.760
+  J61                  JUNCTION     0.000    2.903     0  00:02           0      0.0845     -14.489
+  J62                  JUNCTION     0.000    3.057     0  00:02           0      0.0989     -13.387
+  J63                  JUNCTION     0.000    3.196     0  00:02           0       0.114     -12.422
+  J64                  JUNCTION     0.000    3.320     0  00:02           0        0.13     -11.572
+  J65                  JUNCTION     0.000    3.431     0  00:02           0       0.147     -10.813
+  J66                  JUNCTION     0.000    3.527     0  00:02           0       0.165     -10.099
+  J67                  JUNCTION     0.000    3.592     0  00:02           0       0.184      -9.278
+  J68                  JUNCTION     0.000    3.598     0  00:01           0       0.203      -8.341
+  J69                  JUNCTION     0.000    3.600     0  00:01           0       0.221      -7.800
+  J70                  JUNCTION     0.000    3.601     0  00:01           0        0.24      -7.204
+  J71                  JUNCTION     0.000    3.603     0  00:01           0       0.258      -6.712
+  J72                  JUNCTION     0.000    3.605     0  00:01           0       0.277      -6.311
+  J73                  JUNCTION     0.000    3.607     0  00:01           0       0.296      -5.916
+  J74                  JUNCTION     0.000    3.610     0  00:01           0       0.314      -5.597
+  J75                  JUNCTION     0.000    3.614     0  00:00           0       0.333      -5.291
+  J76                  JUNCTION     0.000    3.619     0  00:00           0       0.351      -5.068
+  J77                  JUNCTION     0.000    3.668     0  00:02           0        0.37      -5.414
+  J78                  JUNCTION     0.000    3.968     0  00:02           0       0.391      -7.738
+  J79                  JUNCTION     0.000    4.838     0  00:01           0       0.424      -5.695
+  J80                  JUNCTION     0.000    6.461     0  00:00           0       0.451      11.069
+  J81                  JUNCTION     0.000    8.659     0  00:00           0       0.406       4.645
+  J82                  JUNCTION     0.000   11.262     0  00:00           0       0.387       0.617
+  J83                  JUNCTION     0.000   13.361     0  00:00           0       0.385       1.363
+  J84                  JUNCTION     0.000   13.369     0  00:00           0       0.379       2.370
+  J85                  JUNCTION     0.000   14.333     0  00:00           0       0.371       7.905
+  J86                  JUNCTION     0.000   14.197     0  00:00           0       0.344       9.129
+  J87                  JUNCTION     0.000   14.015     0  00:00           0       0.315       8.887
+  J88                  JUNCTION     0.000   14.030     0  00:01           0       0.289       2.628
+  J89                  JUNCTION     0.000   14.499     0  00:01           0       0.282      13.359
+  J90                  JUNCTION     0.000   14.612     0  00:01           0       0.249      27.147
+  J91                  JUNCTION     0.000   14.673     0  00:01           0       0.196       6.088
+  J92                  JUNCTION     0.000   14.609     0  00:01           0       0.185       0.927
+  J93                  JUNCTION     0.000   14.615     0  00:01           0       0.183       0.932
+  J94                  JUNCTION     0.000   14.517     0  00:01           0       0.181       0.999
+  J95                  JUNCTION     0.000   14.398     0  00:01           0        0.18       1.011
+  J96                  JUNCTION     0.000   14.244     0  00:01           0       0.178       3.214
+  J97                  JUNCTION     0.000   14.092     0  00:01           0       0.172      48.653
+  J98                  JUNCTION     0.000   13.881     0  00:02           0       0.116      44.505
+  J99                  JUNCTION     0.000   10.506     0  00:01           0      0.0801       3.326
+  J100                 JUNCTION     0.000   10.225     0  00:01           0      0.0775       1.879
+  J101                 JUNCTION     0.000    9.942     0  00:01           0       0.076       2.033
+  J102                 JUNCTION     0.000    9.656     0  00:01           0      0.0743       2.017
+  J103                 JUNCTION     0.000    9.359     0  00:01           0      0.0726      57.167
+  J104                 JUNCTION     0.000    9.053     0  00:01           0      0.0462     788.925
+  J105                 JUNCTION     0.000    3.422     0  00:02           0      0.0052    5182.349 ltr
+  J106                 JUNCTION     0.000    0.021     0  00:02           0    1.38e-05      13.830 ltr
+  J107                 JUNCTION     0.000    0.000     0  00:02           0    3.05e-11       0.000 ltr
+  J108                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J109                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J110                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J111                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J112                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J113                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J114                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J115                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J116                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J117                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J118                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J119                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J120                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J121                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J122                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J123                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J124                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J125                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J126                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J127                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J128                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J129                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J130                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J131                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J132                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J133                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J134                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J135                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J136                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J137                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J138                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J139                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J140                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J141                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J142                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J143                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J144                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J145                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J146                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J147                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J148                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J149                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J150                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J151                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J152                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J153                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J154                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J155                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J156                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J157                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J158                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J159                 JUNCTION     0.000    0.000     0  00:00           0           0       0.000 ltr
+  J160                 OUTFALL      0.000    0.000     0  00:00           0           0       0.000 ltr
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CMS       CMS    10^6 ltr
+  -----------------------------------------------------------
+  J160                   0.00     0.000     0.000       0.000
+  -----------------------------------------------------------
+  System                 0.00     0.000     0.000       0.000
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CMS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C0                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C1                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C2                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C3                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C4                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C5                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C6                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C7                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C8                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C9                   CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C10                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C11                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C12                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C13                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C14                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C15                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C16                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C17                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C18                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C19                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C20                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C21                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C22                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C23                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C24                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C25                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C26                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C27                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C28                  CONDUIT     0.000     0  00:00      0.00    0.00    0.33
+  C29                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C30                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C31                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C32                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C33                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C34                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C35                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C36                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C37                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C38                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C39                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C40                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C41                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C42                  CONDUIT     0.000     0  00:02      0.00    0.00    0.33
+  C43                  CONDUIT     0.001     0  00:02      0.00    0.00    0.33
+  C44                  CONDUIT     0.004     0  00:02      0.00    0.00    0.33
+  C45                  CONDUIT     0.011     0  00:02      0.00    0.00    0.33
+  C46                  CONDUIT     0.031     0  00:02      0.01    0.00    0.33
+  C47                  CONDUIT     0.077     0  00:02      0.02    0.00    0.33
+  C48                  CONDUIT     0.166     0  00:02      0.04    0.00    0.33
+  C49                  CONDUIT     0.313     0  00:02      0.08    0.00    0.33
+  C50                  CONDUIT     0.522     0  00:02      0.14    0.00    0.33
+  C51                  CONDUIT     0.779     0  00:02      0.21    0.00    0.33
+  C52                  CONDUIT     1.060     0  00:02      0.29    0.00    0.33
+  C53                  CONDUIT     1.345     0  00:02      0.38    0.00    0.33
+  C54                  CONDUIT     1.620     0  00:02      0.47    0.00    0.33
+  C55                  CONDUIT     1.880     0  00:02      0.56    0.00    0.33
+  C56                  CONDUIT     2.121     0  00:02      0.65    0.00    0.33
+  C57                  CONDUIT     2.343     0  00:02      0.74    0.00    0.33
+  C58                  CONDUIT     2.547     0  00:02      0.83    0.00    0.33
+  C59                  CONDUIT     2.734     0  00:02      0.92    0.00    0.33
+  C60                  CONDUIT     2.903     0  00:02      1.00    0.00    0.33
+  C61                  CONDUIT     3.057     0  00:02      1.09    0.00    0.33
+  C62                  CONDUIT     3.196     0  00:02      1.17    0.00    0.33
+  C63                  CONDUIT     3.320     0  00:02      1.24    0.00    0.33
+  C64                  CONDUIT     3.431     0  00:02      1.32    0.01    0.33
+  C65                  CONDUIT     3.527     0  00:02      1.39    0.01    0.33
+  C66                  CONDUIT     3.592     0  00:02      1.43    0.01    0.33
+  C67                  CONDUIT     3.598     0  00:01      1.44    0.01    0.33
+  C68                  CONDUIT     3.600     0  00:01      1.44    0.01    0.33
+  C69                  CONDUIT     3.601     0  00:01      1.44    0.01    0.33
+  C70                  CONDUIT     3.603     0  00:01      1.44    0.01    0.33
+  C71                  CONDUIT     3.605     0  00:01      1.44    0.01    0.33
+  C72                  CONDUIT     3.607     0  00:01      1.44    0.01    0.33
+  C73                  CONDUIT     3.610     0  00:01      1.44    0.01    0.33
+  C74                  CONDUIT     3.614     0  00:00      1.44    0.01    0.33
+  C75                  CONDUIT     3.619     0  00:00      1.44    0.01    0.33
+  C76                  CONDUIT     3.668     0  00:02      1.53    0.01    0.33
+  C77                  CONDUIT     3.968     0  00:02      2.16    0.01    0.33
+  C78                  CONDUIT     4.838     0  00:01      2.76    0.01    0.33
+  C79                  CONDUIT     6.461     0  00:00      7.14    0.01    0.23
+  C80                  CONDUIT     8.659     0  00:00      4.17    0.01    0.25
+  C81                  CONDUIT    11.262     0  00:00      4.03    0.02    0.27
+  C82                  CONDUIT    13.361     0  00:00      5.73    0.02    0.30
+  C83                  CONDUIT    13.369     0  00:00      4.08    0.02    0.28
+  C84                  CONDUIT    14.333     0  00:00      4.07    0.02    0.29
+  C85                  CONDUIT    14.197     0  00:00      4.08    0.02    0.29
+  C86                  CONDUIT    14.015     0  00:00      4.07    0.02    0.31
+  C87                  CONDUIT    14.030     0  00:01      4.04    0.02    0.30
+  C88                  CONDUIT    14.499     0  00:01      4.00    0.02    0.31
+  C89                  CONDUIT    14.612     0  00:01      4.14    0.02    0.31
+  C90                  CONDUIT    14.673     0  00:01      3.94    0.02    0.31
+  C91                  CONDUIT    14.609     0  00:01      3.99    0.02    0.31
+  C92                  CONDUIT    14.615     0  00:01      3.96    0.02    0.31
+  C93                  CONDUIT    14.517     0  00:01      3.95    0.02    0.31
+  C94                  CONDUIT    14.398     0  00:01      3.94    0.02    0.31
+  C95                  CONDUIT    14.244     0  00:01      3.84    0.02    0.31
+  C96                  CONDUIT    14.092     0  00:01      3.80    0.02    0.31
+  C97                  CONDUIT    13.881     0  00:02      3.77    0.02    0.31
+  C98                  CONDUIT    10.506     0  00:01      3.55    0.02    0.25
+  C99                  CONDUIT    10.225     0  00:01      3.53    0.02    0.25
+  C100                 CONDUIT     9.942     0  00:01      3.49    0.01    0.24
+  C101                 CONDUIT     9.656     0  00:01      3.49    0.01    0.24
+  C102                 CONDUIT     9.359     0  00:01      3.46    0.01    0.24
+  C103                 CONDUIT     9.053     0  00:01      3.26    0.01    0.23
+  C104                 CONDUIT     3.422     0  00:02      1.85    0.01    0.15
+  C105                 CONDUIT     0.021     0  00:02      0.10    0.00    0.02
+  C106                 CONDUIT     0.000     0  00:02      0.00    0.00    0.00
+  C107                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C108                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C109                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C110                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C111                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C112                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C113                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C114                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C115                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C116                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C117                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C118                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C119                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C120                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C121                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C122                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C123                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C124                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C125                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C126                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C127                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C128                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C129                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C130                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C131                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C132                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C133                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C134                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C135                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C136                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C137                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C138                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C139                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C140                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C141                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C142                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C143                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C144                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C145                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C146                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C147                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C148                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C149                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C150                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C151                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C152                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C153                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C154                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C155                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C156                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C157                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C158                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  C159                 CONDUIT     0.000     0  00:00      0.00    0.00    0.00
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  C0                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C1                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C2                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C3                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C4                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C5                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C6                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C7                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C8                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C9                      1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C10                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C11                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C12                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C13                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C14                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C15                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C16                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C17                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C18                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C19                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C20                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C21                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C22                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C23                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C24                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C25                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C26                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C27                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C28                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C29                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C30                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C31                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C32                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C33                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C34                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C35                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C36                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C37                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C38                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C39                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C40                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C41                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C42                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C43                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C44                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C45                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C46                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C47                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C48                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C49                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C50                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C51                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C52                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C53                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C54                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C55                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C56                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C57                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C58                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C59                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C60                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C61                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C62                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C63                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C64                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C65                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C66                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C67                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C68                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C69                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C70                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C71                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C72                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C73                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C74                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C75                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C76                     1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C77                     1.00   0.00  0.00  0.00  1.00  0.01  0.00  0.00  0.00  0.00
+  C78                     1.00   0.00  0.00  0.00  0.12  0.88  0.00  0.00  0.00  0.00
+  C79                     1.00   0.00  0.00  0.00  0.09  0.91  0.00  0.00  0.68  0.00
+  C80                     1.00   0.00  0.00  0.00  0.35  0.66  0.00  0.00  0.03  0.00
+  C81                     1.00   0.02  0.00  0.00  0.36  0.63  0.00  0.00  0.01  0.00
+  C82                     1.00   0.06  0.00  0.00  0.37  0.57  0.00  0.00  0.19  0.00
+  C83                     1.00   0.11  0.00  0.00  0.62  0.27  0.00  0.00  0.01  0.00
+  C84                     1.00   0.17  0.00  0.00  0.54  0.30  0.00  0.00  0.01  0.00
+  C85                     1.00   0.21  0.00  0.00  0.60  0.19  0.00  0.00  0.03  0.00
+  C86                     1.00   0.25  0.00  0.00  0.58  0.17  0.00  0.00  0.03  0.00
+  C87                     1.00   0.28  0.00  0.00  0.58  0.14  0.00  0.00  0.03  0.00
+  C88                     1.00   0.31  0.00  0.00  0.47  0.22  0.00  0.00  0.03  0.00
+  C89                     1.00   0.34  0.00  0.00  0.48  0.18  0.00  0.00  0.03  0.00
+  C90                     1.00   0.38  0.00  0.00  0.49  0.14  0.00  0.00  0.03  0.00
+  C91                     1.00   0.41  0.00  0.00  0.46  0.13  0.00  0.00  0.03  0.00
+  C92                     1.00   0.44  0.00  0.00  0.42  0.13  0.00  0.00  0.03  0.00
+  C93                     1.00   0.48  0.00  0.00  0.39  0.13  0.00  0.00  0.03  0.00
+  C94                     1.00   0.51  0.00  0.00  0.36  0.13  0.00  0.00  0.03  0.00
+  C95                     1.00   0.55  0.00  0.00  0.33  0.13  0.00  0.00  0.03  0.00
+  C96                     1.00   0.58  0.00  0.00  0.29  0.13  0.00  0.00  0.02  0.00
+  C97                     1.00   0.62  0.00  0.00  0.29  0.09  0.00  0.00  0.01  0.00
+  C98                     1.00   0.66  0.00  0.00  0.28  0.07  0.00  0.00  0.01  0.00
+  C99                     1.00   0.70  0.00  0.00  0.24  0.07  0.00  0.00  0.01  0.00
+  C100                    1.00   0.73  0.00  0.00  0.20  0.07  0.00  0.00  0.01  0.00
+  C101                    1.00   0.77  0.00  0.00  0.16  0.07  0.00  0.00  0.01  0.00
+  C102                    1.00   0.82  0.00  0.00  0.12  0.06  0.00  0.00  0.01  0.00
+  C103                    1.00   0.86  0.00  0.00  0.10  0.04  0.00  0.00  0.00  0.00
+  C104                    1.00   0.90  0.00  0.00  0.10  0.00  0.00  0.00  0.00  0.00
+  C105                    1.00   0.94  0.00  0.00  0.06  0.00  0.00  0.00  0.00  0.00
+  C106                    1.00   0.99  0.00  0.00  0.01  0.00  0.00  0.00  0.00  0.00
+  C107                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C108                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C109                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C110                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C111                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C112                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C113                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C114                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C115                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C116                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C117                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C118                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C119                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C120                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C121                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C122                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C123                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C124                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C125                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C126                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C127                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C128                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C129                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C130                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C131                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C132                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C133                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C134                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C135                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C136                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C137                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C138                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C139                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C140                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C141                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C142                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C143                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C144                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C145                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C146                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C147                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C148                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C149                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C150                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C151                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C152                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C153                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C154                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C155                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C156                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C157                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C158                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  C159                    1.00   1.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Sun Oct 25 01:51:25 2026
+  Analysis ended on:  Sun Oct 25 01:51:25 2026
+  Total elapsed time: < 1 sec

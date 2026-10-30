@@ -1,0 +1,62 @@
+[
+  {
+    "case": "competition",
+    "nodes": 664,
+    "edges": 978,
+    "width": 4.0,
+    "elevation_min": 0.0,
+    "elevation_max": 71.53,
+    "max_grade": 0.7142534825119442,
+    "grade_over_10pct": 39,
+    "grade_over_30pct": 5,
+    "level_edges": 225,
+    "source": "A",
+    "exits": {
+      "P0393": [
+        6336.99,
+        6073.22,
+        36.15
+      ],
+      "P0526": [
+        6416.05,
+        6579.88,
+        8.69
+      ]
+    }
+  },
+  {
+    "case": "cad",
+    "nodes": 1592,
+    "edges": 2084,
+    "width": 4.99,
+    "elevation_min": 16.272,
+    "elevation_max": 103.954,
+    "max_grade": 0.7132607600838639,
+    "grade_over_10pct": 41,
+    "grade_over_30pct": 6,
+    "level_edges": 102,
+    "source": "A",
+    "exits": {
+      "P0986": [
+        4644.33,
+        3872.54,
+        56.505
+      ],
+      "P1006": [
+        4588.55,
+        3829.19,
+        54.496
+      ],
+      "P1082": [
+        4427.5,
+        3734.49,
+        54.703
+      ],
+      "P1081": [
+        4386.84,
+        3433.22,
+        58.076
+      ]
+    }
+  }
+]
